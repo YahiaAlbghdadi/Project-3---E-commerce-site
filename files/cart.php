@@ -19,9 +19,9 @@
     <?php require_once "../compos/userNavbar.php" ?>
     <div class="container">
         <div class="ordersParent ">
-            <div class="sectionTop p-3 ">
+            <div class="sectionTop p-3  ">
                 <h1>Your Orders</h1>
-                <div class="cartPrice">price</div>
+                <div class="cartPrice row offset-11 ">price</div>
                 <hr>
             </div>
             <div class="sectionMiddle p-3 row">
@@ -39,8 +39,6 @@
                         <option value="actual value 3">Qtty: 7</option>
                         <option value="actual value 3">Qtty: 8</option>
                         <option value="actual value 3">Qtty: 9</option>
-                        
-
                     </select>
                     
                 </div>
@@ -49,6 +47,8 @@
                 </div>
             </div>
             <div class="sectionBottom">
+            <p class="offset-11 ">price</p>
+
             </div>
         </div>
     </div>

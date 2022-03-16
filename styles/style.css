@@ -1,25 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 body {
-    font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f3f6f4ca;
 }
 
 .test {
-    color: #2880b8;
+  color: #2880b8;
 }
 
 .cartItemImg {
-    max-width: 170px;
-    max-height: 160px;
-}
-
-.sectionTop {
-    border: 1px solid red
+  max-width: 170px;
+  max-height: 160px;
 }
 
 .cartPrice {
-    margin-left: auto !important;
-    margin-right: 0 !important;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
+.ordersParent {
+  max-width: 80%;
+  margin: 0px auto;
+}
 
+.usersTable {
+  margin: 10px auto;
+}
+
+.usersTableHeader {
+  background-color: #e63946;
+  color: #f3f6f4;
+}
+
+.usersTable {
+  border: 1px solid #1d3557;
+}
+
+tr:nth-child(even) {
+  background-color: #a8d5dc;
+}
+
+.userDetailsHref {
+  text-decoration: none;
+  color: #000;
+}
+
+.userDetailsHref:hover {
+  color: #f3f6f4;
+}
 /*# sourceMappingURL=style.css.map */
