@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+$color1: #2880b8;
+$color2: #a8d5dc;
+$color3: #e63946;
+$color4: #f3f6f4;
+$color5: #1d3557;
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.test {
+    color: $color1;
+}

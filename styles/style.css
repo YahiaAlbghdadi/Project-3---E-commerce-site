@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.test {
+    color: #2880b8;
+}
+
+.cartItemImg {
+    max-width: 170px;
+    max-height: 160px;
+}
+
+.sectionTop {
+    border: 1px solid red
+}
+
+.cartPrice {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+
+/*# sourceMappingURL=style.css.map */
