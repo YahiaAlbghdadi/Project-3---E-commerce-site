@@ -26,20 +26,20 @@
                 <th class="p-2">Tel. Number</th>
                 <th class="p-2">Manage</th>
             </tr>
-            <tr class="doubleFace">
+            <tr class="tableTrColoring">
                 <td class="p-2">Snow</td>
                 <td class="p-2">aasdfffffffffffdg@gmail.com</td>
                 <td class="p-2">209349687</td>
                 <td class="p-2 " ><a class="userDetailsHref" href='userDetails.php?id=<?=$row["id"]?>'>Show Details</a></td>
                 
             </tr>
-            <tr class="doubleFace">
+            <tr class="tableTrColoring">
                 <td class="p-2">Snow</td>
                 <td class="p-2">aasdfffffffffffdg@gmail.com</td>
                 <td class="p-2">209349687</td>
                 <td class="p-2" ><a href='userDetails.php?id=<?=$row["id"]?>'>Show Details</a></td>
             </tr>
-            <tr class="doubleFace">
+            <tr class="tableTrColoring">
                 <td class="p-2">Snow</td>
                 <td class="p-2">aasdfffffffffffdg@gmail.com</td>
                 <td class="p-2">209349687</td>
