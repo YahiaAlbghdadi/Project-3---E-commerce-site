@@ -112,7 +112,9 @@ if(isset($_POST["btn-signup"])){
   
             if(!$error){
                 $password=hash("sha256",$pass);
-               $query= "INSERT INTO `users`(firstName,lastName, email, image, password,telefonNumber,fkAddress) VALUES 
+
+                
+               $query= "INSERT INTO users(firstName,lastName, email, image, password,telefonNumber,fkAddress) VALUES 
                ('$f_name', '$l_name', '$email','$picture->fileName', '$password','$telefonNumber','$Address')";
 
 
