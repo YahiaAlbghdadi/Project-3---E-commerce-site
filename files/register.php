@@ -217,16 +217,18 @@ if(isset($_POST["btn-signup"])){
                                 </div>
                          
                                 <div class="form-group d-flex">
-                                    <input  type="text" class="form-control" placeholder="Straße" required name="Address"">
+                                    <input  type="text" class="form-control" placeholder="Straße" required name="Address">
                                     <span  class="text-danger"> <?php echo $AddressError; ?></span>
-                                    <input  type="number" class="form-control" placeholder="HausNr" required name="Address"">
+                                    <input  type="number" class="form-control" placeholder="HausNr" required name="HausNr">
                                     <span  class="text-danger"> <?php echo $AddressError; ?></span>
                                 </div>
 
-                                <div class="form-group d-flex">
-                                    <input  type="text" class="form-control" placeholder="Stadt" required name="Address"">
+                                <div class="form-group d-flex  ">
+                                    <input  type="text" class="form-control" placeholder="Stadt" required name="Stadt">
                                     <span  class="text-danger"> <?php echo $AddressError; ?></span>
-                                    <input  type="number" class="form-control" placeholder="plz" required name="Address"">
+                                    <input  type="number" class="form-control" placeholder="plz" required name="plz">
+                                    <span  class="text-danger"> <?php echo $AddressError; ?></span>
+                                    <input  type="text" class="form-control" placeholder="Stiege" required name="Stiege">
                                     <span  class="text-danger"> <?php echo $AddressError; ?></span>
                                 </div>
 
