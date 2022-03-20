@@ -87,28 +87,7 @@ if(isset($_POST["btn-signup"])){
                     $emailError="your mail already used!";
                 }
             }
-
-/* ///////Address
-
-
-            if(empty($Address)){
-                $error=true;
-                $AddressError ="please enter your Address";
-            }elseif((strlen($Address)){
-                $error=true;
-                $AddressError =" your Address not corect";
-            }else{
-                $sql="SELECT fkAddress FROM users WHERE fkAddress='$Address'";
-                $result=mysqli_query($connect,$sql);
-                if(mysqli_num_rows($result)>0){
-                    $error=true;
-                    $AddressError="your Address already used!";
-                }
-            }
- */
-
-
-
+        
 
 ////telefonNumber
             if(empty($telefonNumber)){
@@ -237,12 +216,21 @@ if(isset($_POST["btn-signup"])){
                                     <span class="text-danger"  ><?php echo $passError; ?> </span>
                                 </div>
                          
-                                <div class="form-group">
-                                    <input  type="text" class="form-control" placeholder="Address" required name="Address" value="<?php echo $Address?>">
+                                <div class="form-group d-flex">
+                                    <input  type="text" class="form-control" placeholder="Straße" required name="Address"">
+                                    <span  class="text-danger"> <?php echo $AddressError; ?></span>
+                                    <input  type="number" class="form-control" placeholder="HausNr" required name="Address"">
                                     <span  class="text-danger"> <?php echo $AddressError; ?></span>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group d-flex">
+                                    <input  type="text" class="form-control" placeholder="Stadt" required name="Address"">
+                                    <span  class="text-danger"> <?php echo $AddressError; ?></span>
+                                    <input  type="number" class="form-control" placeholder="plz" required name="Address"">
+                                    <span  class="text-danger"> <?php echo $AddressError; ?></span>
+                                </div>
+
+                                <div class="form-group ">
                                     <input  type="number" class="form-control" placeholder="telefonNumber" required name="telefonNumber" value="<?php echo $telefonNumber?>">
                                     <span  class="text-danger"> <?php echo $telefonNumberError; ?></span>
                                 </div>
@@ -270,58 +258,7 @@ if(isset($_POST["btn-signup"])){
         </section>
 
 
-<!-- 
 
-                <div class="form-group first">
-                  <h3  for="username ">FIRST NAME</h3>
-                  <input type="text" class="form-control "  placeholder="your Name"
-                   name="f_name" value="<?php echo $f_name?>">
-                  <span class="text-danger" > <?php echo $f_nameError; ?> </span>
-                </div>
-                <div class="form-group first">
-                  <h3 for="username">LASR NAME</h3>
-                  <input type="text" class="form-control" placeholder=" Last Name"
-                   name="l_name" value="<?php echo $l_name?>">
-                   <span class="text-danger" > <?php echo $l_nameError; ?> </span>
-                </div>
-                <div class="form-group first">
-                  <h3 for="username">E-MAIL</h3>
-                  <input type="email" class="form-control" placeholder="your-email@gmail.com" 
-                  name="email" value="<?php echo $email?>">
-                  <span class="text-danger" > <?php echo $emailError; ?> </span>
-                </div>
-               
-                <div class="form-group last mb-3">
-                  <h3 for="password">Password</h3>
-                  <input type="password" class="form-control" placeholder="Your Password" 
-                  name="pass" value="<?php echo $pass?>">
-                  <span class="text-danger" > <?php echo $passError; ?> </span>
-                </div>
-                
-                <div class="form-group first">
-                  <h3 for="username">date-of-birth</h3>
-                  <input type="date" class="form-control" placeholder="date_of_birth" 
-                  name="date" value="<?php echo $date?>">
-                  <span class="text-danger" > <?php echo $dateError; ?> </span>
-                </div>
-                <div class="form-group first">
-                  <h3 for="username">picture</h3>
-                  <input type="file" class="form-control"  placeholder="no foto"
-                  name= "picture">
-                  <span class="text-danger" > <?php echo $pictureError; ?> </span>
-                </div>
-                
-                <div class="d-sm-flex mb-5 align-items-center">
-                  <h3 class="control control--checkbox mb-3 mb-sm-0"><span class="caption">Remember me</span>
-                    <input type="checkbox" checked="checked"/>
-                    <div class="control__indicator"></div>
-                  </h3>
-                  <span class="ml-auto"><a  href="login.php" style="color: #fff" class="forgot-pass">login</a></span> 
-                </div>
-
-                <button type="submit" name = "btn-signup"  class="btn btn-block py-2 btn-primary">Register</button>
-            <a class="btn-danger"  href="login.php" class="forgot-pass">login</a> -->
-            
 <script src="../LoginForm/js/jquery.min.js"></script>
         <script src="../LoginForm/js/popper.js"></script>
         <script src="../LoginForm/js/bootstrap.min.js"></script>

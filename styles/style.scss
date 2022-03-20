@@ -2,12 +2,54 @@
 $color1: #2880b8;
 $color2: #a8d5dc;
 $color3: #e63946;
-$color4: #f3f6f4;
+$color4: #f3f6f4ca;
 $color5: #1d3557;
 body {
     font-family: 'Quicksand', sans-serif;
+    background-color: $color4;
 }
 
 .test {
-    color: $color1;
+    color: #2880b8;
+}
+
+.cartItemImg {
+    max-width: 170px;
+    max-height: 160px;
+}
+
+.cartPrice {
+    width: fit-content;
+}
+
+.ordersParent {
+    max-width: 80%;
+    margin: 0px auto;
+}
+
+.usersTable {
+    margin: 10px auto;
+    ;
+}
+
+.usersTableHeader {
+    background-color: $color3;
+    color: #f3f6f4;
+}
+
+.usersTable {
+    border: 1px solid $color5;
+}
+
+tr:nth-child(even) {
+    background-color: $color2;
+}
+
+.userDetailsHref {
+    text-decoration: none;
+    color: #000;
+}
+
+.userDetailsHref:hover {
+    color: #f3f6f4;
 }

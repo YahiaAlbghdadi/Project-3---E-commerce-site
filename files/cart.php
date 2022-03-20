@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <?php require_once "../compos/bootstrap.php" ?>
 
     <link rel="stylesheet" href="../styles/style.css">
     
@@ -19,9 +19,9 @@
     <?php require_once "../compos/userNavbar.php" ?>
     <div class="container">
         <div class="ordersParent ">
-            <div class="sectionTop p-3 ">
+            <div class="sectionTop p-3  ">
                 <h1>Your Orders</h1>
-                <div class="cartPrice">price</div>
+                <div class="cartPrice row offset-11 ">price</div>
                 <hr>
             </div>
             <div class="sectionMiddle p-3 row">
@@ -39,8 +39,6 @@
                         <option value="actual value 3">Qtty: 7</option>
                         <option value="actual value 3">Qtty: 8</option>
                         <option value="actual value 3">Qtty: 9</option>
-                        
-
                     </select>
                     
                 </div>
@@ -49,6 +47,8 @@
                 </div>
             </div>
             <div class="sectionBottom">
+            <p class="offset-11 ">price</p>
+
             </div>
         </div>
     </div>
