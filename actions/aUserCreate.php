@@ -18,31 +18,39 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
     if($_POST){
-        $name = $_POST["name"];
-        $location = $_POST["location"];
-        $hobbies = $_POST["hobbies"];
-        $age = $_POST["age"];
-        $stage = $_POST["stage"];
-        $imageA = fileUpload($_FILES["image"]);
-        $image = $imageA->fileName;
-        $description = $_POST["description"];
-
-        $uploadError = "";
-
-        $sql = "INSERT INTO users(name, location, hobbies, age, stage, image, description) VALUES ('$name','$location','$hobbies','$age','$stage','$image','$description')";
+        $firstName = $_POST["firstName"];
+        $lastName = $_POST["lastName"];        
+        $email = $_POST["email"];
+        $pass = $_POST["password"];
+        $password=hash("sha256",$pass);        
+        $imageArray = fileUpload($_FILES["image"]);
+        $image = $imageArray->fileName;
+        $telefonNumber = $_POST["telefonNumber"];
+        $street = $_POST["street"];
+        $houseNumber = $_POST["houseNumber"];
+        $city = $_POST["city"];
+        $stiege = $_POST["stiege"];
+        $plz = $_POST["plz"];
         
-        if($conn->query($sql)){
+        $uploadError  = "";
+        $sql = "INSERT INTO addresses (city, street, plz, stiege, houseNumber) VALUES ('$city','$street','$plz','$stiege','$houseNumber')";
+        $result1= $conn->query($sql);
+
+        $sql2 = "INSERT INTO users (firstName, lastName, email, password, image, telefonNumber,fkAddress) VALUES ('$firstName','$lastName','$email','$password','$image','$telefonNumber', LAST_INSERT_ID())";
+        $result2= $conn->query($sql2);
+        
+        if($result1 && $result2){
             $class = "success";
             $message = "The entry below was successfully created <br>
                  <table class='table w-50'><tr>
-                 <td> $name </td>
-                 <td> $stage </td>
+                 <td> $firstName $lastName </td>
+                 <td> $email </td>
                  </tr></table><hr>";
-            $uploadError = ($imageA->error != 0)? $imageA->ErrorMessage :'';
+            $uploadError = ($imageArray->error != 0)? $imageArray->ErrorMessage :'';
         } else {
             $class = "danger";
             $message = "Error while creating record. Try again: <br>" . $conn->error;
-            $uploadError = ($imageA->error !=0)? $imageA->ErrorMessage :'';
+            $uploadError = ($imageArray->error !=0)? $imageArray->ErrorMessage :'';
         }
 
      } else {
@@ -58,8 +66,8 @@ if (session_status() == PHP_SESSION_NONE) {
 <html lang= "en">
    <head>
        <meta  charset="UTF-8">
-       <title>aCreate</title>
-       <?php require_once '../compos/boot.php' ?>
+       <title>New User</title>
+       <?php require_once '../compos/bootstrap.php' ?>
    </head>
    <body>
        <div  class="container">

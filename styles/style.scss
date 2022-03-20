@@ -41,7 +41,7 @@ body {
     border: 1px solid $color5;
 }
 
-tr:nth-child(even) {
+.tableTrColoring:nth-child(even) {
     background-color: $color2;
 }
 

@@ -1,66 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 body {
-    font-family: 'Quicksand', sans-serif;
-    background-color: #f3f6f4ca;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f3f6f4ca;
 }
 
 .test {
-    color: #2880b8;
+  color: #2880b8;
 }
 
 .cartItemImg {
-    max-width: 170px;
-    max-height: 160px;
+  max-width: 170px;
+  max-height: 160px;
 }
 
 .cartPrice {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .ordersParent {
-    max-width: 80%;
-    margin: 0px auto;
+  max-width: 80%;
+  margin: 0px auto;
 }
 
 .usersTable {
-    margin: 10px auto;
+  margin: 10px auto;
 }
 
 .usersTableHeader {
-    background-color: #e63946;
-    color: #f3f6f4;
+  background-color: #e63946;
+  color: #f3f6f4;
 }
 
 .usersTable {
-    border: 1px solid #1d3557;
+  border: 1px solid #1d3557;
 }
 
 .tableTrColoring:nth-child(even) {
-    background-color: #a8d5dc;
+  background-color: #a8d5dc;
 }
 
 .userDetailsHref {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 .userDetailsHref:hover {
-    color: #f3f6f4;
+  color: #f3f6f4;
 }
-
-.street {
-    width: 40%;
-}
-
-.plz {
-    width: 25%;
-}
-
-.stiege {
-    width: 25%;
-}
-
-
 /*# sourceMappingURL=style.css.map */
