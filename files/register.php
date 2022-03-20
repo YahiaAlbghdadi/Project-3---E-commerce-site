@@ -46,7 +46,7 @@ if(isset($_POST["btn-signup"])){
 
 
             $uploadError="";
-            $picture = file_upload($_FILES['picture']);
+            $picture = fileUpload($_FILES['picture']);
 
             ///firstName
             if(empty($f_name)){
