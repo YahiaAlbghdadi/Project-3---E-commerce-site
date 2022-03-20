@@ -1,34 +1,54 @@
+
+
+
+
+
+
+
+
 <?php
+      require_once "../actions/connection.php";
+      require_once "../compos/userNavbar.php";
 
-/* reuire_once "components/boot.php";
-require_once "components/navbar.php"; */
+     if(!isset($_SESSION)) 
+      { 
+          session_start(); 
+      } 
+     /*  if( !isset($_SESSION['adm']) && !isset($_SESSION['user' ]) ) {
+            header("Location: ../login/login.php");
+            exit;
+           } */
+?>
+
+<div class ="container">
+<h1 class="text-center">our product</h1>
+<div class="row" id="content"></div>
 
 
-session_start();
-require_once "db_connect.php";
-
-$red="red_Adm";
-
-  if(isset($_SESSION["user"])){
-  $red= "red_User";
-} 
-$search=$_GET["search"];
 
 
-$sql="SELECT * from products WHERE name LIKE '$search%'";
 
 
-$result= mysqli_query($connect,$sql);
 
-if(mysqli_num_rows($result)> 0){
-while($row=mysqli_fetch_assoc($result)){
 
-    echo "<div 
-    ///////////////
-  </div>";
+
+
+
+<script>
+function loadDoc() {
+let xhttp = new XMLHttpRequest();
+xhttp.onload = function() {
+if (this.status == 200 ) {
+ document.getElementById("content").innerHTML =this.responseText;
 
 }
-}else{
-    echo "you dont have any thing...!";
+};
+var name=document.getElementById("search").value;
+xhttp.open("GET", '../actions/productSearch.php?search='+name , true); //(method, URL, async)
+xhttp.send();
 }
-?> 
+
+loadDoc();
+
+document.getElementById("search").addEventListener("keyup",loadDoc);
+</script> 
