@@ -1,32 +1,35 @@
 
 
 <?php
-      /*   require_once "../components/db_connect.php";
-        require_once "../components/boot.php";
-        require_once "../components/file_upload.php";
- */
+        require_once "../actions/connection.php";
+       
+        require_once "../actions/fileUpload.php";
+ 
 /////////////////////
 
-    /*    session_start(); 
+ 
+ 
+    
+   /* session_start(); 
         if ( isset($_SESSION['user'])) {
         header("Location:login.php" ); 
         }   
-        if (isset($_SESSION[ 'adm' ])) {
+        if (isset($_SESSION[ 'admin' ])) {
         header("Location: dashboard.php"); 
-        } 
- */
+        }  */
+
 
     $error=false;
-    $f_name=$l_name=$email=$telefonNumber=$picture=$pass=$Address="";
-    $f_nameError=$l_nameError=$emailError=$dateError=$passError=$passError= $pictureError=$telefonNumberError=$AddressError="";
+    $firstName=$lastName=$email=$telefonNumber=$picture=$pass=$stadt=$stiege=$straße=$hausNr=$plz="";
+    $firstNameError=$lastNameError=$emailError=$passError= $pictureError=$telefonNumberError=$stadtError=$stiegeError=$straßeError=$hausNrError=$plzError="";
 if(isset($_POST["btn-signup"])){
-            $f_name=trim($_POST["f_name"]);
-            $f_name=strip_tags($f_name);
-            $f_name=htmlspecialchars($f_name);
+            $firstName=trim($_POST["firstName"]);
+            $firstName=strip_tags($firstName);
+            $firstName=htmlspecialchars($firstName);
 
-            $l_name=trim($_POST["l_name"]);
-            $l_name=strip_tags($l_name);
-            $l_name=htmlspecialchars($l_name);
+            $lastName=trim($_POST["lastName"]);
+            $lastName=strip_tags($lastName);
+            $lastName=htmlspecialchars($lastName);
             
             $email=trim($_POST["email"]);
             $email=strip_tags($email);
@@ -36,75 +39,113 @@ if(isset($_POST["btn-signup"])){
             $pass=strip_tags($pass);
             $pass=htmlspecialchars($pass);
 
-            $date=trim($_POST["telefonNumber"]);
-            $date=strip_tags($telefonNumber);
-            $date=htmlspecialchars($telefonNumber);
+            $telefonNumber=trim($_POST["telefonNumber"]);
+            $telefonNumber=strip_tags($telefonNumber);
+            $telefonNumber=htmlspecialchars($telefonNumber);
 
-            $date=trim($_POST["Address"]);
-            $date=strip_tags($Address);
-            $date=htmlspecialchars($Address);
+           
+            $stiege=trim($_POST["stiege"]);
+            $stiege=strip_tags($stiege);
+            $stiege=htmlspecialchars($stiege);
 
+            $straße=trim($_POST["straße"]);
+            $straße=strip_tags($straße);
+            $straße=htmlspecialchars($straße);
+
+            $plz=trim($_POST["plz"]);
+            $plz=strip_tags($plz);
+            $plz=htmlspecialchars($plz);
+
+            $hausNr=trim($_POST["hausNr"]);
+            $hausNr=strip_tags($hausNr);
+            $hausNr=htmlspecialchars($hausNr);
+
+            $stadt=trim($_POST["stadt"]);
+            $stadt=strip_tags($stadt);
+            $stadt=htmlspecialchars($stadt);
 
             $uploadError="";
             $picture = fileUpload($_FILES['picture']);
 
             ///firstName
-            if(empty($f_name)){
+            if(empty($firstName)){
                 $error=true;
-                $f_nameError ="please enter your first name";
-            }elseif(strlen($f_name)<3){
+                $firstNameError ="please enter your first name";
+            }elseif(strlen($firstName)<3){
                 $error=true;
-                $f_nameError =" your first name is short";
-            }elseif(!preg_match("/^[a-zA-Z]+$/", $f_name)){
+                $firstNameError =" your first name is short";
+            }elseif(!preg_match("/^[a-zA-Z]+$/", $firstName)){
                 $error=true;
-                $f_nameError =" your first name not corect";
+                $firstNameError =" your first name not corect";
             }
 
             ///LASTNAME
-            if(empty($l_name)){
+            if(empty($lastName)){
                 $error=true;
-                $l_nameError ="please enter your last name";
-            }elseif(strlen($l_name)<3){
+                $lastNameError ="please enter your last name";
+            }elseif(strlen($lastName)<3){
                 $error=true;
-                $f_nameError =" your last name is short";
-            }elseif(!preg_match("/^[a-zA-Z]+$/", $l_name)){
+                $firstNameError =" your last name is short";
+            }elseif(!preg_match("/^[a-zA-Z]+$/", $lastName)){
                 $error=true;
-                $l_nameError =" your lasst name not corect";
+                $lastNameError =" your lasst name not corect";
             }
 
             ///email
             if(empty($email)){
                 $error=true;
-                $l_nameError ="please enter your email";
+                $lastNameError ="please enter your email";
             }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $error=true;
                 $emailError =" your email not corect";
             }else{
                 $sql="SELECT email FROM users WHERE email='$email'";
-                $result=mysqli_query($connect,$sql);
+                $result=mysqli_query($conn,$sql);
                 if(mysqli_num_rows($result)>0){
                     $error=true;
                     $emailError="your mail already used!";
                 }
             }
+
+             ///stadt
+            if(empty($stadt)){
+                        $error=true;
+                        $stadtError ="please enter your stadt";
+                    }
+
+
+
+
+                /////stiege
+                if(empty($stiege)){
+                    $error=true;
+                    $stiegeError ="please enter your stiege";
+                }
         
 
-////telefonNumber
+                /////hausNr
+                if(empty($hausNr)){
+                    $error=true;
+                    $hausNrError ="please enter your hausNr";
+                }
+
+
+                 /////plz
+                 if(empty($plz)){
+                    $error=true;
+                    $plzError ="please enter your plz";
+                }
+ 
+            ///telefonNumber
             if(empty($telefonNumber)){
                 $error=true;
                 $telefonNumberError ="please enter your PhoneNumber";
-            }elseif(strlen($telefonNumber)<10){
-                $error=true;
-                $telefonNumberError =" your PhoneNumber not corect ";
-            }elseif(!preg_match("/^[a-zA-Z]+$/", $telefonNumber)){
-                $error=true;
-                $telefonNumberError =" your PhoneNumber  not corect";
-            } 
+            }
 
            
             if(empty($pass)){
                 $error=true;
-                $l_nameError ="please enter your pass";
+                $passError ="please enter your pass";
             }elseif(strlen($pass)<5){
                 $error=true;
                 $passError =" your pass not corect!";
@@ -112,30 +153,26 @@ if(isset($_POST["btn-signup"])){
   
             if(!$error){
                 $password=hash("sha256",$pass);
-
+                $uploadError  = "";
+                $sql = "INSERT INTO addresses (city, street, plz, stiege, houseNumber) VALUES ('$stadt','$straße','$plz','$stiege','$hausNr')";
+                $result1= $conn->query($sql);
+        
+                $sql2 = "INSERT INTO users (firstName, lastName, email, password, image, telefonNumber,fkAddress) VALUES ('$firstName','$lastName','$email','$password','$picture->fileName','$telefonNumber', LAST_INSERT_ID())";
+                $result2= $conn->query($sql2);
                 
-               $query= "INSERT INTO users(firstName,lastName, email, image, password,telefonNumber,fkAddress) VALUES 
-               ('$f_name', '$l_name', '$email','$picture->fileName', '$password','$telefonNumber','$Address')";
-
-
-               $result=mysqli_query($connect,$query);
-
-               if($result){
+                if($result1 && $result2){
                    $errTyp="success";
-                   $errMSG="welcome!!";
+                   $errMSG="register successfuly!";
                    $uploadError = ($picture->error != 0) ? $picture->ErrorMessage : '';
-                    $f_name="";
-                    $l_name="";
-                    $email="";
-                    $pass="";
-                    $telefonNumber="";
-                    $Address="";
+                    $firstName= $lastName=$email= $pass=$telefonNumber=$straße=$plz=$hausNr= $stadt=$stiege="";
+                 header("Location:login.php" ); 
+                   
                }else{
                 $errTyp="danger";
-                $errMSG="you have some thing wrong.";
+                $errMSG="something went wrong.";
                 $uploadError = ($picture->error != 0) ? $picture->ErrorMessage : '';
                }
-               $connect->close();
+               $conn->close();
             }
 
   }
@@ -189,7 +226,7 @@ if(isset($_POST["btn-signup"])){
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center mb-5">
-                    <h3 class="heading-section">Register<strong> Phone shop</strong></h3>
+                    <h2 class="heading-section">Register<strong> Phone shop</strong></h2>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -198,53 +235,53 @@ if(isset($_POST["btn-signup"])){
                             <h3 class="mb-4 text-center"></h3>
                             <form class="w-100  " method="post"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off"  enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="FirstName" required  name="f_name" value="<?php echo $f_name?>">
-                                    <span class="text-danger" > <?php echo $f_nameError; ?> </span>
+                                    <input type="text" class="form-control" placeholder="FirstName"   name="firstName" value="<?php echo $firstName?>">
+                                    <span class="text-danger" > <?php echo $firstNameError; ?> </span>
                                 </div>
 
                             
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="LastName" required  name="l_name" value="<?php echo $l_name?>">
-                                    <span  class="text-danger"  > <?php echo $l_nameError; ?> </span>
+                                    <input type="text" class="form-control" placeholder="LastName"   name="lastName" value="<?php echo $lastName?>">
+                                    <span  class="text-danger"  > <?php echo $lastNameError; ?> </span>
                                 </div>
 
                                 <div class="form-group">
-                                    <input  type="Email" class="form-control" required  placeholder="your-email@gmail.com" 
+                                    <input  type="Email" class="form-control"   placeholder="your-email@gmail.com" 
                                      name="email" value="<?php echo $email?>">
                                      <span class="text-danger" > <?php echo $emailError; ?> </span>
                                 </div>
                                 <div class="form-group">
-                                    <input id="password-field" type="password" class="form-control" placeholder="Password" required  name="pass" value="<?php echo $pass?>">
+                                    <input id="password-field" type="password" class="form-control" placeholder="Password"   name="pass" value="<?php echo $pass?>">
                                     <span class="text-danger"  ><?php echo $passError; ?> </span>
                                 </div>
                          
                                 <div class="form-group d-flex">
-                                    <input  type="text" class="form-control" placeholder="Straße" required name="Address">
-                                    <span  class="text-danger"> <?php echo $AddressError; ?></span>
-                                    <input  type="number" class="form-control" placeholder="HausNr" required name="HausNr">
-                                    <span  class="text-danger"> <?php echo $AddressError; ?></span>
+                                    <input  type="text" class="form-control" placeholder="Straße"  name="straße">
+                                    <span  class="text-danger"> <?php echo $straßeError; ?></span>
+                                    <input  type="number" class="form-control" placeholder="HausNr"  name="hausNr">
+                                    <span  class="text-danger"> <?php echo $hausNrError; ?></span>
                                 </div>
 
                                 <div class="form-group d-flex  ">
-                                    <input  type="text" class="form-control" placeholder="Stadt" required name="Stadt">
-                                    <span  class="text-danger"> <?php echo $AddressError; ?></span>
-                                    <input  type="number" class="form-control" placeholder="plz" required name="plz">
-                                    <span  class="text-danger"> <?php echo $AddressError; ?></span>
-                                    <input  type="text" class="form-control" placeholder="Stiege" required name="Stiege">
-                                    <span  class="text-danger"> <?php echo $AddressError; ?></span>
+                                    <input  type="text" class="form-control" placeholder="Stadt"  name="stadt">
+                                    <span  class="text-danger"> <?php echo $stadtError; ?></span>
+                                    <input  type="number" class="form-control" placeholder="plz"  name="plz">
+                                    <span  class="text-danger"> <?php echo $plzError; ?></span>
+                                    <input  type="text" class="form-control" placeholder="Stiege"  name="stiege">
+                                    <span  class="text-danger"> <?php echo $stiegeError; ?></span>
                                 </div>
 
                                 <div class="form-group ">
-                                    <input  type="number" class="form-control" placeholder="telefonNumber" required name="telefonNumber" value="<?php echo $telefonNumber?>">
+                                    <input  type="number" class="form-control" placeholder="+43 telefonNumber"  name="telefonNumber" value="<?php echo $telefonNumber?>">
                                     <span  class="text-danger"> <?php echo $telefonNumberError; ?></span>
                                 </div>
 
                                 <div class="form-group">
-                                    <input id="password-field" type="file" class="form-control" placeholder="no foto" required  name= "picture" >
+                                    <input id="password-field" type="file" class="form-control" placeholder="no foto"  name= "picture" >
                                     <span class="text-danger" > <?php echo $pictureError; ?> </span>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+                                    <button type="submit"  name = "btn-signup" class="form-control btn btn-primary submit px-3">Sign In</button>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn btn-primary submit px-3 "  ><a class=" btn btn-primary submit px-3 "  href="login.php"> log In</a></button>
