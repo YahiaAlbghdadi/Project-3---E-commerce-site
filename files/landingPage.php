@@ -35,7 +35,7 @@
 <div class ="container">
 <h1 class="text-center">our product</h1>
 <div class="row" id="content"></div>
- 
+<a  class="btn-danger" href="logout.php?logout">Sign Out </a><br>
 
 
 <script>
