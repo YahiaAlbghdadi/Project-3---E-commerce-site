@@ -1,19 +1,18 @@
 <?php
-   /*   require_once "../components/db_connect.php";
-     
-        require_once "../components/file_upload.php"; 
-    */
+    require_once "../actions/connection.php";
+       
+    require_once "../actions/fileUpload.php";
     
-       /*  if(!isset($_SESSION)) 
+         if(!isset($_SESSION)) 
         { 
             session_start(); 
         } 
         if (isset($_SESSION['user'])) {
            header("Location:landingPage.php"); 
         }    
-         if (isset($_SESSION[ 'adm' ])) {
+         if (isset($_SESSION['admin'])) {
            header("Location:dashboard.php"); 
-        }  */
+        }  
       
         $error=false;
         $email=$pass="";
@@ -30,7 +29,7 @@
 
             if(empty($email)){
               $error=true;
-              $l_nameError ="please enter your email";
+              $emailError ="please enter your email";
           }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
               $error=true;
               $emailError =" your email not corect";
@@ -39,31 +38,25 @@
 
           if(empty($pass)){
             $error=true;
-            $l_nameError ="please enter your pass";
+            $passError ="please enter your pass";
           }elseif(strlen($pass)<5){
             $error=true;
             $passError =" your pass not corect!";
           }
           if(!$error){
                 $password=hash("sha256",$pass);
-                $sql ="SELECT * FROM user WHERE eimail='$email'";
-                $result= mysqli_query($connect,$sql);
+                $sql ="SELECT * FROM users WHERE email='$email'";
+                $result= $conn->query($sql);
                 $row=mysqli_fetch_assoc($result);
                 $count=mysqli_num_rows($result);
-
               if($count==1 &&$row["password"]==$password){
-                if($row["status"]=="adm"){
-                  $_SESSION["adm"]=$row["id"];
+                if($row["rank"]=="admin"){
+                  $_SESSION["admin"]=$row["id"];
                   header("Location: dashboard.php");
                 }
-               elseif($row["status"]=="superAdm"){
-                  $_SESSION["superAdm"]=$row["id"];
-                  header("Location: dashboard.php");
-                }
-                
                 else{
                   $_SESSION["user"]=$row["id"];
-                  header("Location:../cradZoo/u_login.php");
+                  header("Location:landingPage.php");
                 }
               }else{
                 $errMSG="wrong in your acaunt, try agen..";
@@ -71,7 +64,7 @@
 
          }
 
-         $connect->close();
+         $conn->close();
         }
         
          
@@ -105,16 +98,26 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="login-wrap p-0">
                             <h3 class="mb-4 text-center">Have an account?</h3>
-                            <form action="#" class="signin-form">
+                            <form  class="signin-form" method="POST"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off"  >
+                           
+                            <?php
+                if (isset($errMSG)) {
+                    echo $errMSG;
+                }
+                ?>
+
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Username" required>
+                                    <input type="email" class="form-control" autocomplete="off" placeholder="your-email@gmail.com"
+                                    name="email" value="<?php echo $email; ?>">
+                                     <span class="text-danger" > <?php echo $emailError; ?> </span>
                                 </div>
                                 <div class="form-group">
-                                    <input id="password-field" type="password" class="form-control" placeholder="Password" required>
-                                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                    <input  type="password" class="form-control" name="pass"  placeholder="Password" >
+                                    <span class="text-danger"> <?php echo $passError; ?> </span>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+                                   <button type="submit"  name="btn-login" value="Sign In" class="form-control btn btn-primary submit px-3">Sign In</button> 
+                                    <!-- <button type="submit" name="btn-login" class="form-control btn btn-primary submit px-3 "  ><a class=" btn btn-primary submit px-3 "  > log In</a></button> -->
                                 </div>
                                 <div class="form-group d-md-flex">
                                     <div class="w-50">
