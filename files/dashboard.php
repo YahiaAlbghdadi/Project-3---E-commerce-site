@@ -12,42 +12,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <?php require_once "../compos/bootstrap.php" ?>
 
-    <link rel="stylesheet" href="../styles/style.css">
+
 </head>
 <body>
     <?php require_once "../compos/adminNavbar.php" ?>
+    <div class="userSearchDiv">
+        <input type="search" class="userSearchBar" id="user" placeholder="search for user">
+    </div>
     <div class="container text-center">
         <h1 class="">logged In Users:</h1>
-        <table class="usersTable text-center">
-            <tr class="p-3 usersTableHeader">
+        <table id="" class="usersTable text-center ">
+        <tr class="p-3 usersTableHeader ">
+            
                 <th class="p-2">Last Name</th>
                 <th class="p-2">Email Address</th>
                 <th class="p-2">Tel. Number</th>
                 <th class="p-2">Manage</th>
-            </tr>
-            <tr class="tableTrColoring">
-                <td class="p-2">Snow</td>
-                <td class="p-2">aasdfffffffffffdg@gmail.com</td>
-                <td class="p-2">209349687</td>
-                <td class="p-2 " ><a class="userDetailsHref" href='userDetails.php?id=<?=$row["id"]?>'>Show Details</a></td>
-                
-            </tr>
-            <tr class="tableTrColoring">
-                <td class="p-2">Snow</td>
-                <td class="p-2">aasdfffffffffffdg@gmail.com</td>
-                <td class="p-2">209349687</td>
-                <td class="p-2" ><a href='userDetails.php?id=<?=$row["id"]?>'>Show Details</a></td>
-            </tr>
-            <tr class="tableTrColoring">
-                <td class="p-2">Snow</td>
-                <td class="p-2">aasdfffffffffffdg@gmail.com</td>
-                <td class="p-2">209349687</td>
-                <td class="p-2" ><a href='userDetails.php?id=<?=$row["id"]?>'>Show Details</a></td>
 
-            </tr>
-            
-    </table>
+        </tr>
+        <?=$users?>
+
+       
+
+        </table>
+        <div class="searchedUser">
+        
+
+        </div>
     </div>
+    <script>
+        function loadDoc() {
+        let xhttp = new XMLHttpRequest(); 
+        xhttp.onload = function() {
+            if (this.status == 200 ) {
+                document.getElementById("searchedUser").innerHTML = this.responseText;
+            }
+        };
+
+        var user = document.getElementById("user").value;
+        xhttp.open("GET", '../actions/userSearch.php?user='+user , true); 
+        xhttp.send();
+        }
+        document.getElementById("user").addEventListener("keyup", loadDoc);
+    </script>
+        <?php require_once "../compos/bootJs.php" ?>
+
 </body>
 </html>

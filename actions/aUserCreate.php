@@ -13,7 +13,7 @@ if (session_status() == PHP_SESSION_NONE) {
 //  }
  
     require_once "connection.php";
-    require_once "fileUpload.php";
+    require_once "userFileUpload.php";
 
 
 
@@ -23,7 +23,7 @@ if (session_status() == PHP_SESSION_NONE) {
         $email = $_POST["email"];
         $pass = $_POST["password"];
         $password=hash("sha256",$pass);        
-        $imageArray = fileUpload($_FILES["image"]);
+        $imageArray = userFileUpload($_FILES["image"]);
         $image = $imageArray->fileName;
         $telefonNumber = $_POST["telefonNumber"];
         $street = $_POST["street"];

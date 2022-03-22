@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-function fileUpload($image) {
+function userFileUpload($image) {
     
 
     $result = new stdClass();

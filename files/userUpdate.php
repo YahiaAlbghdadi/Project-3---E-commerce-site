@@ -1,24 +1,27 @@
 <?php
 
 require_once "../actions/connection.php";
+require_once "../actions/userFileUpload.php";
 
-if (isset($_GET[ 'id'])) {
+
+if ($_GET) {
     $id = $_GET['id'];
-    $sql = "SELECT * FROM users WHERE id = {$id}";
-    $result = $connection->query($sql);
-    if ($result->num_rows == 1) {
-        $fetchedResult = $result->fetch_assoc();
-        $firstName = $fetchedResult['firstName'];
-        $lastName = $fetchedResult['lastName'];
-        $email = $fetchedResult['email'];
-        $telefonNumber = $fetchedResult['telefonNumber'];
-        $city = $fetchedResult['city'];
-        $street = $fetchedResult['street'];
-        $plz = $fetchedResult['plz'];
-        $stiege = $fetchedResult['stiege'];        $houseNumber = $fetchedResult['houseNumber'];
-        $image = $fetchedResult['image'];
+    $sql = "SELECT * FROM users left join addresses on users.fkAddress = addresses.id WHERE users.id = {$id}";
+    $result = $conn->query($sql);
+    $rows = $result->fetch_assoc();
+    $firstName = $rows['firstName'];
+    $lastName = $rows['lastName'];
+    $email = $rows['email'];
+    $image = $rows['image'];
+    $telefonNumber = $rows['telefonNumber'];
+    $city = $rows['city'];
+    $street = $rows['street'];
+    $plz = $rows['plz'];
+    $stiege = $rows['stiege'];  
+    $houseNumber = $rows['houseNumber'];
+    $image = $rows['image'];
 
-    }  
+     
  }
  
 ?>
@@ -33,10 +36,12 @@ if (isset($_GET[ 'id'])) {
 </head>
 <body>
     <div class="container ">
-       <h2>Update</h2>       
-       <img class='img-thumbnail rounded-circle'  src='../images/<?= $fetchedResult['image'] ?>' alt="<?= $name ?>">
-       <form action="../actions/aUpdate.php" method="post" enctype="multipart/form-data">
-       <table  class="table">
+        <div class="w-75 center">
+            <h2>Update <?= $lastName ?></h2>       
+            <img class='img-thumbnail userImage rounded-circle'  src='../images/<?= $rows['image'] ?>' alt="">
+            <form action="../actions/aUserUpdate.php" method="post" enctype="multipart/form-data">
+        </div>
+       <table  class="table center w-75">
                <tr>
                    <th>First Name</th>
                    <td><input class="form-control"  type="text"  name ="firstName" placeholder = "First Name"value="<?=$firstName?>" /></td>
@@ -73,11 +78,11 @@ if (isset($_GET[ 'id'])) {
 
                <tr>
                    <th>Image</th>
-                    <td><input  class= "form-control"  type ="file"   name = "image" value="<?=$image?>" /></td>
+                    <td><input  class= "form-control"  type ="file" name = "image" value="<?=$image?>" /></td>
                 </tr>
                 <tr>
                     <td>
-                        <button   name = "submit"   class = "btn btn-success"   type = "submit"> Save Changes </button>
+                        <button   name = "submit"   class = "btn btn-success" type = "submit"> Save Changes </button>
                     </td>
                     <td>
                         <a href = "dashboard.php"><button class = "btn btn-warning" type = "button"> Back </button></a>
