@@ -2,14 +2,14 @@
       require_once "../actions/connection.php";
       require_once "../compos/userNavbar.php";
 
-  /*    if(!isset($_SESSION)) 
+   /*  if(!isset($_SESSION)) 
       { 
           session_start(); 
       } 
-     if( !isset($_SESSION['admin']) && !isset($_SESSION['user' ]) ) {
+     if( !isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
             header("Location:login.php");
             exit;
-           }  */
+           }   */
 ?>
 
 <!DOCTYPE html>
