@@ -3,20 +3,21 @@
 <?php
         require_once "../actions/connection.php";
        
-        require_once "../actions/fileUpload.php";
+        require_once "../actions/userFileUpload.php";
  
 /////////////////////
 
- 
- 
-    
-   /* session_start(); 
+            
+            if(!isset($_SESSION)) 
+            { 
+                session_start(); 
+            } 
         if ( isset($_SESSION['user'])) {
         header("Location:login.php" ); 
         }   
         if (isset($_SESSION[ 'admin' ])) {
         header("Location: dashboard.php"); 
-        }  */
+        } 
 
 
     $error=false;
@@ -65,7 +66,7 @@ if(isset($_POST["btn-signup"])){
             $stadt=htmlspecialchars($stadt);
 
             $uploadError="";
-            $picture = fileUpload($_FILES['picture']);
+            $picture = userFileUpload($_FILES['picture']);
 
             ///firstName
             if(empty($firstName)){
@@ -284,7 +285,7 @@ if(isset($_POST["btn-signup"])){
                                     <button type="submit"  name = "btn-signup" class="form-control btn btn-primary submit px-3">Sign In</button>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary submit px-3 "  ><a class=" btn btn-primary submit px-3 "  href="login.php"> log In</a></button>
+                                    <button type="submit" class="form-control btn btn-primary submit px-3 "  ><a class=" btn btn-primary submit px-3 "href="login.php"> log In</a></button>
                                     <!-- <span class="ml-auto"><a  href="login.php" style="color: #fff" class="forgot-pass">login</a></span>  -->
                                     
                                 </div>

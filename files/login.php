@@ -1,7 +1,7 @@
 <?php
     require_once "../actions/connection.php";
        
-    require_once "../actions/fileUpload.php";
+    require_once "../actions/userFileUpload.php";
     
          if(!isset($_SESSION)) 
         { 
@@ -86,7 +86,7 @@
 
     </head>
 
-    <body class="img js-fullheight" style="background-image: url(../LoginForm/images/bg.jpg);">
+    <body class="img js-fullheight" style="background-image: url(../LoginForm/images/phon.jpg);">
         <section class="ftco-section">
             <div class="container">
                 <div class="row justify-content-center">
