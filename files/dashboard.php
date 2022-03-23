@@ -1,8 +1,10 @@
 <?php
     require_once "../actions/connection.php";
     require_once "../actions/userSearch.php";
+    require_once "../compos/adminNavbar.php";
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

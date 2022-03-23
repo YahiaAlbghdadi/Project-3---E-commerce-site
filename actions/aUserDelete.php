@@ -39,7 +39,7 @@ if ($_POST) {
    <head>
        <meta  charset="UTF-8">
        <title>aDelete</title>
-       <?php require_once '../compos/boot.php' ?> 
+       <?php require_once '../compos/bootstrap.php' ?> 
    </head>
    <body>
        <div  class="container">

@@ -1,5 +1,7 @@
 <?php
-require_once "../actions/connection.php";
+    
+    require_once "../actions/connection.php";
+    require_once "../compos/adminNavbar.php";
 
     if (session_status() == PHP_SESSION_NONE) {
         session_start();

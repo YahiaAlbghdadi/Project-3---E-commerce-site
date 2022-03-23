@@ -1,6 +1,8 @@
 <?php
-
+    
     require_once "../actions/connection.php";
+    require_once "../compos/adminNavbar.php";
+    
 
 if($_GET['id']) {
 

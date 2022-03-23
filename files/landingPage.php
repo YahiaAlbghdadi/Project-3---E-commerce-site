@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 <?php
       require_once "../actions/connection.php";
       require_once "../compos/userNavbar.php";
