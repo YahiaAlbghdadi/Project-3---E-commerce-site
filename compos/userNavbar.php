@@ -1,3 +1,17 @@
+<?php
+
+ $destination="login.php";
+ if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        } 
+        if (isset($_SESSION['user'])) {
+          
+           $destination="userUpdate.php"; 
+        }    
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,7 +109,7 @@
                     <div class="icons">
                         <a href="#" class="fas fa-heart"></a>
                         <a href="#" class="fas fa-shopping-cart"></a>
-                        <a href="#" class="fas fa-user"></a>
+                        <a href="<?=$destination?>" class="fas fa-user"></a>
                     </div>
                 </div>
 

@@ -2,17 +2,20 @@
     require_once "../actions/connection.php";
        
     require_once "../actions/userFileUpload.php";
-    
+       
+
          if(!isset($_SESSION)) 
         { 
             session_start(); 
         } 
         if (isset($_SESSION['user'])) {
-           header("Location:landingPage.php"); 
+           header("Location:landingPage.php");
+          
         }    
          if (isset($_SESSION['admin'])) {
            header("Location:dashboard.php"); 
         }  
+       
       
         $error=false;
         $email=$pass="";

@@ -1,6 +1,6 @@
 <?php
 
-/* session_start();
+/*  session_start();
 require_once "db_connect.php";
 
 $red="red_Adm";
@@ -8,8 +8,8 @@ $red="red_Adm";
   if(isset($_SESSION["user"])){
   $red= "red_User";
 } 
-$search=$_GET["search"];
- */
+$search=$_GET["search"]; */
+ 
 
 $sql="SELECT * from products WHERE name LIKE '$search%'";
 
