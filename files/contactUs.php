@@ -15,7 +15,7 @@
     box-shadow:0px 0px 10px -2px rgba(0,0,0,0.75);
 }
 .child1{
-    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://cdn.pixabay.com/photo/2019/06/28/00/17/architecture-4303279_1280.jpg");
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://cdn.pixabay.com/photo/2018/05/01/13/04/miniature-3365503__340.jpg");
     background-size:cover;
     display:flex;
     flex-direction:column;
@@ -59,7 +59,7 @@
     margin-bottom:20px;
 }
 .inside-contact input[type=submit]{
-    background-color:#000;
+    background-color:#1D3557;
     color:#fff;
     transition:0.2s;
     border:2px solid #000;
@@ -89,14 +89,14 @@
 
 </style>
 
-<div class="container">
+<!-- <div class="container"> -->
    <div class="contact-parent">
       <div class="contact-child child1">
          <p>
             <i class="fas fa-map-marker-alt"></i> Address <br />
-            <span> Ash Lane 110
+            <span> Austria
             <br />
-            London, UK
+           Vianna, 1050
             </span>
          </p>
          <p>
