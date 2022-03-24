@@ -34,7 +34,7 @@
        <meta charset="UTF-8">
         <meta name="viewport" content ="width=device-width, initial-scale=1.0">
        <?php require_once '../compos/bootstrap.php'?>
-       <title>User Details</title>
+       <title>User Detail</title>
    </head>
    <body>
    <div class="container  p-5">
