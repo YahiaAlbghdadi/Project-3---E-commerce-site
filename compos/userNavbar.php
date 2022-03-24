@@ -3,11 +3,14 @@
  $destination="login.php";
  if(!isset($_SESSION)) 
         { 
+           
             session_start(); 
+            $id=$_SESSION['user'];
         } 
         if (isset($_SESSION['user'])) {
           
-           $destination="userUpdate.php"; 
+           $destination="userUpdate.php?id={$id}"; 
+
         }    
 
 ?>
