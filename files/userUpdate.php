@@ -89,7 +89,7 @@ if ($_GET) {
                         <a href = "dashboard.php"><button class = "btn btn-warning" type = "button"> Back </button></a>
                     </td>
                 </tr>
-            </table>
+            </table> 
         </form>    
 </div>
 </body>
