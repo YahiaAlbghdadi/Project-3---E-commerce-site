@@ -1,17 +1,12 @@
 <?php
     require_once "../actions/connection.php";
-       
-<<<<<<< HEAD
     require_once "../actions/userFileUpload.php"; 
-=======
-    require_once "../actions/userFileUpload.php";
-<<<<<<< HEAD
+
+   
+
        
 
-=======
->>>>>>> 1fadccfad38ec60e0cc707fa60fd2f266fd437e3
-    
->>>>>>> 1fe5c0e942336561a61c852484c31877bc533716
+
          if(!isset($_SESSION)) 
         { 
             session_start(); 
