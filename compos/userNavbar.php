@@ -55,7 +55,7 @@
                         <!-- <i class="fa-brands fa-shopify"></i> -->
                     </div>
                     <ul class="links">
-                        <li><a href="#">HOME</a></li>
+                        <li><a href="landingPage.php">HOME</a></li>
                         <li>
                             <a href="#">ELECTRONICS</a>
                             <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
