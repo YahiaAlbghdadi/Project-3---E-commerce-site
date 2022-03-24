@@ -6,17 +6,101 @@
     <?php require_once "bootstrap.php" ?>
     <style><?php include "../styles/footer.css"; ?></style>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+    
+    <!-- owl carousel css file cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+
+   
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
     <!-- <link rel="stylesheet" href="../styles/css/footer.css"> -->
     
-    <title>Document</title>
+    <title>footer</title>
 </head>
 <body>
-    
+
+        <section class="deal" id="deal">
+
+            <!-- <h1 class="heading"> <span> best deals </span> </h1> -->
+
+            <!-- <div class="box-container">
+
+                <div class="box">
+                    <img src="images/deal1.jpg" alt="">
+                    <div class="content">
+                        <h3>latest laptop</h3>
+                        <p>upto 25% off on first purchase</p>
+                        <a href="#"><button class="btn">explore</button></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="images/deal2.jpg" alt="">
+                    <div class="content">
+                        <h3>new headphone</h3>
+                        <p>upto 25% off on first purchase</p>
+                        <a href="#"><button class="btn">explore</button></a>
+                    </div>
+                </div>
+
+            </div> -->
+
+            <div class="icons-container">
+
+                <div class="icons">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>fast delivery</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, molestiae?</p>
+                </div>
+
+                <div class="icons">
+                    <i class="fas fa-user-clock"></i>
+                    <h3>24 x 7 support</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, molestiae?</p>
+                </div>
+
+                <div class="icons">
+                    <i class="fas fa-money-check-alt"></i>
+                    <h3>easy payments</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, molestiae?</p>
+                </div>
+
+                <div class="icons">
+                    <i class="fas fa-box"></i>
+                    <h3>10 days replacements</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, molestiae?</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- deal section ends -->
+
+        <!-- newsletter section starts  -->
+
+        <section class="newsletter">
+
+            <h1>newsletter</h1>
+            <p>get in touch for latest discounts and updates</p>
+            <form action="">
+                <input type="email" placeholder="enter your email">
+                <input type="submit" class="btn">
+            </form>
+
+        </section>
+
+    <!-- newsletter section ends -->
+    <!-- ----------------------------- -->
     <footer class="footer">
         <div class="container bottom_border">
             <div class="row">
@@ -68,8 +152,8 @@
 
                     <ul class="footer_ul2_amrc">
                         <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing.<a href="#">https://www.lipsum.com/</a></p></li>
-                        <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing.<a href="#">https://www.lipsum.com/</a></p></li>
-                        <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing.<a href="#">https://www.lipsum.com/</a></p></li>
+                        <li><a href="#"><i class="fab fa-facebook-f fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing.<a href="#">https://www.lipsum.com/</a></p></li>
+                        <li><a href="#"><i class="fab fa-youtube fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing.<a href="#">https://www.lipsum.com/</a></p></li>
                     </ul>
                     
                 </div>
@@ -87,7 +171,7 @@
                
             </ul>
             
-            <p class="text-center">Copyright @2022 | Designed by Munir Alahmad - Code Factory Wien Austria
+            <p class="text-center">Copyright @2022 | Designed by Back-End Project Team - Code Factory Wien Austria
 
             <div class="rounded-social-buttons">
                 <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -101,10 +185,24 @@
 
     </footer>
 
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- owl carousel js file cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script> -->
+
+    
     
 </body>
 </html>
