@@ -138,37 +138,3 @@
 
 
 
-<!-- 
- <!DOCTYPE html>
-<html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-</head>
-<body>
-
-<div class="row ">
-
-<form action="https://formsubmit.co/ahmadtktk44@gmail.com" method="POST">
-    <div class="inputBox ">
-
-        <input type="text " placeholder="name " required name="name ">
-        <input type="email " placeholder="Email Address " name="email " required>
-        <input type="hidden" name="_next " value="https://ahmad.codefactory.live/thank.html">
-    </div>
-    <input type="text " placeholder="subject " name="_subject " required>
-    <textarea name="message " id=" " cols="30 " rows="10 " placeholder="Write your message here.... "></textarea>
-    <button class="btn" type="submit "> send message </button>
-</form>
-
-
-<iframe class="map " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85039.95750098575!2d16.4090905!3d48.235527300000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d079e5136ca9f%3A0xfdc2e58a51a25b46!2sVienna!5e0!3m2!1sen!2sat!4v1645703664801!5m2!1sen!2sat "
-    width="600 " height="450 " style="border:0; " allowfullscreen=" " loading="lazy "></iframe>
-</div>
-
-
-      
-</body>
-</html>   -->
