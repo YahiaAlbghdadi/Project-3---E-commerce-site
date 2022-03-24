@@ -2,7 +2,7 @@
     require_once "../actions/connection.php";  
     require_once "../compos/userNavbar.php";
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>

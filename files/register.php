@@ -3,7 +3,7 @@
 <?php
         require_once "../actions/connection.php";
        
-        require_once "../actions/fileUpload.php";
+        require_once "../actions/userFileUpload.php";
  
 /////////////////////
 
@@ -65,7 +65,7 @@ if(isset($_POST["btn-signup"])){
             $stadt=htmlspecialchars($stadt);
 
             $uploadError="";
-            $picture = fileUpload($_FILES['picture']);
+            $picture = userFileUpload($_FILES['picture']);
 
             ///firstName
             if(empty($firstName)){

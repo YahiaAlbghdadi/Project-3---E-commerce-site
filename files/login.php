@@ -1,7 +1,7 @@
 <?php
     require_once "../actions/connection.php";
        
-    require_once "../actions/fileUpload.php";
+    require_once "../actions/userFileUpload.php"; 
     
          if(!isset($_SESSION)) 
         { 

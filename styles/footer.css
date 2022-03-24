@@ -1,7 +1,130 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
-.col_white_amrc {
-    color: #FFF;
+ :root {
+    --blue: #2980b9;
 }
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all .2s cubic-bezier(.37, 1.14, .26, 1.24);
+}
+
+*::selection {
+    background: #ff3300;
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+.btn {
+    height: 4rem;
+    width: 14rem;
+    background: var(--blue);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    letter-spacing: .2rem;
+    opacity: .8;
+}
+
+.deal {
+    background-color: fff;
+}
+
+.deal .icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.deal .icons-container .icons {
+    flex: 1 1 25rem;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    border: .2rem solid var(--blue);
+}
+
+.deal .icons-container .icons i {
+    color: var(--blue);
+    font-size: 4rem;
+    padding: 1rem 0;
+}
+
+.deal .icons-container .icons h3 {
+    color: #333;
+    font-size: 2rem;
+}
+
+.deal .icons-container .icons p {
+    color: #666;
+    font-size: 1.3rem;
+    padding: 1rem 0;
+}
+
+
+/* --------------------- */
+
+.newsletter {
+    background: linear-gradient(var(--blue), var(--blue));
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.newsletter h1 {
+    color: #fff;
+    font-size: 4rem;
+}
+
+.newsletter p {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.newsletter form {
+    height: 5rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5rem;
+    background: rgba(0, 0, 0, .3);
+}
+
+.newsletter form input[type="email"] {
+    height: 100%;
+    width: 80%;
+    padding: 0 1rem;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.newsletter form input[type="submit"] {
+    border-radius: 5rem;
+}
+
+
+/* ------------------------------------------------------------------------------- */
 
 footer {
     width: 100%;
@@ -9,6 +132,16 @@ footer {
     min-height: 250px;
     padding: 10px 0px 25px 0px;
 }
+
+.headin5_amrc {
+    font-size: 20px;
+    color: #fff;
+}
+
+
+/* .headin5_amrc:hover {
+color: rgb(170, 43, 43);
+} */
 
 .pt2 {
     padding-top: 40px;
@@ -23,7 +156,7 @@ footer p {
 }
 
 footer p:hover {
-    color: yellow;
+    color: rgb(139, 139, 49);
 }
 
 .mb10 {
@@ -47,7 +180,7 @@ footer p:hover {
 }
 
 .footer_ul_amrc li a:hover {
-    color: yellow;
+    color: rgb(139, 139, 49);
     text-decoration: none;
 }
 
@@ -78,22 +211,55 @@ footer p:hover {
 }
 
 .footer_ul2_amrc .fa-twitter {
-    font-size: 25px;
-    width: 27px;
+    font-size: 20px;
+    width: 29px;
+    color: #007bb5;
 }
 
 .footer_ul2_amrc .fa-twitter:hover {
-    font-size: 30px;
+    font-size: 24px;
+    width: 30px;
+    color: #007bb5;
+}
+
+.footer_ul2_amrc .fa-facebook-f {
+    font-size: 24px;
+    color: #172bdf;
+    width: 27px;
+}
+
+.footer_ul2_amrc .fa-facebook-f:hover {
+    font-size: 27px;
+    width: 28px;
+    color: #172bdf;
+}
+
+.footer_ul2_amrc .fa-youtube {
+    font-size: 20px;
+    color: red;
+    width: 30px;
+    padding-right: 10px;
+}
+
+.footer_ul2_amrc .fa-youtube:hover {
+    font-size: 24px;
+    width: 30px;
+    color: red;
 }
 
 
 /* .footer_ul2_amrc li i .fa-twitter {
-    font-size: 25px;
-    width: 20px;
+font-size: 25px;
+width: 20px;
 } */
 
 .footer_ul2_amrc li a {
-    font-size: 15px;
+    color: white;
+    font-size: 13px;
+}
+
+.footer_ul2_amrc li a:hover {
+    color: rgb(46, 193, 204);
 }
 
 .footer_ul2_amrc li p {
@@ -102,7 +268,7 @@ footer p:hover {
 
 .footer_ul2_amrc li p:hover {
     /* font-size: 16px; */
-    color: yellow;
+    color: rgb(139, 139, 49);
 }
 
 .bottom_border {
@@ -128,11 +294,11 @@ footer p:hover {
     color: rgb(255, 255, 255);
     margin: 0 12px;
     text-decoration: none;
+    font-size: 15
 }
 
 .foote_bottom_ul_amrc li a:hover {
-    color: yellow;
-    font-size: 16;
+    color: rgb(139, 139, 49);
 }
 
 .text-center {
@@ -141,7 +307,7 @@ footer p:hover {
 }
 
 .text-center:hover {
-    color: yellow;
+    color: rgb(139, 139, 49);
 }
 
 .svg-inline--fa {
@@ -156,8 +322,8 @@ footer p:hover {
     display: inline-block;
     position: relative;
     cursor: pointer;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border: 0.125rem solid transparent;
     padding: 0;
     text-decoration: none;
@@ -170,7 +336,7 @@ footer p:hover {
     transition: all 0.7s ease;
     margin-right: 0.3rem;
     margin-bottom: 0.25rem;
-    padding-top: 0.4rem;
+    padding-top: 0.5rem;
     padding-right: 0.1rem;
 }
 
@@ -242,4 +408,35 @@ footer p:hover {
     color: #125688;
     background: #fefefe;
     border-color: #125688;
+}
+
+
+/* media queries  */
+
+@media (max-width:940px) {
+    .newsletter form {
+        height: 4.5rem;
+        max-width: 45rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5rem;
+        background: rgba(0, 0, 0, .3);
+    }
+}
+
+@media (max-width:800px) {
+    .newsletter form {
+        height: 4.3rem;
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5rem;
+        background: rgba(0, 0, 0, .3);
+    }
 }
