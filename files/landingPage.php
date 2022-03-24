@@ -2,6 +2,7 @@
       require_once "../actions/connection.php";
       require_once "../compos/userNavbar.php";
 
+<<<<<<< HEAD
     //  if(!isset($_SESSION)) 
     //   { 
     //       session_start(); 
@@ -10,6 +11,16 @@
     //         header("Location:login.php");
     //         exit;
     //        } 
+=======
+   /*  if(!isset($_SESSION)) 
+      { 
+          session_start(); 
+      } 
+     if( !isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
+            header("Location:login.php");
+            exit;
+           }   */
+>>>>>>> 1fadccfad38ec60e0cc707fa60fd2f266fd437e3
 ?>
 
 <!DOCTYPE html>
@@ -49,39 +60,9 @@ loadDoc();
 document.getElementById("search").addEventListener("keyup",loadDoc);
 </script> 
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-function loadDoc() {
-let xhttp = new XMLHttpRequest();
-xhttp.onload = function() {
-if (this.status == 200 ) {
- document.getElementById("content").innerHTML =this.responseText;
-
-}
-};
-var name=document.getElementById("search").value;
-xhttp.open("GET", '../actions/productSearch.php?search='+name , true); //(method, URL, async)
-xhttp.send();
-}
-
-loadDoc();
-
-document.getElementById("search").addEventListener("keyup",loadDoc);
 </script> 
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.28.0/dist/tsparticles.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.5.0/custom-elements-es5-adapter.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.5.0/webcomponents-loader.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/web-particles@1.1.0/dist/web-particles.min.js"></script>
+</body>

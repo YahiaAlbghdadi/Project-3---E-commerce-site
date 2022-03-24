@@ -1,7 +1,11 @@
 <?php
     require_once "../actions/connection.php";
        
+<<<<<<< HEAD
     require_once "../actions/userFileUpload.php"; 
+=======
+    require_once "../actions/userFileUpload.php";
+>>>>>>> 1fadccfad38ec60e0cc707fa60fd2f266fd437e3
     
          if(!isset($_SESSION)) 
         { 
@@ -86,7 +90,7 @@
 
     </head>
 
-    <body class="img js-fullheight" style="background-image: url(../LoginForm/images/bg.jpg);">
+    <body class="img js-fullheight" style="background-image: url(../LoginForm/images/phon.jpg);">
         <section class="ftco-section">
             <div class="container">
                 <div class="row justify-content-center">
