@@ -38,31 +38,34 @@
                         <!-- <i class="fa-brands fa-shopify"></i> -->
                     </div>
                     <ul class="links">
-                        <!-- ss -->
+
                         <li>
-                            <a href="#">Dashboard</a>
-                            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-                            <ul class="htmlCss-sub-menu sub-menu">
-                                <li><a href="#">Haushalt</a></li>
-                                <li><a href="#">Garten</a></li>
-                                <li><a href="#">Office</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Products</a>
-                            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                            <a href="/files/dashboard.php"> Dashboard</a>
+                            <!-- <i class='bx bxs-chevron-down js-arrow arrow '></i>
                             <ul class="js-sub-menu sub-menu">
                                 <li><a href="#">All Products</a></li>
                                 <li><a href="#">Dell</a></li>
                                 <li><a href="#">Lenovo</a></li>
                                 <li><a href="#">Samsung</a></li>
                                 <li><a href="#">Asus</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
 
-                        <li><a href="#">Create Product</a></li>
-                        <li><a href="#">Create User</a></li>
-                        <li><a href="#">User Interface</a></li>
+                        <li>
+                            <a href="#">Products</a>
+                            <i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
+                            <ul class="htmlCss-sub-menu sub-menu">
+                            <li><a href="/files/landingPage.php">All Products</a></li>
+                                <li><a href="/files/sort1.php">Samsung</a></li>
+                                <li><a href="/files/sort2.php">I Phone</a></li>
+                                <li><a href="/files/sort3.php">Xiaumi</a></li>
+                            </ul>
+                        </li>
+                        
+
+                        <li><a href="/files/productCreate.php">Create Product</a></li>
+                        <li><a href="/files/userCreate.php">Create User</a></li>
+                        <!-- <li><a href="#">User Interface</a></li> -->
                     </ul>
                 </div>
 
@@ -135,9 +138,6 @@
 
     <!-- jquery cdn link  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- owl carousel js file cdn link  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

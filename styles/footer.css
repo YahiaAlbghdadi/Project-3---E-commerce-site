@@ -4,7 +4,7 @@
 }
 
 * {
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,26 +18,24 @@
     color: #fff;
 }
 
-html {
-    font-size: 62.5%;
-    overflow-x: hidden;
-}
-
-.btn {
-    height: 4rem;
-    width: 14rem;
+.btn1 {
+    height: 2.6rem;
+    width: 8rem;
     background: var(--blue);
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.3rem;
     cursor: pointer;
     border: none;
     outline: none;
 }
 
-.btn:hover {
+.btn1:hover {
     letter-spacing: .2rem;
-    opacity: .8;
+    opacity: .6;
 }
+
+
+/* --------- deal start   ------------ */
 
 .deal {
     background-color: fff;
@@ -47,58 +45,68 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 1.2rem;
     flex-wrap: wrap;
 }
 
 .deal .icons-container .icons {
-    flex: 1 1 25rem;
-    padding: 1rem;
-    margin: 1rem;
+    flex: 1 1 18rem;
+    padding: 0.3rem;
+    margin: 0.5rem;
     text-align: center;
     border: .2rem solid var(--blue);
+    background-color: rgb(232, 238, 241);
+}
+
+.deal .icons-container .icons:hover {
+    background-color: #fff;
 }
 
 .deal .icons-container .icons i {
-    color: var(--blue);
-    font-size: 4rem;
-    padding: 1rem 0;
+    color: #007bb5;
+    font-size: 2.5rem;
+    padding: 0.6rem 0;
 }
 
 .deal .icons-container .icons h3 {
     color: #333;
-    font-size: 2rem;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 .deal .icons-container .icons p {
-    color: #666;
-    font-size: 1.3rem;
-    padding: 1rem 0;
+    color: #0470a1;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.3rem 0;
 }
 
 
-/* --------------------- */
+/* --------- deal end   ------------ */
+
+
+/* --------- newsletter start   ------------ */
 
 .newsletter {
-    background: linear-gradient(var(--blue), var(--blue));
-    padding: 3rem 1rem;
+    background-color: #007bb5;
+    padding: 1rem 0.5rem;
     text-align: center;
 }
 
 .newsletter h1 {
     color: #fff;
-    font-size: 4rem;
+    font-size: 2.5rem;
 }
 
 .newsletter p {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1rem 0;
 }
 
 .newsletter form {
-    height: 5rem;
-    max-width: 60rem;
+    height: 3rem;
+    max-width: 40rem;
     margin: 0 auto;
     padding: 0 1rem;
     display: flex;
@@ -115,7 +123,7 @@ html {
     outline: none;
     border: none;
     background: none;
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: #fff;
 }
 
@@ -124,7 +132,10 @@ html {
 }
 
 
-/* ------------------------------------------------------------------------------- */
+/* --------- newsletter end   ------------ */
+
+
+/* --------- footer start   ------------ */
 
 footer {
     width: 100%;
@@ -137,11 +148,6 @@ footer {
     font-size: 20px;
     color: #fff;
 }
-
-
-/* .headin5_amrc:hover {
-color: rgb(170, 43, 43);
-} */
 
 .pt2 {
     padding-top: 40px;
@@ -242,16 +248,10 @@ footer p:hover {
 }
 
 .footer_ul2_amrc .fa-youtube:hover {
-    font-size: 24px;
+    font-size: 22px;
     width: 30px;
     color: red;
 }
-
-
-/* .footer_ul2_amrc li i .fa-twitter {
-font-size: 25px;
-width: 20px;
-} */
 
 .footer_ul2_amrc li a {
     color: white;
@@ -267,7 +267,6 @@ width: 20px;
 }
 
 .footer_ul2_amrc li p:hover {
-    /* font-size: 16px; */
     color: rgb(139, 139, 49);
 }
 
@@ -322,8 +321,8 @@ width: 20px;
     display: inline-block;
     position: relative;
     cursor: pointer;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border: 0.125rem solid transparent;
     padding: 0;
     text-decoration: none;
@@ -411,12 +410,15 @@ width: 20px;
 }
 
 
+/* --------- footer end   ------------ */
+
+
 /* media queries  */
 
 @media (max-width:940px) {
     .newsletter form {
-        height: 4.5rem;
-        max-width: 45rem;
+        height: 3rem;
+        max-width: 40rem;
         margin: 0 auto;
         padding: 0 1rem;
         display: flex;
@@ -429,8 +431,8 @@ width: 20px;
 
 @media (max-width:800px) {
     .newsletter form {
-        height: 4.3rem;
-        max-width: 40rem;
+        height: 3rem;
+        max-width: 25rem;
         margin: 0 auto;
         padding: 0 1rem;
         display: flex;
@@ -440,3 +442,18 @@ width: 20px;
         background: rgba(0, 0, 0, .3);
     }
 }
+
+
+/* @media (max-width:767px) {
+    .newsletter form {
+        height: 3rem;
+        max-width: 30rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5rem;
+        background: rgba(0, 0, 0, .3);
+    }
+} */
