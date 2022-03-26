@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TECH FACTORY Admin Navbar</title>
-    <!-- CSS only -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <!-- owl carousel css file cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,11 +26,11 @@
         <nav>
             <div class="navbar">
                 <i class='bx bx-menu'></i>
-                <div class="logo"><a href="#">TECH TRADE</a></div>
+                <div class="logo"><a href="#">My Mobile</a></div>
                 <!-- <i class="fa-brands fa-shopify"></i> -->
                 <div class="nav-links">
                     <div class="sidebar-logo">
-                        <span class="logo-name">TECH TRADE</span>
+                        <span class="logo-name">My Mobile</span>
                         <i class='bx bx-x'></i>
                         <!-- <i class="fa-brands fa-shopify"></i> -->
                     </div>
@@ -73,12 +70,12 @@
                 <div class="linksaid">
                     <div class="search-box">
                         <i class='bx bx-search'></i>
-                        <div class="input-box">
+                        <div class="input-box" id="userSearchBar">
                             <input type="text" placeholder="Search...">
                         </div>
                     </div>
                     <div class="icons">
-                        <!-- <a href="#" class="fas fa-heart"></a>
+                        <!-- <a href="#" class="fas fa-heart"></a> 
                         <a href="#" class="fas fa-shopping-cart"></a> -->
                         <a href="#" class="fas fa-user"></a>
                     </div>
@@ -119,14 +116,14 @@
                 navLinks.classList.toggle("show1");
             }
 
-            let jsArrow = document.querySelector(".js-arrow");
-            jsArrow.onclick = function() {
-                navLinks.classList.toggle("show3");
-            }
-            let jsArrow2 = document.querySelector(".js-arrow2");
-            jsArrow.onclick = function() {
-                navLinks.classList.toggle("show2");
-            }
+            // let jsArrow = document.querySelector(".js-arrow");
+            // jsArrow.onclick = function() {
+            //     navLinks.classList.toggle("show3");
+            // }
+            // let jsArrow2 = document.querySelector(".js-arrow2");
+            // jsArrow.onclick = function() {
+            //     navLinks.classList.toggle("show2");
+            // }
         </script>
 
 
@@ -137,10 +134,10 @@
 
 
     <!-- jquery cdn link  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
 
     <!-- custom js file link  -->
     <!-- <script src="js/navbar.js"></script> -->

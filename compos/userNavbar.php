@@ -21,12 +21,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TECH FACTORY User Navbar</title>
-    <!-- CSS only -->
+    <title>My Mobile User Navbar</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -37,22 +37,22 @@
 
 <body>
 
-    <!-- header section starts  -->
+    <!-- nav section starts  -->
     <header>
         <nav>
             <div class="navbar">
                 <i class='bx bx-menu'></i>
-                <div class="logo"><a href="#">TECH TRADE</a></div>
+                <div class="logo"><a href="#">  My Mobile</a></div>
                 <!-- <i class="fa-brands fa-shopify"></i> -->
                 <div class="nav-links">
                     <div class="sidebar-logo">
-                        <span class="logo-name">TECH TRADE</span>
+                        <span class="logo-name">My Mobile</span>
                         <i class='bx bx-x'></i>
                         <!-- <i class="fa-brands fa-shopify"></i> -->
                     </div>
                     <ul class="links">
                         <li><a href="/files/landingPage.php">HOME</a></li>
-                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="/files/aboutUs.php">ABOUT US</a></li>
                         <li><a href="contactUs.php">CONTACT US</a></li>
                         
                         <li>
@@ -117,7 +117,7 @@
 
     </header>
         
-    <!-- header section ends -->
+    <!-- nav section ends -->
 
     <script>
         // search-box open close js code
@@ -134,7 +134,7 @@ searchBox.addEventListener("click", () => {
     }
 });
 
-// sidebar open close js code
+// sidebar open close 
 let navLinks = document.querySelector(".nav-links");
 let menuOpenBtn = document.querySelector(".navbar .bx-menu");
 let menuCloseBtn = document.querySelector(".nav-links .bx-x");
@@ -145,7 +145,7 @@ menuCloseBtn.onclick = function() {
     navLinks.style.left = "-100%";
 }
 
-// sidebar submenu open close js code
+// sidebar submenu open close 
 let htmlcssArrow = document.querySelector(".htmlcss-arrow");
 htmlcssArrow.onclick = function() {
     navLinks.classList.toggle("show1");
@@ -156,7 +156,7 @@ htmlcssArrow.onclick = function() {
 // }
 // let jsArrow = document.querySelector(".js-arrow");
 // jsArrow.onclick = function() {
-//     navLinks.classList.toggle("show3");
+//     navLinks.classList.toggle("show3"); 
 // }
 
     </script>
