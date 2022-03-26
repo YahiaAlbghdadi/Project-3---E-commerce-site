@@ -40,7 +40,7 @@
    <div class="container  p-5">
    <div class="w-75 center">
             <h2>Update <?= $lastName ?></h2>       
-            <img class='img-thumbnail userImage rounded-circle'  src='../images/<?= $fetchedResult['image'] ?>' alt="">
+            <img class='img-thumbnail userImage rounded-circle'  src='../images/<?= $rows['image'] ?>' alt="">
             <form action="../actions/aUserUpdate.php" method="post" enctype="multipart/form-data">
         </div>
 
@@ -70,7 +70,7 @@
                         <div class="d-flex">
                             <input readonly class= "form-control  street" type ="text"  name="street"  placeholder= "<?=$street?>"  />
                             <input readonly class= "form-control plz ms-4 " type ="text"  name="houseNumber"  placeholder= "<?=$houseNumber?>"  />
-                            <input readonly class= "form-control stiege ms-4 " type ="text"  name="<?=$stiege?>"  placeholder= "Stiege"  />
+                            <input readonly class= "form-control stiege ms-4 " type ="text"  name="stiege"  placeholder= "<?=$stiege?>"  />
                         </div>
                         <div class="d-flex mt-2">
                             <input readonly class= "form-control w-50  " type ="text"  name="city"  placeholder= "<?=$city?>"  />

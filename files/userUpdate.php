@@ -2,7 +2,6 @@
 
 require_once "../actions/connection.php";
 require_once "../actions/userFileUpload.php";
-require_once "../compos/adminNavbar.php";
 
 
 if ($_GET) {
@@ -21,6 +20,7 @@ if ($_GET) {
     $stiege = $rows['stiege'];  
     $houseNumber = $rows['houseNumber'];
     $image = $rows['image'];
+    $rank = $rows['rank'];
 
      
  }
@@ -36,10 +36,12 @@ if ($_GET) {
   <?php require_once '../compos/bootstrap.php'?>
 </head>
 <body>
+<?php require_once "../compos/adminNavbar.php";?>
+
     <div class="container ">
         <div class="w-75 center">
             <h2>Update <?= $lastName ?></h2>       
-            <img class='img-thumbnail userImage rounded-circle'  src='../images/<?= $rows['image'] ?>' alt="">
+            <img class='img-thumbnail userImage rounded-circle'  src='../images/<?= $image ?>' alt="">
             <form action="../actions/aUserUpdate.php" method="post" enctype="multipart/form-data">
         </div>
        <table  class="table center w-75">
@@ -80,6 +82,17 @@ if ($_GET) {
                <tr>
                    <th>Image</th>
                     <td><input  class= "form-control"  type ="file" name = "image" value="<?=$image?>" /></td>
+                </tr>
+                <tr>
+                       <th>rank</th>
+                        <td><select class="form-control" name="rank" id="">
+                            <option value="<?=$rank?>"><?=$rank?></option>
+                            <option value="admin">admin</option>
+                        </select></td>
+                </tr>
+                <tr class="d-none">
+                    <input type="hidden" name="id" value="<?=$id?>"/>
+                    <input type="hidden" name="image" value="<?=$image?>"/>
                 </tr>
                 <tr>
                     <td>

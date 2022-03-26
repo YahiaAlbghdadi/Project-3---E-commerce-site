@@ -22,6 +22,7 @@ if (isset($_POST["submit" ])) {
     $email = $_POST['email'];
     $imageArray = userFileUpload($_FILES['image']);
     $telefonNumber = $_POST['telefonNumber'];
+    $rank = $_POST['rank'];
     $city = $_POST['city'];
     $street = $_POST['street'];
     $plz = $_POST['plz'];
@@ -31,19 +32,19 @@ if (isset($_POST["submit" ])) {
     $uploadError = '';    
 
    if ($imageArray->error == 0) {      
-       ($_POST["image"] == "animal.png") ?: unlink("../images/$_POST[image]");
-       $sql = "UPDATE animals SET name = '$name', location = '$location',stage = '$stage', hobbies = '$hobbies', description = '$description', age = '$age', image = '$image' WHERE id = {$id}";
+       ($_POST["image"] == "avatar.png") ?: unlink("../images/$_POST[image]");
+       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.id) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', image = '$image', city = '$city', street = '$street', plz = '$plz', stiege = '$stiege', houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.id";
    } else {
-       $sql = "UPDATE animals SET name = '$name', location = '$location',stage = '$stage', hobbies = '$hobbies', description = '$description', age = '$age' WHERE id = {$id}";
+       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.id) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', city = '$city', street = '$street', plz = '$plz', stiege = '$stiege', houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.id";
    }
-    if ($connection->query($sql)) {    
+    if ($conn->query($sql)) {    
        $class = "alert alert-success";
        $message = "The record was successfully updated";
        $uploadError = ($imageArray->error != 0) ? $imageArray->ErrorMessage : '';
        header("refresh:3;url=../files/dashboard.php");
    } else {
        $class = "alert alert-danger";
-       $message = "Error while updating record : <br>" . $connection->error;
+       $message = "Error while updating record : <br>" . $conn->error;
        $uploadError = ($imageArray->error != 0) ? $imageArray->ErrorMessage : '';
    }
 }
@@ -58,14 +59,14 @@ if (isset($_POST["submit" ])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aUpdate</title>
-    <?php require_once '../compos/boot.php'?>
+    <title>aUserUpdate</title>
+    <?php require_once '../compos/bootstrap.php'?>
 </head>
 <body>
 <div class ="container">
-   <div class="<?php echo $class; ?>"  role="alert">
-       <p><?php echo ($message) ?? ''; ?></p>
-        <p><?php echo ($uploadError) ?? ''; ?></p>       
+   <div class="<?=$class; ?>"  role="alert">
+       <p><?=($message) ?? ''; ?></p>
+        <p><?=($uploadError) ?? ''; ?></p>       
     </div>
 </div>
 
