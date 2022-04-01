@@ -9,9 +9,9 @@
     //  }
     //  if ( isset($_SESSION["user"])) {
     //     header("Location: landingPage.php");
-    //     exit;
+    //     exit; 
     //  }
-    
+    require_once "../compos/adminNavbar.php";
 ?>
 
 <!DOCTYPE html>

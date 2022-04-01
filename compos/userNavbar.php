@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
  $destination="login.php";
  if(!isset($_SESSION)) 
@@ -13,7 +13,7 @@
 
         }    
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -75,6 +75,7 @@
                                 </li> -->
                             </ul>
                         </li>
+                        <li><a href="../files/dashboard.php">Dashboard</a></li>
                         <!-- <li>
                             <a href="#">LAPTOP</a>
                             <i class='bx bxs-chevron-down js-arrow arrow '></i>
@@ -101,8 +102,8 @@
                 <div class="linksaid">
                     <div class="search-box">
                         <i class='bx bx-search'></i>
-                        <div class="input-box">
-                            <input type="text" placeholder="Search...">
+                        <div class="input-box" id="productSearch">
+                            <input id="products" type="text" placeholder="Search...">
                         </div>
                     </div>
                     <div class="icons">
