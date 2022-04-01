@@ -1,5 +1,5 @@
 <?php
-    require_once "../compos/adminNavbar.php";
+    
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -10,9 +10,9 @@
     //  }
     //  if ( isset($_SESSION["user"])) {
     //     header("Location: landingPage.php");
-    //     exit;
+    //     exit; 
     //  }
-    
+    require_once "../compos/adminNavbar.php";
 ?>
 
 <!DOCTYPE html>

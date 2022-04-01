@@ -70,8 +70,8 @@
                 <div class="linksaid">
                     <div class="search-box">
                         <i class='bx bx-search'></i>
-                        <div class="input-box" id="userSearchBar">
-                            <input type="text" placeholder="Search...">
+                        <div class="input-box"  type="search" placeholder="Search" aria-label="Search">
+                            <input id="products" type="text"  placeholder="Search...">
                         </div>
                     </div>
                     <div class="icons">
