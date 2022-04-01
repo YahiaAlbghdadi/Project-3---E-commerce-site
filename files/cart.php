@@ -1,6 +1,5 @@
 <?php
     require_once "../actions/connection.php";  
-    require_once "../compos/userNavbar.php";
 ?>
  
 <!DOCTYPE html>
@@ -26,7 +25,7 @@
                 <hr>
             </div>
             <div class="sectionMiddle p-3 row">
-                <img src="https://m.media-amazon.com/images/I/71birmzmmTL._AC_AA180_.jpg" alt="" class="col-4 cartItemImg">
+                <img src="https://m.media-amazon.com/images/I/71birmzmmTL._AC_AA180_.jpg" alt="" class="col-lg-2 col-md-4 col-5">
                 <div class="col-6">
                     <p>2 x Swirl H 41 MP Plus AirSpace Vacuum Cleaner Bags to Fit Fürstaubbeutel Microfleece</p>
                     <p>In stock</p>

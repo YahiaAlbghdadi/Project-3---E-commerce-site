@@ -1,5 +1,4 @@
 <?php
-    require_once "../compos/adminNavbar.php";
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -24,6 +23,8 @@
        <title>Create User</title>
    </head>
    <body>
+   <?php require_once "../compos/adminNavbar.php";?>
+
    <div class="container p-5">
        <h2>Create new User</h2>       
        <form action="../actions/aUserCreate.php" method="post" enctype="multipart/form-data">
@@ -54,13 +55,13 @@
                    <th>Address</th>
                     <td class="">
                         <div class="d-flex">
-                            <input class= "form-control  street" type ="text"  name="street"  placeholder= "street"  />
-                            <input class= "form-control plz ms-4 " type ="text"  name="houseNumber"  placeholder= "HausNr"  />
-                            <input class= "form-control stiege ms-4 " type ="text"  name="stiege"  placeholder= "Stiege"  />
+                            <input class= "form-control  street" type ="text"  name="plz"  placeholder= "plz"  />
+                            <input class= "form-control plz  " type ="text"  name="houseNumber"  placeholder= "HausNr"  />
+                            <input class= "form-control stiege  " type ="text"  name="stiege"  placeholder= "Stiege"  />
                         </div>
-                        <div class="d-flex mt-2">
+                        <div class="d-flex ">
                             <input class= "form-control w-50  " type ="text"  name="city"  placeholder= "Stadt"  />
-                            <input class= "form-control stiege ms-4 " type ="text"  name="plz"  placeholder= "plz"  />
+                            <input class= "form-control stiege  " type ="text"  name="street"  placeholder= "street"  />
                         </div>
                     </td>
                     

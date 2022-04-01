@@ -1,7 +1,6 @@
 <?php
     require_once "../actions/connection.php";
     require_once "../actions/userSearch.php";
-    require_once "../compos/adminNavbar.php";
 
 ?>
 
@@ -21,7 +20,6 @@
 <body>
     <?php require_once "../compos/adminNavbar.php" ?>
     <div class="userSearchDiv">
-        <input type="search" class="userSearchBar" id="user" placeholder="search for user">
     </div>
     <div class="container text-center">
         <h1 class="">logged In Users:</h1>
@@ -39,7 +37,7 @@
        
 
         </table>
-        <div class="searchedUser">
+        <div class="foundUser">
         
 
         </div>
@@ -49,15 +47,15 @@
         let xhttp = new XMLHttpRequest(); 
         xhttp.onload = function() {
             if (this.status == 200 ) {
-                document.getElementById("searchedUser").innerHTML = this.responseText;
+                document.getElementById("foundUser").innerHTML = this.responseText;
             }
         };
 
-        var user = document.getElementById("user").value;
+        var user = document.getElementById("userSearchBar").value;
         xhttp.open("GET", '../actions/userSearch.php?user='+user , true); 
         xhttp.send();
         }
-        document.getElementById("user").addEventListener("keyup", loadDoc);
+        document.getElementById("userSearchBar").addEventListener("keyup", loadDoc);
     </script>
         <?php require_once "../compos/bootJs.php" ?>
 

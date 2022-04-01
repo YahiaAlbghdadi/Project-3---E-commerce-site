@@ -1,8 +1,6 @@
 <?php
     
     require_once "../actions/connection.php";
-    require_once "../compos/adminNavbar.php";
-
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -37,6 +35,8 @@
        <title>User Detail</title>
    </head>
    <body>
+   <?php require_once "../compos/adminNavbar.php";?>
+
    <div class="container  p-5">
    <div class="w-75 center">
             <h2>Update <?= $lastName ?></h2>       
@@ -68,13 +68,14 @@
                    <th>Address</th>
                     <td class="">
                         <div class="d-flex">
-                            <input readonly class= "form-control  street" type ="text"  name="street"  placeholder= "<?=$street?>"  />
-                            <input readonly class= "form-control plz ms-4 " type ="text"  name="houseNumber"  placeholder= "<?=$houseNumber?>"  />
-                            <input readonly class= "form-control stiege ms-4 " type ="text"  name="stiege"  placeholder= "<?=$stiege?>"  />
+                            <input readonly class= "form-control  street " type ="text"  name="plz"  placeholder= "<?=$plz?>"  />
+                            
+                            <input readonly class= "form-control plz  " type ="text"  name="houseNumber"  placeholder= "<?=$houseNumber?>"  />
+                            <input readonly class= "form-control stiege  " type ="text"  name="stiege"  placeholder= "<?=$stiege?>"  />
                         </div>
-                        <div class="d-flex mt-2">
+                        <div class="d-flex ">
                             <input readonly class= "form-control w-50  " type ="text"  name="city"  placeholder= "<?=$city?>"  />
-                            <input readonly class= "form-control stiege ms-4 " type ="text"  name="plz"  placeholder= "<?=$plz?>"  />
+                            <input readonly class= "form-control stiege  " type ="text"  name="street"  placeholder= "<?=$street?>"  />
                         </div>
                     </td>
                     

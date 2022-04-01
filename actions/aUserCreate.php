@@ -33,7 +33,12 @@ if (session_status() == PHP_SESSION_NONE) {
         $plz = $_POST["plz"];
         
         $uploadError  = "";
-        $sql = "INSERT INTO addresses (city, street, plz, stiege, houseNumber) VALUES ('$city','$street','$plz','$stiege','$houseNumber')";
+        if($stiege != ""){
+            $sql = "INSERT INTO addresses (city, street, plz, stiege, houseNumber) VALUES ('$city','$street','$plz','$stiege','$houseNumber')";
+        }else{
+            $sql = "INSERT INTO addresses (city, street, plz, houseNumber) VALUES ('$city','$street','$plz','$houseNumber')";
+
+        }
         $result1= $conn->query($sql);
 
         $sql2 = "INSERT INTO users (firstName, lastName, email, password, image, telefonNumber,fkAddress) VALUES ('$firstName','$lastName','$email','$password','$image','$telefonNumber', LAST_INSERT_ID())";
