@@ -17,20 +17,28 @@ if(!$_GET){
     foreach( $rows as $row){
       $name = strtoupper($row['name']);
       $brand = strtoupper($row['brand']);
-      $products .= "<div class='card' style='width: 20rem;'>
-      <img src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
-      <div class='card-body'>
-        <h4 class='card-title'>{$row['name']}{$row['brand']}</h4>
-        
-        <p class='card-text'>Price: {$row['price']} €</p>
-        <div class='multi-button'>
-          <button><a href='../files/productUpdate.php?id={$row['id']}'>Update</a></button>
-          <button id='del'><a href='../files/productDelete.php?id={$row['id']}' >Delete</a></button>
-          <button><a href='details.php?id={$row['id']}' >Details</a></button>
-        </div>
-        
+      $products .="<div class='card' style='width: 20rem;'>
+      <div class='product-grid'>
+          <div class='product-image'>
+              <a href='#' class='image'>
+                  <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
+              </a>
+              <ul class='product-links'>
+                  <li><a href='#'><i class='fa fa-shopping-bag'></i> Add to cart</a></li>
+                  <li><a href='#'><i class='fa fa-search'></i> Quick View</a></li>
+              </ul>
+          </div>
       </div>
-      </div>";
+      <div class='card-body'>
+          <h4 class='card-title'>{$row['name']}   {$row['brand']}</h4>
+          <p class='card-text'>Price:{$row['price']} €</p>
+          <div class='multi-button'>
+          <button><a href='../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
+          <button id='del'><a href='../files/productDelete.php?id={$row['id']}' >DELETE</a></button>
+          <button><a href='../files/productDetails.php?id={$row['id']}'>DETAILS</a></button>
+        </div>
+      </div>
+  </div>";
   } 
 }else{
     $products =  $_GET["products"];
@@ -44,20 +52,27 @@ if(!$_GET){
     foreach($rows as $row){
       // $upperName = strtoupper($row['name']);
         echo "<div class='card' style='width: 20rem;'>
-        <img src='../images/{$row["image"]}' class='card-img-top' alt='...' height='350'>
-        <div class='card-body'>
-          <h4 class='card-title'> {$row["name"]} {$row["brand"]}</h4>
-          
-          <p class='card-text'>Price: {$row["price"]} €</p>
-          
-          <div class='multi-button'>
-            <button><a href='../files/productUpdate.php?id={$row["id"]}'>Update</a></button>
-            <button><a href='../files/productDelete.php?id={$row["id"]}' >Delete</a></button>
-            <button><a href='../files/productDetails.php?id={$row["id"]}' >Details</a></button>
-          </div>
-          
+        <div class='product-grid'>
+            <div class='product-image'>
+                <a href='#' class='image'>
+                    <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
+                </a>
+                <ul class='product-links'>
+                    <li><a href='#'><i class='fa fa-shopping-bag'></i> Add to cart</a></li>
+                    <li><a href='#'><i class='fa fa-search'></i> Quick View</a></li>
+                </ul>
+            </div>
         </div>
-      </div>";
+        <div class='card-body'>
+            <h4 class='card-title'>{$row['name']}   {$row['brand']}</h4>
+            <p class='card-text'>Price:{$row['price']} €</p>
+            <div class='multi-button'>
+            <button><a href='../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
+            <button id='del'><a href='../files/productDelete.php?id={$row['id']}' >DELETE</a></button>
+            <button><a href='../files/productDetails.php?id={$row['id']}'>DETAILS</a></button>
+          </div>
+        </div>
+    </div>";
     }
   }
   }
