@@ -1,28 +1,5 @@
 <?php
-    require_once "../actions/connection.php"; 
-    
-    if(session_id() == '') {
-        session_start();
-    }
-    $cart = $_SESSION["shopping_cart"];
-    if($_POST){
-        $currentArray = $cart[array_search($_POST["id"],$cart)];
-        $qtty = $currentArray['quantity'];
-    }
-    $status="";
-    if (isset($_POST['action']) && $_POST['action']=="remove"){
-        unset($cart[array_search($_POST["id"],$cart)]);
-        $status = "<div class='box' style='color:red;'>
-        Product is removed from your cart!</div>";    		
-}
-
-
-    if (isset($_POST['action']) && $_POST['action']=="change"){
-        if($currentArray['id'] == $_POST["id"]){
-            $qtty = $_POST["quantity"];
-        }
-  	
-}
+    require_once "../actions/connection.php";  
 ?>
  
 <!DOCTYPE html>

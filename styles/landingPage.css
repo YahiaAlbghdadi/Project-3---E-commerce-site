@@ -12,10 +12,6 @@ body {
     padding: auto;
 }
 
-.center {
-    margin: 10px auto !important;
-}
-
 .card {
     font-family: 'Eczar', serif;
     /* border-radius: 20px 0px 20px 0px; */

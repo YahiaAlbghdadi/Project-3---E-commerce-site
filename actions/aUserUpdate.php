@@ -4,7 +4,6 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 require_once 'connection.php';
 require_once 'userFileUpload.php';
-// require_once '../files/userUpdate.php';
 // if (!isset($_SESSION['adm' ]) && !isset($_SESSION['user']) && !isset($_SESSION['superAdm'])) {
 //     header("Location: login.php" );
 //      exit;
@@ -13,7 +12,7 @@ require_once 'userFileUpload.php';
 //     header("Location: home.php");
 //     exit;
 //  }
-
+  
 
 $class = 'd-none';
 if (isset($_POST["submit" ])) {
@@ -31,19 +30,12 @@ if (isset($_POST["submit" ])) {
     $houseNumber = $_POST['houseNumber'];
     $image = $imageArray->fileName;
     $uploadError = '';    
-    $insertStiege = "";
-    $prevStiege = $_SESSION["previousStiege"];
-    if($stiege !=$prevStiege){
-        $insertStiege = ", stiege = '$stiege',";
-    }else{
-        $insertStiege = ",";
-    }
 
    if ($imageArray->error == 0) {      
        ($_POST["image"] == "avatar.png") ?: unlink("../images/$_POST[image]");
-       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.id) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', image = '$image', city = '$city', street = '$street', plz = '$plz' $insertStiege houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.id";
+       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.id) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', image = '$image', city = '$city', street = '$street', plz = '$plz', stiege = '$stiege', houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.id";
    } else {
-       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.id) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', city = '$city', street = '$street', plz = '$plz'$insertStiege houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.id";
+       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.id) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', city = '$city', street = '$street', plz = '$plz', stiege = '$stiege', houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.id";
    }
     if ($conn->query($sql)) {    
        $class = "alert alert-success";
