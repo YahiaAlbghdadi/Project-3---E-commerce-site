@@ -31,9 +31,8 @@ if(!$_GET){
           </form>
 
         </div>
-        
       </div>
-      </div>";
+  </div>";
   } 
 }else{
     $products =  $_GET["products"];
@@ -62,10 +61,13 @@ if(!$_GET){
             </form>
 
           </div>
-          
         </div>
+<<<<<<< HEAD
 
         </div>";
+=======
+    </div>";
+>>>>>>> fd9737673fffb05b4a017e6b22b068731f3338fc
     }
   }
   }
