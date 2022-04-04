@@ -22,6 +22,7 @@
         $city = $rows["city"];
         $stiege = $rows["stiege"];
         $plz = $rows["plz"];
+        $_SESSION["previousStiege"] = $stiege;
     }
     
 ?>

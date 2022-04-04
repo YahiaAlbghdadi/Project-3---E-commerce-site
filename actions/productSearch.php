@@ -15,9 +15,9 @@ if(!$_GET){
     $rows = $result->fetch_all(MYSQLI_ASSOC);
     $products = "";
     foreach( $rows as $row){
-      $name = strtoupper($row['name']);
-      $brand = strtoupper($row['brand']);
-      $products .= "<div class='card' style='width: 20rem;'>
+      $products .= "<div class='card center' style='width: 20rem;'>
+      <form method='post' >
+      <input type='hidden' name='id' value='{$row['id']}'/>      
       <img src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
       <div class='card-body'>
         <h4 class='card-title'>{$row['name']}{$row['brand']}</h4>
@@ -27,6 +27,9 @@ if(!$_GET){
           <button><a href='../files/productUpdate.php?id={$row['id']}'>Update</a></button>
           <button id='del'><a href='../files/productDelete.php?id={$row['id']}' >Delete</a></button>
           <button><a href='details.php?id={$row['id']}' >Details</a></button>
+          <button type='submit' >Buy Now</button>
+          </form>
+
         </div>
         
       </div>
@@ -42,22 +45,27 @@ if(!$_GET){
         $rows = $result->fetch_all(MYSQLI_ASSOC);
 
     foreach($rows as $row){
-      // $upperName = strtoupper($row['name']);
-        echo "<div class='card' style='width: 20rem;'>
-        <img src='../images/{$row["image"]}' class='card-img-top' alt='...' height='350'>
+        echo "<div class='card center' style='width: 20rem;'>
+        <form method='post' >
+
+        <input type='hidden' name='id' value='{$row['id']}'/>      
+        <img src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
         <div class='card-body'>
-          <h4 class='card-title'> {$row["name"]} {$row["brand"]}</h4>
+          <h4 class='card-title'>{$row['name']}{$row['brand']}</h4>
           
-          <p class='card-text'>Price: {$row["price"]} €</p>
-          
+          <p class='card-text'>Price: {$row['price']} €</p>
           <div class='multi-button'>
-            <button><a href='../files/productUpdate.php?id={$row["id"]}'>Update</a></button>
-            <button><a href='../files/productDelete.php?id={$row["id"]}' >Delete</a></button>
-            <button><a href='../files/productDetails.php?id={$row["id"]}' >Details</a></button>
+            <button><a href='../files/productUpdate.php?id={$row['id']}'>Update</a></button>
+            <button id='del'><a href='../files/productDelete.php?id={$row['id']}' >Delete</a></button>
+            <button><a href='details.php?id={$row['id']}' >Details</a></button>
+            <button type='submit' >Buy Now</button>
+            </form>
+
           </div>
           
         </div>
-      </div>";
+
+        </div>";
     }
   }
   }

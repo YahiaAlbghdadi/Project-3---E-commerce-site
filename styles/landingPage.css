@@ -12,6 +12,10 @@ body {
     padding: auto;
 }
 
+.center {
+    margin: 10px auto !important;
+}
+
 .card {
     font-family: 'Eczar', serif;
     /* border-radius: 20px 0px 20px 0px; */
@@ -111,4 +115,12 @@ button:active {
     font-family: 'Eczar', serif;
     color: #050505;
     filter: drop-shadow(3px 5px 5px rgba(0, 0, 0, 1));
+}
+
+.message_box .box {
+    margin: 10px 0px;
+    border: 1px solid #2b772e;
+    text-align: center;
+    font-weight: bold;
+    color: #2b772e;
 }
