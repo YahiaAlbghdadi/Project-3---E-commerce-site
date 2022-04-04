@@ -77,16 +77,16 @@ foreach ($cart as $product){
 <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
 <div class="input-group plus-minus-input">
   <div class="input-group-button">
-    <button type="button" class="button hollow circle" data-quantity="minus" data-field="<?= $product['id']?>">
-      <i type="submit" class="fa fa-minus" aria-hidden="true"></i>
-    </button>
+    <i type="button" class="button hollow circle " data-quantity="minus" data-field="<?= $product['id']?>">
+    <i class="fa-solid fa-circle-minus"></i></i>
   </div>
-  <input class="input-group-field" type="number" name="<?= $product['id']?>" value="<?= $product['quantity']?>">
-  <div class="input-group-button">
-    <button type="button" class="button hollow circle" data-quantity="plus" data-field="<?= $product['id']?>">
-      <i class="fa fa-plus" aria-hidden="true"></i>
-    </button>
+  <input class="input-group-field qttyInput text-center ms-2 me-2" type="number" name="<?= $product['id']?>" value="<?= $product['quantity']?>">
+  <div class="input-group-button ">
+    <i type="button" class="button hollow circle" data-quantity="plus" data-field="<?= $product['id']?>">
+      <i class="fa-solid fa-circle-plus"></i>
+</i>
   </div>
+
 </div>
 </form>
 </td>
@@ -117,3 +117,8 @@ $total_price += ($product["price"]*$product["quantity"]);
 <?php echo $status; ?>
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="script.js"></script>
+</body>
+</html>
