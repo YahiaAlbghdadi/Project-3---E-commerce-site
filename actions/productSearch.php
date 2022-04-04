@@ -18,6 +18,7 @@ if(!$_GET){
       $name = strtoupper($row['name']);
       $brand = strtoupper($row['brand']);
       $products .= "<div class='card' style='width: 20rem;'>
+      <form method='post' >
       <img src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
       <div class='card-body'>
         <h4 class='card-title'>{$row['name']}{$row['brand']}</h4>
@@ -27,6 +28,8 @@ if(!$_GET){
           <button><a href='../files/productUpdate.php?id={$row['id']}'>Update</a></button>
           <button id='del'><a href='../files/productDelete.php?id={$row['id']}' >Delete</a></button>
           <button><a href='details.php?id={$row['id']}' >Details</a></button>
+          <button type='submit' >Buy Now</button>
+            </form>
         </div>
         
       </div>
@@ -44,6 +47,7 @@ if(!$_GET){
     foreach($rows as $row){
       // $upperName = strtoupper($row['name']);
         echo "<div class='card' style='width: 20rem;'>
+        <form method='post' >
         <img src='../images/{$row["image"]}' class='card-img-top' alt='...' height='350'>
         <div class='card-body'>
           <h4 class='card-title'> {$row["name"]} {$row["brand"]}</h4>
@@ -54,6 +58,8 @@ if(!$_GET){
             <button><a href='../files/productUpdate.php?id={$row["id"]}'>Update</a></button>
             <button><a href='../files/productDelete.php?id={$row["id"]}' >Delete</a></button>
             <button><a href='../files/productDetails.php?id={$row["id"]}' >Details</a></button>
+            <button type='submit' >Buy Now</button>
+            </form>
           </div>
           
         </div>

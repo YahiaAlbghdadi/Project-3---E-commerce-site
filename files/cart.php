@@ -1,5 +1,28 @@
 <?php
-    require_once "../actions/connection.php";  
+    require_once "../actions/connection.php"; 
+    
+    if(session_id() == '') {
+        session_start();
+    }
+    $cart = $_SESSION["shopping_cart"];
+    if($_POST){
+        $currentArray = $cart[array_search($_POST["id"],$cart)];
+        $qtty = $currentArray['quantity'];
+    }
+    $status="";
+    if (isset($_POST['action']) && $_POST['action']=="remove"){
+        unset($cart[array_search($_POST["id"],$cart)]);
+        $status = "<div class='box' style='color:red;'>
+        Product is removed from your cart!</div>";    		
+}
+
+
+    if (isset($_POST['action']) && $_POST['action']=="change"){
+        if($currentArray['id'] == $_POST["id"]){
+            $qtty = $_POST["quantity"];
+        }
+  	
+}
 ?>
  
 <!DOCTYPE html>
@@ -94,47 +117,3 @@ $total_price += ($product["price"]*$product["quantity"]);
 <?php echo $status; ?>
 
 </div>
-
-
-
-
-    <!-- <div class="container">
-        <div class="ordersParent ">
-            <div class="sectionTop p-3  ">
-                <h1>Your Orders</h1>
-                <div class="cartPrice row offset-11 ">price</div>
-                <hr>
-            </div>
-            <div class="sectionMiddle p-3 row">
-                <img src="https://m.media-amazon.com/images/I/71birmzmmTL._AC_AA180_.jpg" alt="" class="col-lg-2 col-md-4 col-5">
-                <div class="col-6">
-                    <p>2 x Swirl H 41 MP Plus AirSpace Vacuum Cleaner Bags to Fit Fürstaubbeutel Microfleece</p>
-                    <p>In stock</p>
-                    <select placeholder="Qtty">
-                        <option value="actual value 1">Qtty: 1</option>
-                        <option value="actual value 2">Qtty: 2</option>
-                        <option value="actual value 3">Qtty: 3</option>
-                        <option value="actual value 3">Qtty: 4</option>
-                        <option value="actual value 3">Qtty: 5</option>
-                        <option value="actual value 3">Qtty: 6</option>
-                        <option value="actual value 3">Qtty: 7</option>
-                        <option value="actual value 3">Qtty: 8</option>
-                        <option value="actual value 3">Qtty: 9</option>
-                    </select>
-                    
-                </div>
-                <div class="col-2">
-
-                </div>
-            </div>
-            <div class="sectionBottom">
-            <p class="offset-11 ">price</p>
-
-            </div>
-        </div>
-    </div> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
