@@ -71,21 +71,23 @@ foreach ($cart as $product){
 </form>
 </td>
 <td>
-<form method='post' action=''>
+<form method='post' action='' >
 <input type='hidden' name='id' value="<?php echo $product["id"]; ?>" />
 <input type='hidden' name='action' value="change" />
-<select name='quantity' class='quantity' onChange="this.form.submit()">
-<option <?php if($product["quantity"]==1) echo "selected";?>
-value="1">1</option>
-<option <?php if($product["quantity"]==2) echo "selected";?>
-value="2">2</option>
-<option <?php if($product["quantity"]==3) echo "selected";?>
-value="3">3</option>
-<option <?php if($product["quantity"]==4) echo "selected";?>
-value="4">4</option>
-<option <?php if($product["quantity"]==5) echo "selected";?>
-value="5">5</option>
-</select>
+<!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
+<div class="input-group plus-minus-input">
+  <div class="input-group-button">
+    <button type="button" class="button hollow circle" data-quantity="minus" data-field="<?= $product['id']?>">
+      <i type="submit" class="fa fa-minus" aria-hidden="true"></i>
+    </button>
+  </div>
+  <input class="input-group-field" type="number" name="<?= $product['id']?>" value="<?= $product['quantity']?>">
+  <div class="input-group-button">
+    <button type="button" class="button hollow circle" data-quantity="plus" data-field="<?= $product['id']?>">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
 </form>
 </td>
 <td><?php echo "$".$product["price"]; ?></td>
@@ -155,6 +157,7 @@ $total_price += ($product["price"]*$product["quantity"]);
         </div>
     </div> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
