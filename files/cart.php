@@ -5,13 +5,15 @@
         session_start();
     }
     $cart = $_SESSION["shopping_cart"];
+    $currentArray = "";
     if($_POST){
-        $currentArray = $cart[array_search($_POST["id"],$cart)];
-        $qtty = $currentArray['quantity'];
+      $id = $_POST['id'];
+      $currentArray = array_search("Samsung 1",$cart);
+      var_dump($currentArray);
     }
     $status="";
     if (isset($_POST['action']) && $_POST['action']=="remove"){
-        unset($cart[array_search($_POST["id"],$cart)]);
+        unset($currentArray);
         $status = "<div class='box' style='color:red;'>
         Product is removed from your cart!</div>";    		
 }
@@ -19,7 +21,7 @@
 
     if (isset($_POST['action']) && $_POST['action']=="change"){
         if($currentArray['id'] == $_POST["id"]){
-            $qtty = $_POST["quantity"];
+           $currentArray['quantity'] = $_POST['quantity'];
         }
   	
 }
@@ -71,23 +73,21 @@ foreach ($cart as $product){
 </form>
 </td>
 <td>
-<form method='post' action='' >
-<input type='hidden' name='id' value="<?php echo $product["id"]; ?>" />
+<form method='post' action=''>
+<input type='hidden' name='id' value="<?= $product["id"]; ?>" />
 <input type='hidden' name='action' value="change" />
-<!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
-<div class="input-group plus-minus-input">
-  <div class="input-group-button">
-    <i type="button" class="button hollow circle " data-quantity="minus" data-field="<?= $product['id']?>">
-    <i class="fa-solid fa-circle-minus"></i></i>
-  </div>
-  <input class="input-group-field qttyInput text-center ms-2 me-2" type="number" name="<?= $product['id']?>" value="<?= $product['quantity']?>">
-  <div class="input-group-button ">
-    <i type="button" class="button hollow circle" data-quantity="plus" data-field="<?= $product['id']?>">
-      <i class="fa-solid fa-circle-plus"></i>
-</i>
-  </div>
-
-</div>
+<select name='quantity' class='quantity' onChange="this.form.submit()">
+<option <?php if($product["quantity"]==1) echo "selected";?>
+value="1">1</option>
+<option <?php if($product["quantity"]==2) echo "selected";?>
+value="2">2</option>
+<option <?php if($product["quantity"]==3) echo "selected";?>
+value="3">3</option>
+<option <?php if($product["quantity"]==4) echo "selected";?>
+value="4">4</option>
+<option <?php if($product["quantity"]==5) echo "selected";?>
+value="5">5</option>
+</select>
 </form>
 </td>
 <td><?php echo "$".$product["price"]; ?></td>
