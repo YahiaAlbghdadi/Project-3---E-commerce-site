@@ -16,6 +16,7 @@ if(!$_GET){
     $products = "";
     foreach( $rows as $row){
       $products .= "<div class='card' style='width: 20rem;'>
+      <form method='post'>
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
@@ -35,6 +36,7 @@ if(!$_GET){
               <button><a class='del' href='../files/productDelete.php?id={$row['id']}'>DELETE</a></button>
               <button><a class='tail' href='../files/productDetails.php?id={$row['id']}'>DETAILS</a></button>
           </div>
+            </form>
       </div>
   </div>";
   } 
@@ -49,6 +51,7 @@ if(!$_GET){
 
     foreach($rows as $row){
       echo "<div class='card' style='width: 20rem;'>
+      <form method='post'>
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
@@ -62,12 +65,13 @@ if(!$_GET){
       </div>
       <div class='card-body'>
           <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
-          <p class='card-text'>Price: {$row['price']} €</p>
+          <p class='card-text'>Price 1080 €</p>
           <div class='multi-button'>
-              <button><a class='updt' href='../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
+              <button><a class='updt' href=''../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
               <button><a class='del' href='../files/productDelete.php?id={$row['id']}'>DELETE</a></button>
               <button><a class='tail' href='../files/productDetails.php?id={$row['id']}'>DETAILS</a></button>
           </div>
+            </form>
       </div>
   </div>";
 
