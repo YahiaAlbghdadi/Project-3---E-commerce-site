@@ -23,8 +23,8 @@ if(!$_GET){
                   <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
               </a>
               <ul class='product-links'>
-                  <li><a href='#'><i class='fa fa-shopping-bag'></i> Add to cart</a></li>
-                  <li><a href='#'><i class='fa fa-search'></i> Quick View</a></li>
+                  <li><button type='submit'><i class='fa fa-shopping-bag'></i> Add to cart</button></li>
+                  <li><button><a href='#'><i class='fa fa-search'></i></a> Quick View </button></li>
               </ul>
           </div>
       </div>
@@ -32,7 +32,7 @@ if(!$_GET){
           <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
           <p class='card-text'>Price 1080 €</p>
           <div class='multi-button'>
-              <button><a class='updt' href=''../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
+              <button><a class='updt' href='../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
               <button><a class='del' href='../files/productDelete.php?id={$row['id']}'>DELETE</a></button>
               <button><a class='tail' href='../files/productDetails.php?id={$row['id']}'>DETAILS</a></button>
           </div>
@@ -58,8 +58,9 @@ if(!$_GET){
                   <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
               </a>
               <ul class='product-links'>
-                  <li><a href='#'><i class='fa fa-shopping-bag'></i> Add to cart</a></li>
-                  <li><a href='#'><i class='fa fa-search'></i> Quick View</a></li>
+                <li><button type='submit'><i class='fa fa-shopping-bag'></i> Add to cart</button></li>
+                <li><button><a href='#'><i class='fa fa-search'></i></a> Quick View </button></li>
+                
               </ul>
           </div>
       </div>
@@ -67,7 +68,7 @@ if(!$_GET){
           <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
           <p class='card-text'>Price 1080 €</p>
           <div class='multi-button'>
-              <button><a class='updt' href=''../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
+              <button><a class='updt' href='../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
               <button><a class='del' href='../files/productDelete.php?id={$row['id']}'>DELETE</a></button>
               <button><a class='tail' href='../files/productDetails.php?id={$row['id']}'>DETAILS</a></button>
           </div>

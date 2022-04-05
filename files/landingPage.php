@@ -74,8 +74,7 @@ mysqli_close($conn)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     
     <?php require_once "../compos/bootstrap.php" ?>
-    <link rel="stylesheet" href="../styles/landingPage.css">
-    <!-- <link rel="stylesheet" href="../styles/product.css"> -->
+    <link rel="stylesheet" href="../styles/landingpage.css">
     <?php require_once "../compos/userNavbar.php";?>
     <title>Home Page</title>
 </head>

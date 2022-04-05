@@ -20,20 +20,25 @@ body {
 
 /* -------- Cart Start  -------- */
 
+
+/* .parent {
+    margin-top: 100px;
+} */
+
 .row {
     margin: auto;
     padding: auto;
 }
 
 .card {
-    /* font-family: 'Poppins', sans-serif; */
+    background-color: #2880b8;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     border: 1px solid #00d9ff;
-    font-family: 'Eczar', serif;
+    /* font-family: 'Eczar', serif; */
     margin: 10px;
     padding-left: 0px;
     padding-right: 0px;
-    background-color: #2880b8;
     filter: drop-shadow(3px 5px 5px rgba(0, 0, 0, 0.65));
 }
 
@@ -129,7 +134,7 @@ img:hover {
     transform: translateX(0);
 }
 
-.product-grid .product-links li a {
+.product-grid .product-links li button {
     color: #fff;
     text-decoration: none;
     background-color: #00b894;
@@ -140,15 +145,20 @@ img:hover {
     opacity: 0.9;
     transition: all 0.3s ease 0s;
     animation: bg-animate 5s infinite linear;
+    border: none !important;
 }
 
-.product-grid .product-links li a:hover {
+.product-grid .product-links li a {
     color: #fff;
+}
+
+.product-grid .product-links li button:hover {
+    color: rgb(255, 255, 255);
     box-shadow: 0 0 0 3px #fff inset;
     opacity: 1;
 }
 
-.product-grid .product-links li a i {
+.product-grid .product-links li button i {
     margin: 0 5px 0 0;
 }
 
