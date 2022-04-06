@@ -16,15 +16,17 @@ if(!$_GET){
     $products = "";
     foreach( $rows as $row){
       $products .= "<div class='card' style='width: 20rem;'>
-      <form method='post'>
+      <form method='post' action=''>
+      <input type='hidden' name='id' value='{$row['id']}' />      
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
                   <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
               </a>
               <ul class='product-links'>
-                  <li><button type='submit'><i class='fa fa-shopping-bag'></i> Add to cart</button></li>
-                  <li><button><a href='#'><i class='fa fa-search'></i></a> Quick View </button></li>
+                <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag'></i> Add to cart</button></li>
+                <li><button><a href='#'><i class='fa fa-search'></i></a> Quick View </button></li>
+                
               </ul>
           </div>
       </div>
@@ -51,14 +53,15 @@ if(!$_GET){
 
     foreach($rows as $row){
       echo "<div class='card' style='width: 20rem;'>
-      <form method='post'>
+      <form method='post' action=''>
+      <input type='hidden' name='id' value='{$row['id']}' />      
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
                   <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
               </a>
               <ul class='product-links'>
-                <li><button type='submit'><i class='fa fa-shopping-bag'></i> Add to cart</button></li>
+                <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag'></i> Add to cart</button></li>
                 <li><button><a href='#'><i class='fa fa-search'></i></a> Quick View </button></li>
                 
               </ul>

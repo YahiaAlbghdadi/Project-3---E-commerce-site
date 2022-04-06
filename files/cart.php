@@ -4,12 +4,13 @@
     if(session_id() == '') {
         session_start();
     }
-    $cart = $_SESSION["shopping_cart"];
+    if($_SESSION['shopping_cart']!=""){
+        $cart = $_SESSION["shopping_cart"];
+    }   
     $currentArray = "";
     if($_POST){
       $id = $_POST['id'];
-      $currentArray = array_search("Samsung 1",$cart);
-      var_dump($currentArray);
+      $currentArray = $cart[array_search("$id", array_column($cart, 'id'))];
     }
     $status="";
     if (isset($_POST['action']) && $_POST['action']=="remove"){
@@ -67,7 +68,7 @@ foreach ($cart as $product){
 </td>
 <td><?php echo $product["name"]; ?><br />
 <form method='post' action=''>
-<input type='hidden' name='id' value="<?php echo $product["id"]; ?>" />
+<input type='hidden' name='id' value="<?= $product["id"]; ?>" />
 <input type='hidden' name='action' value="remove" />
 <button type='submit' class='remove'>Remove Item</button>
 </form>

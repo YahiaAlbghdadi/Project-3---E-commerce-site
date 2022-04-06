@@ -24,6 +24,7 @@ $brand = $cartRow['brand'];
 $deliveryDate = $cartRow['deliveryDate'];
 
 
+
 $cartArray = array(
 	array(
     'id'=>$id,
@@ -49,7 +50,15 @@ if(empty($_SESSION["shopping_cart"])) {
     // var_dump($addedIds);
     // exit;
     if(in_array($id,$addedIds)) {
-        echo "TEST";
+        echo '<script>';
+        echo 'Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Product is already added to your cart!",
+            showConfirmButton: false,
+            timer: 1500
+        })';
+        echo '</script>';
 	$status = "<div class='box' style='color:red;'>
 	Product is already added to your cart!</div>";
     } else {
@@ -75,9 +84,10 @@ mysqli_close($conn)
     
     <?php require_once "../compos/bootstrap.php" ?>
     <link rel="stylesheet" href="../styles/landingpage.css">
-    <?php require_once "../compos/userNavbar.php";?>
     <title>Home Page</title>
 </head>
+<?php require_once "../compos/userNavbar.php" ?>
+
 <body>
 
 
@@ -108,9 +118,7 @@ document.getElementById("products").addEventListener("keyup",loadDoc);
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
  
-<!-- <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.28.0/dist/tsparticles.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.5.0/custom-elements-es5-adapter.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.5.0/webcomponents-loader.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/web-particles@1.1.0/dist/web-particles.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>
