@@ -57,7 +57,7 @@
     <style><?php include "../styles/product.css"; ?></style>
 </head>
 <body>
-    <div  class="container">
+    <div  class="container1">
         <div class="mt-3 mb-3" >
             <h1>Create request response</h1>
         </div>

@@ -3,7 +3,6 @@
         session_start();
     }
 
-    require_once "../compos/adminNavbar.php"
 ?>
 
 
@@ -12,9 +11,9 @@
 <html lang="en" >
    <head>
        <meta charset="UTF-8">
-       <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+       <meta name="viewport" content ="width=device-width, initial-scale=1.0">     
        <?php require_once '../compos/bootstrap.php'?>
-       <!-- <?php require_once "../compos/adminNavbar.php"?> -->
+       <?php require_once "../compos/adminNavbar.php"?>
        <style><?php include "../styles/product.css"; ?></style>
        <title>Create Product</title>
       
@@ -61,11 +60,11 @@
                   
                    <tr>
                        <td>
-                           <button class ='butten1' type= "submit">Insert Product</button>
+                           <button class ='button1' type= "submit">Insert</button>
                        </td>
 
                        <td>
-                           <a href="landingPage.php" ><button class= 'butten3' type= "button">Home</button></a>
+                           <a href="landingPage.php" ><button class= 'button3' type= "button">Home</button></a>
                        <td>
                    </tr>
                </table>

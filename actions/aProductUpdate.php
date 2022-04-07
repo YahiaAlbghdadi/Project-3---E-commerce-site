@@ -60,7 +60,7 @@ if (isset($_POST["submit" ])) {
     
 </head>
 <body>
-    <div class ="container">
+    <div class ="container1">
     <div class="<?=$class; ?>"  role="alert">
         <p><?=($message) ?? ''; ?></p>
             <p><?=($uploadError) ?? ''; ?></p>       
