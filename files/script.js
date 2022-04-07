@@ -34,3 +34,13 @@ jQuery(document).ready(function() {
         }
     });
 });
+
+$(".remove").click(function() {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'info',
+        title: ' Item has been removed from your shopping cart',
+        showConfirmButton: false,
+        timer: 1500
+    })
+})

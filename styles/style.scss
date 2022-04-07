@@ -200,33 +200,9 @@ canvas {
 }
 
 .cart .remove:hover {
-    text-decoration: underline;
+    font-weight: 600;
 }
 
-// .plus-minus-input {
-//     align-items: center;
-//     .input-group-field {
-//         text-align: center;
-//         margin-left: 0.5rem;
-//         margin-right: 0.5rem;
-//         padding: 1rem;
-//         &::-webkit-inner-spin-button,
-//          ::-webkit-outer-spin-button {
-//             appearance: none;
-//         }
-//     }
-//     .input-group-button {
-//         .circle {
-//             border-radius: 50%;
-//             padding: 0.25em 0.8em;
-//         }
-//     }
-// }
-// .input-group-field {
-//     max-width: 4rem;
-//     max-height: 2rem;
-//     ;
-// }
 .qttyInput {
     max-width: 1.7rem;
     max-height: 1.5rem;
@@ -236,6 +212,23 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+#checkoutBtn {
+    padding: 10px;
+    border: 4px solid snow;
+    border-radius: 8px;
+    background-color: $color1;
+    color: $color2;
+    font-weight: 700;
+}
+
+#checkoutBtn:hover {
+    padding: 13px;
+}
+
+.remove {
+    color: $color3 !important;
 }
 
 //cart style
