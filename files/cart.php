@@ -104,6 +104,13 @@ $total_price += ($product["price"]*$product["quantity"]);
 <strong>TOTAL: <?php echo "$".$total_price; ?></strong>
 </td>
 </tr>
+<tr>
+    <td colspan="5" align="right">    
+        <form method="post" action="orders.php" class="">
+            <button id="checkoutBtn">checkout</button>
+        </form>
+    </td>
+</tr>
 </tbody>
 </table>		
   <?php
@@ -113,14 +120,8 @@ $total_price += ($product["price"]*$product["quantity"]);
 ?>
 </div>
 
-<div style="clear:both;"></div>
-
-<div class="message_box" style="margin:10px 0px;">
-<?php echo $status; ?>
-
-</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="script.js"></script>
 </body>
 </html>
