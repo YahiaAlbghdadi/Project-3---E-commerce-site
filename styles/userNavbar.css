@@ -21,23 +21,19 @@
     transition: all .2s cubic-bezier(.37, 1.14, .26, 1.24);
 }
 
-*::selection {
+
+/* *::selection {
     background: #abb4b6;
     color: #fff;
-}
-
-
-/* html {
-    font-size: 62.5%;
-    overflow-x: hidden;
 } */
 
 header {
-    margin-bottom: 40px;
+    margin-bottom: 100px;
     font-family: 'Open Sans', sans-serif;
 }
 
-.btn {
+
+/* .btn {
     height: 4rem;
     width: 14rem;
     background: var(--blue);
@@ -51,11 +47,11 @@ header {
 .btn:hover {
     letter-spacing: .2rem;
     opacity: .8;
-}
+} */
 
 .heading {
     padding-top: 7rem;
-    width: 95%;
+    width: 100%;
     border-bottom: .2rem solid rgba(0, 0, 0, .3);
     margin: 0 auto;
 }
@@ -74,7 +70,6 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    /* height: 100%; */
     height: 70px;
     background: #1d355728;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -86,10 +81,9 @@ nav .navbar {
     /* max-width: 1250px; */
     width: 100%;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space;
-    margin: auto;
-    /* background: red; */
+    /* margin: auto; */
     padding: 0 30px;
     margin-bottom: 100px;
 }
@@ -131,7 +125,7 @@ nav .navbar .links li a {
     height: 100%;
     text-decoration: none;
     white-space: nowrap;
-    color: rgb(3, 3, 3);
+    color: rgb(240, 227, 227);
     font-size: 15px;
     font-weight: 500;
     white-space: nowrap;

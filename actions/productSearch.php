@@ -32,7 +32,7 @@ if(!$_GET){
       </div>
       <div class='card-body'>
           <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
-          <p class='card-text'>Price 1080 €</p>
+          <p class='card-text'>Price: {$row['price']} €</p>
           <div class='multi-button'>
               <button><a class='updt' href='../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
               <button><a class='del' href='../files/productDelete.php?id={$row['id']}'>DELETE</a></button>
@@ -69,11 +69,11 @@ if(!$_GET){
       </div>
       <div class='card-body'>
           <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
-          <p class='card-text'>Price 1080 €</p>
+          <p class='card-text'>Price: {$row['price']} €</p>
           <div class='multi-button'>
-              <button><a class='updt' href='../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
-              <button><a class='del' href='../files/productDelete.php?id={$row['id']}'>DELETE</a></button>
-              <button><a class='tail' href='../files/productDetails.php?id={$row['id']}'>DETAILS</a></button>
+              <button class='updt'><a href='../files/productUpdate.php?id={$row['id']}'>EDITE</a></button>
+              <button class='del'><a href='../files/productDelete.php?id={$row['id']}'>DELETE</a></button>
+              <button class='tail'><a href='../files/productDetails.php?id={$row['id']}'>DETAILS</a></button>
           </div>
             </form>
       </div>

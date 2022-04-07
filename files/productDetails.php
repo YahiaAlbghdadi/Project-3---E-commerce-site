@@ -6,7 +6,7 @@
         session_start();
     }
     require_once "../actions/connection.php";
-    require_once "../compos/adminNavbar.php";
+    
 
     if($_GET){
         $Id = $_GET['id'];
@@ -27,57 +27,54 @@
 <!DOCTYPE html>
 <html lang="en" >
    <head>
-       <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-       <?php require_once '../compos/bootstrap.php'?>
-       <style><?php include "../styles/product.css"; ?></style>
-       <title>Product Detail</title>
+        <title>Product Detail</title>
+        <?php require_once '../compos/bootstrap.php'?>
+        <?php require_once "../compos/adminNavbar.php";?>
+        <style><?php include "../styles/product.css" ?></style>
+       
    </head>
    <body>
    <div class="abovtit">
-      <h1>Detail <?= $name ?></h1> 
+      <h1>Detail <?= $name ?> <?= $brand ?></h1> 
      </div>
-   <div class="container  p-5">
-   <div class="w-75 center">
-            <!-- <h2>Detail <?= $name ?></h2>        -->
-            <img class='img-thumbnail productImage'  src='../images/<?= $rows['image'] ?>' alt="">
-            <form action="../actions/aProductUpdate.php" method="post" enctype="multipart/form-data">
-        </div>
+   <div class="container">
+        
+        <img class='w-25  img-thumbnail '   src='../images/<?= $rows['image'] ?>' alt="">
+        
 
-           <table class="center w-75" >
+        <table class="center w-50" >
 
-               <tr>
-                   <th>Name</th>
-                   <td><input readonly  class="form-control"  type="text"  name ="name" placeholder = "<?=$name?>" /></td>
-               </tr>
-               <tr>
-                   <th>Brand</th>
-                   <td><input readonly class="form-control"  type="text"  name ="brand" placeholder = "<?=$brand?>" /></td>
-               </tr>
+            <tr>
+                <th>Name</th>
+                <td><input readonly  class="form-control"  type="text"  name ="name" placeholder = "<?=$name?>" /></td>
+            </tr>
+            <tr>
+                <th>Brand</th>
+                <td><input readonly class="form-control"  type="text"  name ="brand" placeholder = "<?=$brand?>" /></td>
+            </tr>
 
-               <tr>
-               <tr>
-                   <th>Price</th>
-                    <td><input readonly class= "form-control " type ="text"  name="price"  placeholder= "<?=$price?>" /></td>
-               </tr>
-               <tr>
-                   <th>Delivery Date</th>
-                    <td><input readonly class= "form-control" type ="text"  name="deliveryDate"  placeholder= "<?=$deliveryDate?>"  /></td>
-               </tr>
+            <tr>
+            <tr>
+                <th>Price</th>
+                <td><input readonly class= "form-control " type ="text"  name="price"  placeholder= "<?=$price?>" /></td>
+            </tr>
+            <tr>
+                <th>Delivery Date</th>
+                <td><input readonly class= "form-control" type ="text"  name="deliveryDate"  placeholder= "<?=$deliveryDate?>"  /></td>
+            </tr>
 
-               <tr>
-                   <th>Image</th>
-                    <td><input readonly  class= "form-control"  type ="file" placeholder="<?=$image?>"  name = "image"  /></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a   href="productUpdate.php?id=<?=$Id?>"   class = "butten1"   type = "button"> Edit Product </a>
-                    </td>
-                    <td>
-                        <a href="landingPage.php"><button class = "butten3" type = "button"> Back </button></a>
-                    </td>
-                </tr>
-            </table>
+        
+            <tr>
+                <td>
+                    <a   href="productUpdate.php?id=<?=$Id?>"   class = "button1"   type = "button"> Edit Product </a>
+                </td>
+                <td>
+                    <a href="landingPage.php"><button class = "button3" type = "button"> Back </button></a>
+                </td>
+            </tr>
+        </table>
     </div>
    </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
       require_once "../actions/connection.php";
-      require_once "../compos/adminNavbar.php";
+      
       
 
 if($_GET['id']) {
@@ -25,7 +25,9 @@ if($_GET['id']) {
       <meta charset="UTF-8">
       <meta name="viewport"   content="width=device-width, initial-scale=1.0">
       <title>Delete Product</title>
+      
       <?php require_once '../compos/bootstrap.php' ?>
+      <?php require_once "../compos/adminNavbar.php"?>
       <style><?php include "../styles/product.css"; ?></style>
       </head>
       <body>
@@ -33,28 +35,33 @@ if($_GET['id']) {
             <p><?= ($message) ?? ''; ?></p>           
       </div>
       <div class="abovtit">
-            <h1>Do you really want to delete this User?</h1 >
-     </div>
-      
-      <fieldset class="container w-50 center dlt">
-      
-            <legend class='h2 mb-3' >Delete request <img class= 'img-thumbnail w-75 center productImage '  src='../images/<?= $fetchedResult["image"] ?>' alt="<?= $name."". $brand ?>"></legend >
-            <div>
-               <h5>You have selected the data below: </h5>
+            <h1>Do you really want to delete this Product?</h1 > <hr>
             
-                  <table  class="table w-75 mt-3">
+     </div>
+     
+      
+      <fieldset class="container w-75 center pdelete">
+      
+            <img class= 'img-thumbnail w-25 center productImage '  src='../images/<?= $fetchedResult["image"] ?>' alt="<?= $name."". $brand ?>">
+            <div class="pdlt">
+                  <div class="abovtitdlt">
+                        <h1>Delete request</h1>  
+                  </div>
+                  <h5>You have selected the data below: </h5>
+            
+                  <table  class="table w-25 mt-3">
                         <tr>
                               <td>Name: <?="$name "?><?= $brand?></td>
                               
                         </tr>
                   </table>  
-                   <div class="formdel">
+                        <div class="formdel">
                               <!-- <h3 class="mb-4" >Do you really want to delete this User?</h3 > -->
                         <form action="../actions/aProductDelete.php"  method="post">
                               <input type="hidden" name ="id" value= "<?= $id ?>" />
                               <input type= "hidden" name= "image" value= "<?= $image ?>" />
-                              <button class="butten2"  type="submit"> Yes, delete this Product! </button  >
-                              <a  href="landingPage.php" ><button  class="butten3"  type= "button">No, go back!</button></a>
+                              <button class="button2"  type="submit"> Yes, delete this Product! </button  >
+                              <a  href="landingPage.php" ><button  class="button3"  type= "button">No, go back!</button></a>
                         </form > 
                   </div>
             </div>

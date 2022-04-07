@@ -8,6 +8,36 @@ body {
     background-color: #2880b8;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container .productImage {
+    margin: 1rem;
+    height: 100%;
+    width: 100%;
+    margin-top: 3rem;
+    background-color: #2880b8;
+    border: none;
+}
+
+.container form {
+    margin: 1rem;
+    background-color: rgb(13, 144, 200);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.container form table tr td {
+    border: none;
+}
+
+.container form table tr th {
+    border: none;
+}
+
 
 /* -------- Product Create start  -------- */
 
@@ -36,7 +66,8 @@ fieldset {
 
 /* -------- Product Update start  -------- */
 
-.butten1 {
+
+/* .butten1 {
     transition: all .3s ease;
     color: #131314;
     border: 1px solid #0eac0e;
@@ -45,7 +76,7 @@ fieldset {
     text-align: center;
     line-height: 1;
     font-size: 14px;
-    /* background-color: transparent; */
+    background-color: transparent;
     background-color: rgb(23, 136, 89);
     padding: 7px;
     outline: none;
@@ -55,48 +86,60 @@ fieldset {
 .butten1:hover {
     color: #f1f2f8;
     background-color: rgb(7, 197, 45);
-}
+} */
 
-.butten2 {
-    transition: all .3s ease;
-    color: #131314;
-    border: 1px solid #b91111;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1;
-    font-size: 14px;
-    /* background-color: transparent; */
-    background-color: rgb(173, 44, 44);
-    padding: 7px;
+.button1 {
+    height: 30px;
+    width: 90px;
+    background-color: green;
+    font-size: 0.9rem;
+    border: none;
+    margin: -1px;
+    padding: 0;
+    stroke: black;
     outline: none;
-    border-radius: 4px;
 }
 
-.butten2:hover {
-    color: #f1f2f8;
-    background-color: rgb(255, 30, 0);
+.button1:hover {
+    cursor: pointer;
+    filter: drop-shadow(3px 2px 5px rgba(0, 0, 0, 0.9));
+    background-color: rgb(98, 242, 98);
 }
 
-.butten3 {
-    transition: all .3s ease;
-    color: #131314;
-    border: 1px solid #f8990a;
-    background-color: rgb(235, 130, 60);
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1;
-    font-size: 14px;
-    /* background-color: transparent; */
-    padding: 7px;
+.button2 {
+    height: 30px;
+    width: 180px;
+    background-color: rgb(210, 12, 12);
+    font-size: 0.9rem;
+    border: none;
+    margin: -1px;
+    padding: 0;
+    stroke: black;
     outline: none;
-    border-radius: 5px;
 }
 
-.butten3:hover {
-    color: #f1f2f8;
-    background-color: rgb(255, 168, 6);
+.button2:hover {
+    cursor: pointer;
+    filter: drop-shadow(3px 2px 5px rgba(0, 0, 0, 0.9));
+    background-color: rgb(255, 47, 0);
+}
+
+.button3 {
+    height: 30px;
+    width: 90px;
+    background-color: orange;
+    font-size: 0.9rem;
+    border: none;
+    margin: -1px;
+    padding: 0;
+    stroke: black;
+    outline: none;
+}
+
+.button3:hover {
+    cursor: pointer;
+    filter: drop-shadow(3px 2px 5px rgba(0, 0, 0, 0.9));
+    background-color: rgb(250, 238, 8);
 }
 
 
@@ -151,6 +194,17 @@ fieldset {
 
 .abovtit {
     display: flex;
+    justify-content: center;
+}
+
+.abovtitdlt {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pdlt {
+    margin-top: 4rem;
     justify-content: center;
 }
 
