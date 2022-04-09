@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-* {
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+s * {
     margin: 0px;
     padding: 0px;
 }
@@ -9,7 +11,7 @@ html {
 }
 
 body {
-    background-color: #2cbae9;
+    background-color: #e2ece5ca;
     overflow-x: hidden;
 }
 
@@ -41,11 +43,12 @@ body {
 }
 
 .card {
-    background-color: #2880b8;
+    background-color: #b94c55;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    border: 1px solid #00d9ff;
+    border: 3px solid goldenrod;
     /* font-family: 'Eczar', serif; */
+    /* font-family: 'Quicksand', sans-serif !important; */
     margin: 10px;
     padding-left: 0px;
     padding-right: 0px;
