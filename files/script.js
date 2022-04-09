@@ -44,3 +44,13 @@ $(".remove").click(function() {
         timer: 1500
     })
 })
+
+$("#checkoutBtn").click(function() {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your order has been placed successfuly',
+        showConfirmButton: false,
+        timer: 1500
+    })
+})
