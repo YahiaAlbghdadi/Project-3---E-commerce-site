@@ -6,6 +6,10 @@
     }
     if($_SESSION['shopping_cart']!=""){
         $cart = $_SESSION["shopping_cart"];
+        $_SESSION['addedIds'] = array();
+        foreach($_SESSION["shopping_cart"] as $key => $value){
+            array_push($_SESSION['addedIds'], $value["id"]);
+        }
     }   
     $currentArray = "";
     if($_POST){
@@ -25,6 +29,22 @@
            $currentArray['quantity'] = $_POST['quantity'];
         }
   	
+}
+if(isset($_POST['action']) && $_POST['action']=="checkout"){
+        // $userId = $_SESSION['user'];
+        $productsIds = $_SESSION['addedIds'];
+        $currentDate = date('Y-m-d');
+        
+        // $sql = "INSERT INTO orders( orderPlaceDate, fkUser, fkProduct) VALUES ('$currentDate','$userId','$productsIds')";
+        if($result = $conn->query($sql)){
+            unset($_SESSION['shopping_cart']);
+            $status = "<div class='alert alert-success' role='alert'>
+            Your Order has been added to the orders Queue!
+          </div>";
+        }else{
+            $status = "there is an Error in your SQL statement";
+        }
+        
 }
 ?>
  
@@ -107,6 +127,7 @@ $total_price += ($product["price"]*$product["quantity"]);
 <tr>
     <td colspan="5" align="right">    
         <form method="post" action="orders.php" class="">
+            <input type="hidden" name="action" value="checkout">
             <button id="checkoutBtn">checkout</button>
         </form>
     </td>
