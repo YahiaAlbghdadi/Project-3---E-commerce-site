@@ -4,6 +4,8 @@
     if(session_id() == '') {
         session_start();
     }
+    $status="";
+    $class = "";
     if($_SESSION['shopping_cart']!=""){
         $cart = $_SESSION["shopping_cart"];
         $_SESSION['addedIds'] = array();
@@ -16,11 +18,10 @@
       $id = $_POST['id'];
       $currentArray = $cart[array_search("$id", array_column($cart, 'id'))];
     }
-    $status="";
+   
     if (isset($_POST['action']) && $_POST['action']=="remove"){
         unset($currentArray);
-        $status = "<div class='box' style='color:red;'>
-        Product is removed from your cart!</div>";    		
+        	
 }
 
 
@@ -38,11 +39,13 @@ if(isset($_POST['action']) && $_POST['action']=="checkout"){
         // $sql = "INSERT INTO orders( orderPlaceDate, fkUser, fkProduct) VALUES ('$currentDate','$userId','$productsIds')";
         if($result = $conn->query($sql)){
             unset($_SESSION['shopping_cart']);
-            $status = "<div class='alert alert-success' role='alert'>
+            $status = "
             Your Order has been added to the orders Queue!
-          </div>";
+          ";
+          $class = "success";
         }else{
             $status = "there is an Error in your SQL statement";
+            $class = "danger";
         }
         
 }
@@ -56,14 +59,14 @@ if(isset($_POST['action']) && $_POST['action']=="checkout"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?php require_once "../compos/bootstrap.php" ?>
-    <?php require_once "../compos/userNavbar.php" ?>
 
     <link rel="stylesheet" href="../styles/style.css">
     
 
 </head>
 <body>
-    
+<?php require_once "../compos/userNavbar.php" ?>
+   
 
 
     <div class="cart container">
@@ -73,7 +76,11 @@ if(isset($cart)){
 ?>	
 <table class="table">
 <tbody>
-<tr>
+<div class="alert alert-<?=$class;?>" role="alert">
+               <p><?php echo ($status) ?? ''; ?></p>
+                
+           </div >
+           <tr>
 <td></td>
 <td>ITEM NAME</td>
 <td>QUANTITY</td>
@@ -91,7 +98,7 @@ foreach ($cart as $product){
 <form method='post' action=''>
 <input type='hidden' name='id' value="<?= $product["id"]; ?>" />
 <input type='hidden' name='action' value="remove" />
-<button type='submit' class='remove'>Remove Item</button>
+<button type='submit' onclick="myAlert()" class='remove'>Remove Item</button>
 </form>
 </td>
 <td>
@@ -126,7 +133,7 @@ $total_price += ($product["price"]*$product["quantity"]);
 </tr>
 <tr>
     <td colspan="5" align="right">    
-        <form method="post" action="orders.php" class="">
+        <form method="post" action="" class="">
             <input type="hidden" name="action" value="checkout">
             <button id="checkoutBtn">checkout</button>
         </form>

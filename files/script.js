@@ -35,15 +35,15 @@ jQuery(document).ready(function() {
     });
 });
 
-$(".remove").click(function() {
+function myAlert() {
     Swal.fire({
         position: 'top-end',
         icon: 'info',
         title: ' Item has been removed from your shopping cart',
-        showConfirmButton: false,
+        showConfirmButton: true,
         timer: 1500
     })
-})
+}
 
 $("#checkoutBtn").click(function() {
     Swal.fire({
