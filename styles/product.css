@@ -142,6 +142,10 @@ fieldset {
     background-color: rgb(250, 238, 8);
 }
 
+.productImage {
+    background-color: #0096e681;
+}
+
 
 /* .createbtn {
     display: flex;

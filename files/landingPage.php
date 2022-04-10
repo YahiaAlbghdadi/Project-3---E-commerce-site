@@ -91,9 +91,6 @@ mysqli_close($conn)
 
 <body>
 
-
-
-
     <div  class="parent row p-5 mb-2  " id="foundUser">
         <?=$products?>
     </div>

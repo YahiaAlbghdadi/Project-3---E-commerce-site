@@ -58,13 +58,13 @@
 </head>
 <body>
     <div  class="container1">
-        <div class="mt-3 mb-3" >
+        <div class="mt-3 mb-3 text-center">
             <h1>Create request response</h1>
         </div>
-            <div class="alert alert-<?=$class;?>" role="alert">
+        <div class="alert alert-<?=$class;?>" role="alert">
             <p><?php echo ($message) ?? ''; ?></p>
-                <p><?php echo ($uploadError) ?? ''; ?></p>
-                <a href='../files/landingPage.php'><button class="btn btn-primary"  type='button'>Home</button ></a>
+            <p><?php echo ($uploadError) ?? ''; ?></p>
+            <a href='../files/landingPage.php'><button class="btn btn-primary"  type='button'>Home</button ></a>
         </div >
     </div>
 </body>
