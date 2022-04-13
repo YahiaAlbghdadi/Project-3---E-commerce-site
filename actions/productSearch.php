@@ -24,7 +24,7 @@ if(!$_GET){
               </a>
               <ul class='product-links'>
                 <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag cartButton'></i> Add to cart</button></li>
-                <li><button><a href='#'><i class='fa fa-search'></i></a> Quick View </button></li>
+                <li><button><a href='../files/productDetails.php?id={$row['id']}'><i class='fa fa-search'></i></a> Quick View </button></li>
                 
               </ul>
           </div>
@@ -32,7 +32,7 @@ if(!$_GET){
       <div class='card-body'>
           <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
           <p class='card-text'>Price: {$row['price']} €</p>
-          
+         
            
       </div>
   </div>
@@ -59,7 +59,7 @@ if(!$_GET){
               </a>
               <ul class='product-links'>
                 <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag cartButton'></i> Add to cart</button></li>
-                <li><button><a href='#'><i class='fa fa-search'></i></a> Quick View </button></li>
+                <li><button><a href='../files/productDetails.php?id={$row['id']}'><i class='fa fa-search'></i></a> Quick View </button></li>
                 
               </ul>
           </div>
