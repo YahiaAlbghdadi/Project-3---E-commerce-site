@@ -3,11 +3,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once "bootstrap.php" ?>
-    <style><?php include "../styles/footer.css"; ?></style>
+    
 
     <!-- font awesome cdn link  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <?php require_once "bootstrap.php" ?>
+    <style><?php include "../styles/footer.css"; ?></style>
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
 
     <title>footer</title>
@@ -95,14 +98,7 @@
                 </div>
 
                 <div class=" col-sm-4 col-md  col-12 col">
-
-                    <img src="/images/footerlogo4.png" style="width: 250px;" alt="">
-                    <!-- <h4 class="headin5_amrc col_white_amrc pt2">Follow us</h4>
-                    <ul class="footer_ul2_amrc">
-                        <li><a href="#"><i class="fab fa-youtube fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing.<a href="#">https://www.lipsum.com/</a></p></li>
-                        <li><a href="#"><i class="fab fa-facebook-f fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing.<a href="#">https://www.lipsum.com/</a></p></li>
-                        <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing.<a href="#">https://www.lipsum.com/</a></p></li>
-                    </ul> -->
+                    <img src="/images/footerlogo.png" style="width: 300px;" alt="">
                 </div>
             </div>
         </div>
@@ -112,23 +108,32 @@
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">ABOUT US</a></li>
                 <li><a href="#">CONTACT US</a></li>
-                <li><a href="#">ALL PRODUCTS</a></li>
-                
-            </ul>
+                <li><a href="#">ALL PRODUCTS</a></li> 
+            </ul> 
+        </div>
         
+        <div class="iconn">
+            <img src="../images/pay.png" style="width: 220px;"  alt="">
             <p class="text-center">Copyright @2022 | Designed by Full-Stack Team - Code Factory, Wien Austria </p>
-
-            <!-- <div class="footer-social-icons">
+            <div class="footer-social-icons">
                 <ul class="social-icons">
-                    <li><a href="#" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" class="social-icon"> <i class="fa fa-rss"></i></a></li>
-                    <li><a href="#" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#" class="social-icon"> <i class="fa fa-github"></i></a></li>
+                    <li>
+                        <a href="" class="social-icon"> <i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="" class="social-icon"> <i class="fa fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="" class="social-icon"> <i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="" class="social-icon"> <i class="fa fa-telegram"></i></a>
+                    </li>
+                    <li>
+                        <a href="" class="social-icon"> <i class="fa fa-rss"></i></a>
+                    </li>
                 </ul>
-            </div> -->
-           
+            </div>
         </div>
     </footer>
 </body>
