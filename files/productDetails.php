@@ -41,7 +41,7 @@
      </div>
    <div class="container">
         
-        <img class='w-25  img-thumbnail '   src='../images/<?= $rows['image'] ?>' alt="">
+        <img class='w-25  img-thumbnail productImage '   src='../images/<?= $rows['image'] ?>' alt="">
         
 
         <table class="center w-50" >

@@ -15,10 +15,14 @@ body {
     overflow-x: hidden;
 }
 
-
-/* .parent {
-    align-items: center;
-} */
+.nores {
+    padding: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    background-color: #2880b8;
+    text-align: center;
+    color: darkorange;
+}
 
 .row {
     margin: auto;
@@ -250,7 +254,7 @@ img:hover {
 }
 
 .multi-button .tail:hover {
-    background-color: rgb(67, 67, 238);
+    background-color: rgb(57, 57, 207);
 }
 
 .multi-button :nth-child(1) :hover {
@@ -278,7 +282,7 @@ img:hover {
 
 .multi-button button a {
     text-decoration: none;
-    color: #1d3557;
+    color: #000000;
 }
 
 
