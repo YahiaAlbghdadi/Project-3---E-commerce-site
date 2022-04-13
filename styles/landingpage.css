@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap'); */
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
-s * {
+* {
     margin: 0px;
     padding: 0px;
 }
@@ -35,16 +35,6 @@ body {
 
 
 /* -------- Cart Start  -------- */
-
-
-/* .parent {
-    margin-top: 100px;
-} */
-
-.row {
-    margin: auto;
-    padding: auto;
-}
 
 .card {
     background-color: #b94c55;
@@ -104,21 +94,6 @@ img:hover {
 .product-grid .product-image:hover img {
     transform: translate(10px, -10px);
 }
-
-
-/* .product-grid .product-sale-label {
-    color: #fff;
-    background: #1abc9c;
-    font-size: 13px;
-    text-transform: capitalize;
-    line-height: 35px;
-    width: 55px;
-    height: 35px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    animation: bg-animate 5s infinite linear;
-} */
 
 .product-grid .product-links {
     padding: 0;
@@ -226,63 +201,6 @@ img:hover {
     .product-grid {
         margin: 0 0 30px;
     }
-}
-
-.multi-button {
-    text-align: center;
-    filter: drop-shadow(3px 10px 15px rgba(0, 0, 0, 0.45));
-}
-
-.multi-button button {
-    height: 30px;
-    width: 90px;
-    background-color: #71c0d6;
-    font-size: 0.9rem;
-    border: none;
-    margin: -1px;
-    padding: 0;
-    stroke: black;
-    outline: none;
-}
-
-.multi-button .updt:hover {
-    background-color: orange;
-}
-
-.multi-button .del:hover {
-    background-color: orangered;
-}
-
-.multi-button .tail:hover {
-    background-color: rgb(57, 57, 207);
-}
-
-.multi-button :nth-child(1) :hover {
-    color: rgb(252, 254, 253);
-}
-
-.multi-button :nth-child(2) :hover {
-    color: rgb(255, 255, 255);
-}
-
-.multi-button :nth-child(3) :hover {
-    color: rgb(255, 255, 255);
-}
-
-.multi-button button:hover {
-    cursor: pointer;
-    filter: drop-shadow(3px 5px 7px rgba(0, 0, 0, 0.9));
-    /* border: 3px solid rgb(0, 213, 255); */
-}
-
-.multi-button button:active {
-    filter: none;
-    transform: scale(.95);
-}
-
-.multi-button button a {
-    text-decoration: none;
-    color: #000000;
 }
 
 
