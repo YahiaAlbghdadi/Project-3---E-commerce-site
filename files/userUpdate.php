@@ -2,10 +2,21 @@
 
 require_once "../actions/connection.php";
 require_once "../actions/userFileUpload.php";
-
+    // if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+//     header("location: login.php");
+// }
+if(!isset($_GET)){
+    header("location: error.php");
+  }
+  
 
 if ($_GET) {
     $id = $_GET['id'];
+    if(isset($_SESSION['user'])){
+        if($id != $_SESSION['user']){
+          header("location: error.php");
+        }
+      }
     $sql = "SELECT * FROM users left join addresses on users.fkAddress = addresses.id WHERE users.id = {$id}";
     $result = $conn->query($sql);
     $rows = $result->fetch_assoc();
