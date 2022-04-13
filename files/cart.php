@@ -143,10 +143,10 @@ value="5" <?php if($product["quantity"]==5) echo "selected";?>>5</option>
 </form>
 </td>
 <td><?php echo "$".$product["price"]; ?></td>
-<td><?php echo "$".$product["price"]*$product["quantity"]; ?></td>
+<td><?php echo "$".intval($product["price"])*intval($product["quantity"]); ?></td>
 </tr>
 <?php
-$total_price += ($product["price"]*$product["quantity"]);
+$total_price += intval($product["price"])*intval($product["quantity"]);
 $i++;
 }
 ?>
