@@ -2,9 +2,17 @@
 
 require_once "../actions/connection.php";
 
-if(session_id() == '') {
-    session_start();
-}
+// if(session_id() == '') {
+//     session_start();
+// }
+
+// if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+//     header("location: login.php");
+// }
+// if(isset($_SESSION['user'])){
+//     header("location: login.php");
+// }
+
 
 
 $ordersSql = "SELECT * FROM orders";

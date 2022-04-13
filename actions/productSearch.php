@@ -16,15 +16,14 @@ if(!$_GET){
     $products = "";
     foreach( $rows as $row){
       $products .= "<div class='card' style='width: 20rem;'>
-      <form method='post' action=''>
-      <input type='hidden' name='id' value='{$row['id']}' />      
+      <input type='hidden' name='id' id='productId' value='{$row['id']}' />      
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
                   <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
               </a>
               <ul class='product-links'>
-                <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag'></i> Add to cart</button></li>
+                <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag cartButton'></i> Add to cart</button></li>
                 <li><button><a href='#'><i class='fa fa-search'></i></a> Quick View </button></li>
                 
               </ul>
@@ -34,9 +33,10 @@ if(!$_GET){
           <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
           <p class='card-text'>Price: {$row['price']} €</p>
           
-            </form>
+           
       </div>
-  </div>";
+  </div>
+  ";
   } 
 }else{
     $products =  $_GET["products"];
@@ -49,15 +49,14 @@ if(!$_GET){
 
     foreach($rows as $row){
       echo "<div class='card' style='width: 20rem;'>
-      <form method='post' action=''>
-      <input type='hidden' name='id' value='{$row['id']}' />      
+      <input type='hidden' id='productId' name='id' value='{$row['id']}' />      
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
                   <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
               </a>
               <ul class='product-links'>
-                <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag'></i> Add to cart</button></li>
+                <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag cartButton'></i> Add to cart</button></li>
                 <li><button><a href='#'><i class='fa fa-search'></i></a> Quick View </button></li>
                 
               </ul>
@@ -67,7 +66,7 @@ if(!$_GET){
           <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
           <p class='card-text'>Price: {$row['price']} €</p>
           
-            </form>
+           
       </div>
   </div>";
 

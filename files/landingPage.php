@@ -82,10 +82,12 @@ mysqli_close($conn)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <?php require_once "../compos/bootstrap.php" ?>
     <?php require_once "../compos/userNavbar.php" ?>
     <link rel="stylesheet" href="../styles/landingpage.css">
     <title>Home Page</title>
+
 </head>
 
 
@@ -94,10 +96,10 @@ mysqli_close($conn)
 
 
 
-    <div  class="parent row p-5 mb-2  " id="foundUser">
+    <form method="POST" class="parent row p-5 mb-2  " id="foundUser">
         <?=$products?>
-    </div>
-
+    </form>
+    
 <script>
 function loadDoc() {
 let xhttp = new XMLHttpRequest();
@@ -115,10 +117,12 @@ xhttp.send();
 loadDoc();
 
 document.getElementById("products").addEventListener("keyup",loadDoc);
+  
 </script> 
 <?php require_once "../compos/footer.php" ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
- 
+
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>

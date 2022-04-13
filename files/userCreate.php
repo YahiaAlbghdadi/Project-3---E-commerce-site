@@ -1,16 +1,15 @@
 <?php
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    
-    // if (!isset($_SESSION['adm' ]) && !isset($_SESSION['user'])) {
-    //     header("Location: login.php" );
-    //      exit;
-    //  }
-    //  if ( isset($_SESSION["user"])) {
-    //     header("Location: landingPage.php");
-    //     exit; 
-    //  }
+    // if(session_id() == '') {
+    //     session_start();
+    // }
+
+    // if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+    //     header("location: login.php");
+    // }
+    // if(isset($_SESSION['user'])){
+    //     header("location: login.php");
+    // }
+
     require_once "../compos/adminNavbar.php";
 ?>
 

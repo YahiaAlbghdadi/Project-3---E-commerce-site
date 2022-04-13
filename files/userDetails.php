@@ -1,13 +1,22 @@
 <?php
     
     require_once "../actions/connection.php";
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    
+    // if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+//     header("location: login.php");
+// }
+if(!isset($_GET)){
+    header("location: error.php");
+  }
+      
 
     if($_GET){
         $userId = $_GET['id'];
+        if(isset($_SESSION['user'])){
+            if($id != $_SESSION['user']){
+              header("location: error.php");
+            }
+          }
+      
         $sql = "SELECT * FROM users LEFT JOIN addresses on users.fkAddress = addresses.id where users.id = {$userId}";
         $result = $conn->query($sql);
         $rows = $result->fetch_assoc();

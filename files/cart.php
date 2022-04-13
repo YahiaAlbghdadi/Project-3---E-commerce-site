@@ -4,6 +4,12 @@
     if(session_id() == '') {
         session_start();
     }
+    // var_dump($_SESSION["shopping_cart"][0]["quantity"]);
+    // exit;
+    // if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+    //     header("location: login.php");
+    // }
+    
     $status="";
     $class = "";
     if($_SESSION['shopping_cart']!=""){
@@ -13,22 +19,34 @@
             array_push($_SESSION['addedIds'], $value["id"]);
         }
     }   
+    
     $currentArray = "";
-    if($_POST){
-      $id = $_POST['id'];
-      $currentArray = $cart[array_search("$id", array_column($cart, 'id'))];
-    }
+    // if($_POST){
+     
+    // //   var_dump($_SESSION["shopping_cart"]);
+    // //   exit;
+    // }
    
     if (isset($_POST['action']) && $_POST['action']=="remove"){
-        unset($currentArray);
+        // var_dump($_POST["action"]);
+        // exit;
+        $id = $_POST['id'];
+        $currentArray = $cart[array_search("$id", array_column($cart, 'id'))];
+        $index = $_POST["index"];
+        array_splice($_SESSION["shopping_cart"],$index );
+        header("Location: cart.php");
+        // unset($currentArray);
         	
-}
+    }
 
 
     if (isset($_POST['action']) && $_POST['action']=="change"){
-        if($currentArray['id'] == $_POST["id"]){
-           $currentArray['quantity'] = $_POST['quantity'];
-        }
+        // if($_SESSION["shopping_cart"]) == $_POST["index"]){
+            $index = $_POST["index"];
+            $qtty = $_POST["quantity"];
+           $_SESSION["shopping_cart"][$index]["quantity"] = $qtty;
+           
+        // }
   	
 }
 if(isset($_POST['action']) && $_POST['action']=="checkout"){
@@ -71,7 +89,7 @@ if(isset($_POST['action']) && $_POST['action']=="checkout"){
 
     <div class="cart container">
 <?php
-if(isset($cart)){
+if(isset($_SESSION["shopping_cart"]) && count($_SESSION["shopping_cart"]) > 0){
     $total_price = 0;
 ?>	
 <table class="table">
@@ -87,8 +105,9 @@ if(isset($cart)){
 <td>UNIT PRICE</td>
 <td>ITEMS TOTAL</td>
 </tr>	
-<?php		
-foreach ($cart as $product){
+<?php	
+$i = 0;	
+foreach ($_SESSION["shopping_cart"] as $product){
 ?>
 <tr>
 <td>
@@ -97,6 +116,8 @@ foreach ($cart as $product){
 <td><?php echo $product["name"]; ?><br />
 <form method='post' action=''>
 <input type='hidden' name='id' value="<?= $product["id"]; ?>" />
+<input type='hidden' name='index' value="<?= $i; ?>" />
+
 <input type='hidden' name='action' value="remove" />
 <button type='submit' onclick="myAlert()" class='remove'>Remove Item</button>
 </form>
@@ -104,18 +125,20 @@ foreach ($cart as $product){
 <td>
 <form method='post' action=''>
 <input type='hidden' name='id' value="<?= $product["id"]; ?>" />
+<input type='hidden' name='index' value="<?= $i; ?>" />
+
 <input type='hidden' name='action' value="change" />
 <select name='quantity' class='quantity' onChange="this.form.submit()">
-<option <?php if($product["quantity"]==1) echo "selected";?>
-value="1">1</option>
-<option <?php if($product["quantity"]==2) echo "selected";?>
-value="2">2</option>
-<option <?php if($product["quantity"]==3) echo "selected";?>
-value="3">3</option>
-<option <?php if($product["quantity"]==4) echo "selected";?>
-value="4">4</option>
-<option <?php if($product["quantity"]==5) echo "selected";?>
-value="5">5</option>
+<option  
+value="1" <?php if($product["quantity"]==1) echo "selected";?>>1</option>
+<option 
+value="2" <?php if($product["quantity"]==2) echo "selected";?>>2</option>
+<option 
+value="3" <?php if($product["quantity"]==3) echo "selected";?>>3</option>
+<option 
+ value="4" <?php if($product["quantity"]==4) echo "selected ";?>>4</option>
+<option 
+value="5" <?php if($product["quantity"]==5) echo "selected";?>>5</option>
 </select>
 </form>
 </td>
@@ -124,6 +147,7 @@ value="5">5</option>
 </tr>
 <?php
 $total_price += ($product["price"]*$product["quantity"]);
+$i++;
 }
 ?>
 <tr>

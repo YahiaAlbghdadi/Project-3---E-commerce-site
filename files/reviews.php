@@ -1,6 +1,9 @@
 <?php
 
 require_once "../actions/connection.php";
+// if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+//     header("location: login.php");
+// }
 if($_post){
     $user = $_POST['user'];
     $sql="SELECT * FROM products JOIN orders on orders.id = products.id where fkUser = '$user'";

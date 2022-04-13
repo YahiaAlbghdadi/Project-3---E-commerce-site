@@ -3,10 +3,20 @@
     require_once "../actions/connection.php";
     require_once "../compos/adminNavbar.php";
     
+    // if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+//     header("location: login.php");
+// }
+if(!isset($_GET)){
+  header("location: error.php");
+}
 
 if($_GET['id']) {
-
     $id = $_GET['id'];
+    if(isset($_SESSION['user'])){
+      if($id != $_SESSION['user']){
+        header("location: error.php");
+      }
+    }
     $sql = "SELECT * FROM users WHERE id = {$id}" ;
     $result = mysqli_query($conn, $sql);
     $fetchedResult = mysqli_fetch_assoc($result);
