@@ -20,7 +20,7 @@ if(!$_GET){
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
-                  <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
+                  <img class='pic-1' src='../images/{$row['productImage']}' class='card-img-top' alt='...' height='350'>
               </a>
               <ul class='product-links'>
                 <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag cartButton'></i> Add to cart</button></li>
@@ -55,7 +55,7 @@ if(!$_GET){
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
-                  <img class='pic-1' src='../images/{$row['image']}' class='card-img-top' alt='...' height='350'>
+                  <img class='pic-1' src='../images/{$row['productImage']}' class='card-img-top' alt='...' height='350'>
               </a>
               <ul class='product-links'>
                 <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag cartButton'></i> Add to cart</button></li>

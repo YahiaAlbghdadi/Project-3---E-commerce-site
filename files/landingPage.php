@@ -19,7 +19,7 @@ $cartResult = mysqli_query($conn,"SELECT * FROM products WHERE id='$id'");
 $cartRow = mysqli_fetch_assoc($cartResult);
 $name = $cartRow['name'];
 $price = $cartRow['price'];
-$image = $cartRow['image'];
+$productImage = $cartRow['productImage'];
 $brand = $cartRow['brand'];
 $deliveryDate = $cartRow['deliveryDate'];
 
@@ -30,7 +30,7 @@ $cartArray = array(
     'id'=>$id,
 	'name'=>$name,
 	'price'=>$price,
-    'image'=>$image,
+    'productImage'=>$productImage,
     'brand'=>$brand,
     'deliveryDate'=>$deliveryDate,
 	'quantity'=>1
@@ -71,8 +71,8 @@ if(empty($_SESSION["shopping_cart"])) {
 
 	}
 }
-$_SESSION['shopping_cart'] == $_SESSION['shopping_cart'];
-mysqli_close($conn)
+// $_SESSION['shopping_cart'] == $_SESSION['shopping_cart'];
+// mysqli_close($conn)
 ?>
 
 <!DOCTYPE html>
@@ -87,13 +87,14 @@ mysqli_close($conn)
     <?php require_once "../compos/userNavbar.php" ?>
     <link rel="stylesheet" href="../styles/landingpage.css">
     <title>Home Page</title>
+    
+
 
 </head>
 
 
 <body>
-
-
+    
 
 
     <form method="POST" class="parent row p-5 mb-2  " id="foundUser">

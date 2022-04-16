@@ -111,10 +111,10 @@
                 <li><a href="#">ALL PRODUCTS</a></li> 
             </ul> 
         </div>
-        
+        <p class="text-center">Copyright @2022 | Designed by Full-Stack Team - Code Factory, Wien Austria </p>
         <div class="iconn">
             <img src="../images/pay.png" style="width: 220px;"  alt="">
-            <p class="text-center">Copyright @2022 | Designed by Full-Stack Team - Code Factory, Wien Austria </p>
+            
             <div class="footer-social-icons">
                 <ul class="social-icons">
                     <li>
