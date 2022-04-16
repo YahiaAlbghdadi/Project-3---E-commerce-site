@@ -36,7 +36,6 @@ $cartArray = array(
 	'quantity'=>1
 
 ));
-// array_push(array("id"=>));
 if(empty($_SESSION["shopping_cart"])) {
     
     $_SESSION["shopping_cart"] = $cartArray;
@@ -47,8 +46,6 @@ if(empty($_SESSION["shopping_cart"])) {
         array_push($addedIds, $value["id"]);
     }
     
-    // var_dump($addedIds);
-    // exit;
     if(in_array($id,$addedIds)) {
         echo '<script>';
         echo 'Swal.fire({
@@ -97,16 +94,16 @@ if(empty($_SESSION["shopping_cart"])) {
     
 
 
-    <form method="POST" class="parent row p-5 mb-2  " id="foundUser">
+    <div class='parent row p-5 mb-2  ' id="foundProduct">
         <?=$products?>
-    </form>
+    </div>
     
 <script>
 function loadDoc() {
 let xhttp = new XMLHttpRequest();
 xhttp.onload = function() {
     if (this.status == 200 ) {
-    document.getElementById("foundUser").innerHTML =this.responseText;
+    document.getElementById("foundProduct").innerHTML =this.responseText;
 
     }
 };
