@@ -134,26 +134,20 @@
             <div class="item">
                 <img src="../images/caro2.jpg" alt="">
                 <div class="content">
-                    <!-- <h3>I PHONE</h3> -->
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque.</p> -->
                     <a href="#"><button class="btncar">I PHONE</button></a>
                 </div>
             </div>
 
-            <div class="item">
+            <!-- <div class="item">
                 <img src="../images/caro3.jpg" alt="">
                 <div class="content">
-                    <!-- <h3>xiaume</h3> -->
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque.</p> -->
                     <a href="#"><button class="btncar">HUAWEI</button></a>
                 </div>
-            </div>
+            </div> -->
 
             <div class="item">
                 <img src="../images/caro4.jpg" alt="">
                 <div class="content">
-                    <!-- <h3>LG</h3> -->
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque.</p> -->
                     <a href="#"><button class="btncar">XIAUME   </button></a>
                 </div>
             </div>
@@ -161,36 +155,28 @@
             <div class="item">
                 <img src="../images/caro5.jpg" alt="">
                 <div class="content">
-                    <!-- <h3>COLLECTION</h3> -->
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque.</p> -->
                     <a href="#"><button class="btncar"> LG</button></a>
                 </div>
             </div>
 
 
-            <div class="item">
+            <!-- <div class="item">
                 <img src="../images/caro6.jpg" alt="">
                 <div class="content">
-                    <!-- <h3>xiaume</h3> -->
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque.</p> -->
                     <a href="#"><button class="btncar">COLLECTION</button></a>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="item">
+            <!-- <div class="item">
                 <img src="../images/caro7.jpg" alt="">
                 <div class="content">
-                    <!-- <h3>LG</h3> -->
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque.</p> -->
                     <a href="#"><button class="btncar">I PHONE     </button></a>
                 </div>
-            </div>
+            </div> -->
 
             <div class="item">
                 <img src="../images/caro8.jpg" alt="">
                 <div class="content">
-                    <!-- <h3>COLLECTION</h3> -->
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque.</p> -->
                     <a href="#"><button class="btncar">COLLECTION</button></a>
                 </div>
             </div>

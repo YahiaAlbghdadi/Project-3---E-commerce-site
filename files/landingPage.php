@@ -83,6 +83,7 @@ if(empty($_SESSION["shopping_cart"])) {
     <?php require_once "../compos/bootstrap.php" ?>
     <?php require_once "../compos/userNavbar.php" ?>
     <link rel="stylesheet" href="../styles/landingpage.css">
+    <?php require_once "../compos/carousel.php" ?>
     <title>Home Page</title>
     
 
