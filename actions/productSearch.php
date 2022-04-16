@@ -51,6 +51,7 @@ if(!$_GET){
 
     foreach($rows as $row){
       echo "<div class='card' style='width: 20rem;'>
+      <form  method='POST'  >
       <input type='hidden' id='productId' name='id' value='{$row['id']}' />      
       <div class='product-grid'>
           <div class='product-image'>
@@ -68,9 +69,8 @@ if(!$_GET){
           <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
           <p class='card-text'>Price: {$row['price']} €</p>
           
-           
+        </form>
       </div>
-      </form>
   </div>";
 
   }

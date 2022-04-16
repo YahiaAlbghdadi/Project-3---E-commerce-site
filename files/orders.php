@@ -15,14 +15,16 @@ require_once "../actions/connection.php";
 
 
 
-$ordersSql = "SELECT * FROM orders";
-$ordersResult = $conn->query($ordersSql);
-$rows = $ordersResult->fetch_all(MYSQLI_ASSOC);
+$sql = "SELECT * FROM orders INNER JOIN products on orders.fkProduct = products.id INNER JOIN users on orders.fkUser = users.id ";
+$result = $conn->query($sql);
+$rows = $result->fetch_all(MYSQLI_ASSOC);
 $print = "";
 
 foreach($rows as $row){
     $print .= "";
+    
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,16 +39,37 @@ foreach($rows as $row){
 </head>
 <body>
     <?php  require_once "../compos/adminNavbar.php"?>
-    <div class="container">
-        <h1 class="ordersH1">
+    <div class="container ">
+        <h1 class="ordersH1 ">
             Orders queue
         </h1>
-        <form action="reviews.php" method="post">
-            <input type="hidden" name="user" value="<?=$userId?>">
-            <div class="">orders Details</div>
-            <button type="submit"></button>
-        </form>
-        
+        <div class="row ordersCardParent justify-content-center">
+        <div class="ordersCard col col-lg-3 col-md-4 col-sm 6 col-12 ">
+            <p>Product Name: product Name</p> 
+            <button class="sendButton" type="submit">Send Product</button>
+        </div>
+        <div class="ordersCard col col-lg-3 col-md-4 col-sm 6 col-12 ">
+            <p>Product Name: product Name</p> 
+            <button class="sendButton" type="submit">Send Product</button>
+        </div>
+        <div class="ordersCard col col-lg-3 col-md-4 col-sm 6 col-12 ">
+            <p>Product Name: product Name</p> 
+            <button class="sendButton" type="submit">Send Product</button>
+        </div>
+        <div class="ordersCard col col-lg-3 col-md-4 col-sm 6 col-12 ">
+            <p>Product Name: product Name</p> 
+            <button class="sendButton" type="submit">Send Product</button>
+        </div>
+        <div class="ordersCard col col-lg-3 col-md-4 col-sm 6 col-12 ">
+            <p>Product Name: product Name</p> 
+            <button class="sendButton" type="submit">Send Product</button>
+        </div>
+        <div class="ordersCard col col-lg-3 col-md-4 col-sm 6 col-12 ">
+            <p>Product Name: product Name</p> 
+            <button class="sendButton" type="submit">Send Product</button>
+        </div>
+        </div>
+
     </div>
 </body>
 </html>

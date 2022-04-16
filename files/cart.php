@@ -4,58 +4,48 @@
     if(session_id() == '') {
         session_start();
     }
-    // var_dump($_SESSION["shopping_cart"][0]["quantity"]);
-    // exit;
     // if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
     //     header("location: login.php");
     // }
     
     $status="";
     $class = "";
+    $queryStatus = "";
     if($_SESSION['shopping_cart']!=""){
-        $cart = $_SESSION["shopping_cart"];
         $_SESSION['addedIds'] = array();
         foreach($_SESSION["shopping_cart"] as $key => $value){
             array_push($_SESSION['addedIds'], $value["id"]);
         }
+        
     }   
     
-    $currentArray = "";
-    // if($_POST){
-     
-    // //   var_dump($_SESSION["shopping_cart"]);
-    // //   exit;
-    // }
    
     if (isset($_POST['action']) && $_POST['action']=="remove"){
-        // var_dump($_POST["action"]);
-        // exit;
-        $id = $_POST['id'];
-        $currentArray = $cart[array_search("$id", array_column($cart, 'id'))];
         $index = $_POST["index"];
-        array_splice($_SESSION["shopping_cart"],$index );
-        header("Location: cart.php");
-        // unset($currentArray);
+        unset($_SESSION["shopping_cart"][$index]);
         	
     }
 
 
     if (isset($_POST['action']) && $_POST['action']=="change"){
-        // if($_SESSION["shopping_cart"]) == $_POST["index"]){
-            $index = $_POST["index"];
-            $qtty = $_POST["quantity"];
-           $_SESSION["shopping_cart"][$index]["quantity"] = $qtty;
-           
-        // }
-  	
-}
-if(isset($_POST['action']) && $_POST['action']=="checkout"){
-        // $userId = $_SESSION['user'];
-        $productsIds = $_SESSION['addedIds'];
+        $index = $_POST["index"];
+        $qtty = $_POST["quantity"];
+        $_SESSION["shopping_cart"][$index]["quantity"] = $qtty;  	
+    }
+    if(isset($_POST['action']) && $_POST['action']=="checkout"){
+        $userId = 3; //$_SESSION['user']
+        $quantity = $_POST['quantity'];
+        $totalPrice = $_POST['totalPrice'];
         $currentDate = date('Y-m-d');
         
-        // $sql = "INSERT INTO orders( orderPlaceDate, fkUser, fkProduct) VALUES ('$currentDate','$userId','$productsIds')";
-        if($result = $conn->query($sql)){
+        foreach($_SESSION['addedIds'] as $index=>$productsId){
+            $sql = "INSERT INTO orders(orderPlaceDate, fkUser, fkProduct, price, qtty) VALUES ('$currentDate',$userId,$productsId,$totalPrice,$quantity)";
+            if($conn->query($sql)){
+                $queryStatus = true;
+            }
+            ;
+        } 
+        if($queryStatus){
             unset($_SESSION['shopping_cart']);
             $status = "
             Your Order has been added to the orders Queue!
@@ -89,8 +79,9 @@ if(isset($_POST['action']) && $_POST['action']=="checkout"){
 
     <div class="cart container">
 <?php
-if(isset($_SESSION["shopping_cart"]) && count($_SESSION["shopping_cart"]) > 0){
-    $total_price = 0;
+    if(isset($_SESSION["shopping_cart"]) && count($_SESSION["shopping_cart"]) > 0){
+        $totalPrice = 0;
+        ;
 ?>	
 <table class="table">
 <tbody>
@@ -106,8 +97,7 @@ if(isset($_SESSION["shopping_cart"]) && count($_SESSION["shopping_cart"]) > 0){
 <td>ITEMS TOTAL</td>
 </tr>	
 <?php	
-$i = 0;	
-foreach ($_SESSION["shopping_cart"] as $product){
+foreach ($_SESSION["shopping_cart"] as $key=>$product){
 ?>
 <tr>
 <td>
@@ -116,7 +106,7 @@ foreach ($_SESSION["shopping_cart"] as $product){
 <td><?php echo $product["name"]; ?><br />
 <form method='post' action=''>
 <input type='hidden' name='id' value="<?= $product["id"]; ?>" />
-<input type='hidden' name='index' value="<?= $i; ?>" />
+<input type='hidden' name='index' value="<?= $key; ?>" />
 
 <input type='hidden' name='action' value="remove" />
 <button type='submit' onclick="myAlert()" class='remove'>Remove Item</button>
@@ -125,7 +115,7 @@ foreach ($_SESSION["shopping_cart"] as $product){
 <td>
 <form method='post' action=''>
 <input type='hidden' name='id' value="<?= $product["id"]; ?>" />
-<input type='hidden' name='index' value="<?= $i; ?>" />
+<input type='hidden' name='index' value="<?= $key; ?>" />
 
 <input type='hidden' name='action' value="change" />
 <select name='quantity' class='quantity' onChange="this.form.submit()">
@@ -141,24 +131,26 @@ value="3" <?php if($product["quantity"]==3) echo "selected";?>>3</option>
 value="5" <?php if($product["quantity"]==5) echo "selected";?>>5</option>
 </select>
 </form>
+
 </td>
 <td><?php echo "$".$product["price"]; ?></td>
 <td><?php echo "$".intval($product["price"])*intval($product["quantity"]); ?></td>
 </tr>
 <?php
-$total_price += intval($product["price"])*intval($product["quantity"]);
-$i++;
+$totalPrice += intval($product["price"])*intval($product["quantity"]);
 }
 ?>
 <tr>
 <td colspan="5" align="right">
-<strong>TOTAL: <?php echo "$".$total_price; ?></strong>
+<strong>TOTAL: <?php echo "$".$totalPrice; ?></strong>
 </td>
 </tr>
 <tr>
     <td colspan="5" align="right">    
         <form method="post" action="" class="">
             <input type="hidden" name="action" value="checkout">
+            <input type="hidden" name="quantity" value="<?=$product["quantity"]?>">
+            <input type="hidden" name="totalPrice" value="<?=$totalPrice?>">
             <button id="checkoutBtn">checkout</button>
         </form>
     </td>
@@ -169,6 +161,7 @@ $i++;
 }else{
 	echo "<h3>Your cart is empty!</h3>";
 	}
+
 ?>
 </div>
 
