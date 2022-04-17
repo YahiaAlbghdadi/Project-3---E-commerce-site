@@ -28,11 +28,11 @@
                 <i class='bx bx-menu'></i>
                 <div class="navlogo">
                     <img src="../images/navbarlogo.png" style="max-width:90px" alt="">
-                    <div class="logo"><a href="#">  My Mobile</a></div>
+                    <!-- <div class="logo"><a href="#">  My Mobile</a></div> -->
                 </div>
                 <div class="nav-links">
                     <div class="sidebar-logo">
-                        <span class="logo-name">My Mobile</span>
+                        <!-- <span class="logo-name">My Mobile</span> -->
                         <i class='bx bx-x'></i>
                     </div>
                     <ul class="links">

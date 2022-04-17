@@ -13,6 +13,16 @@ body {
     overflow-x: hidden;
 }
 
+.parent {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
 .nores {
     padding: 50px;
     font-family: 'Poppins', sans-serif;
@@ -22,10 +32,11 @@ body {
     color: darkorange;
 }
 
-.row {
+
+/* .row {
     margin: auto;
     padding: auto;
-}
+} */
 
 .fixnav {
     position: fixed;
