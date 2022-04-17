@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
 body {
-  font-family: 'Quicksand', sans-serif;
-  background-color: #f3f6f4ca;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f6f4ca !important;
 }
 
 .test {
@@ -244,7 +244,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .sendButton:hover {
-  padding: 7px;
+  padding: 10px;
+  border: 2px solid snow;
 }
 
 .ordersCard {
@@ -258,5 +259,33 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ordersCardParent {
   padding: 45px;
+}
+
+.ordersHr {
+  height: 3px !important;
+  border: none;
+  border-radius: 20px;
+  background-color: #feb600;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ordersDate {
+  text-align: right;
+  font-size: smaller;
+  color: #1d3557;
+  font-weight: bolder;
+}
+
+.ordersImg {
+  max-width: 200px;
+}
+
+.ordersHeadings {
+  padding: 0px;
+  margin: 0px;
+  font-size: large;
+  color: #1d3557;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

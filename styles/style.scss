@@ -5,8 +5,8 @@ $color3: #e63946;
 $color4: #f3f6f4ca;
 $color5: #1d3557;
 body {
-    font-family: 'Quicksand', sans-serif;
-    background-color: $color4;
+    font-family: 'Poppins', sans-serif;
+    background-color: $color4 !important;
 }
 
 .test {
@@ -251,7 +251,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .sendButton:hover {
-    padding: 7px;
+    padding: 10px;
+    border: 2px solid snow;
 }
 
 .ordersCard {
@@ -264,6 +265,33 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ordersCardParent {
     padding: 45px;
+}
+
+.ordersHr {
+    height: 3px !important;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(254, 182, 0);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ordersDate {
+    text-align: right;
+    font-size: smaller;
+    color: $color5;
+    font-weight: bolder;
+}
+
+.ordersImg {
+    max-width: 200px;
+}
+
+.ordersHeadings {
+    padding: 0px;
+    margin: 0px;
+    font-size: large;
+    color: $color5;
+    font-weight: bold;
 }
 
 //orders style

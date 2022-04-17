@@ -4,10 +4,14 @@
     if(session_id() == '') {
         session_start();
     }
-    // if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
-    //     header("location: login.php");
-    // }
     
+    if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+        header("location: login.php");
+    }
+    if(isset($_SESSON['user'])){
+        header("locaton: landingPage.php");
+    }
+        
     $status="";
     $class = "";
     $queryStatus = "";
@@ -35,11 +39,11 @@
     if(isset($_POST['action']) && $_POST['action']=="checkout"){
         $userId = 3; //$_SESSION['user']
         $quantity = $_POST['quantity'];
-        $totalPrice = $_POST['totalPrice'];
+        $price = $_POST['price'];
         $currentDate = date('Y-m-d');
         
         foreach($_SESSION['addedIds'] as $index=>$productsId){
-            $sql = "INSERT INTO orders(orderPlaceDate, fkUser, fkProduct, price, qtty) VALUES ('$currentDate',$userId,$productsId,$totalPrice,$quantity)";
+            $sql = "INSERT INTO orders(orderPlaceDate, fkUser, fkProduct, price, qtty) VALUES ('$currentDate',$userId,$productsId,$price,$quantity)";
             if($conn->query($sql)){
                 $queryStatus = true;
             }
@@ -150,7 +154,7 @@ $totalPrice += intval($product["price"])*intval($product["quantity"]);
         <form method="post" action="" class="">
             <input type="hidden" name="action" value="checkout">
             <input type="hidden" name="quantity" value="<?=$product["quantity"]?>">
-            <input type="hidden" name="totalPrice" value="<?=$totalPrice?>">
+            <input type="hidden" name="price" value="<?=$product["price"]?>">
             <button id="checkoutBtn">checkout</button>
         </form>
     </td>

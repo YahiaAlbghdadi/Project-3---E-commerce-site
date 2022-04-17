@@ -2,13 +2,19 @@
 
 require_once "../actions/connection.php";
 require_once "../actions/userFileUpload.php";
-    // if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
-//     header("location: login.php");
-// }
-if(!isset($_GET)){
-    header("location: error.php");
+
+if(session_id() == '') {
+    session_start();
+}
+if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+    header("location: login.php");
+}
+if(isset($_SESSON['user'])){
+    header("locaton: landingPage.php");
   }
-  
+if(!isset($_GET)){
+  header("location: error.php");
+}
 
 if ($_GET) {
     $id = $_GET['id'];
