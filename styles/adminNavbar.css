@@ -238,8 +238,8 @@ nav .navbar .links li:hover .htmlCss-sub-menu {
 
 nav .navbar .icons a {
     color: #2880b8;
-    font-size: 1.8rem;
-    padding: 1rem 1rem;
+    font-size: 1.6rem;
+    padding: 1rem .8rem;
     text-decoration: none;
 }
 

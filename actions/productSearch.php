@@ -12,7 +12,7 @@ if(!$_GET){
     $rows = $result->fetch_all(MYSQLI_ASSOC);
     $products = "";
     foreach( $rows as $row){
-      $products .= "<div class='card' style='width: 20rem;'>
+      $products .= "<div class='card' style='width: 17.85rem;'>
       <input type='hidden' name='id' id='productId' value='{$row['id']}' />      
       <div class='product-grid'>
           <div class='product-image'>
@@ -47,7 +47,7 @@ if(!$_GET){
         $rows = $result->fetch_all(MYSQLI_ASSOC);
 
     foreach($rows as $row){
-      echo "<div class='card' style='width: 20rem;'>
+      echo "<div class='card' style='width: 17.85rem;'>
       <form  method='POST'  >
       <input type='hidden' id='productId' name='id' value='{$row['id']}' />      
       <div class='product-grid'>

@@ -95,7 +95,7 @@ if(empty($_SESSION["shopping_cart"])) {
     
 
 
-    <div class='parent row p-5 mb-2  ' id="foundProduct">
+    <div class='container parent row p-5 mb-2'  id="foundProduct">
         <?=$products?>
     </div>
     
