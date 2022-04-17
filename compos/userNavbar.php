@@ -66,8 +66,8 @@
                                 <li><a href="/files/sort3.php">Xiaumi</a></li>
                             </ul>
                         </li>
-                        <li><a href="../files/dashboard.php">Dashboard</a></li>
-                        </ul>
+                        
+                    </ul>
                 </div>
 
                 <div class="linksaid">
@@ -81,6 +81,7 @@
                         <a href="#" class="fas fa-heart"></a>
                         <a href="/files/cart.php" class="fas fa-shopping-cart"></a>
                         <a href="<?=$destination?>" class="fas fa-user"></a>
+                        <a href="logout.php?logout" class="fa fa-sign-out"></a>
                     </div>
                 </div>
 

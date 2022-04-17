@@ -11,6 +11,9 @@
     <!-- font awesome cdn link  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- custom css file link  -->
@@ -69,6 +72,7 @@
                     </div>
                     <div class="icons">
                         <a href="#" class="fas fa-user"></a>
+                        <a href="logout.php?logout" class="fa fa-sign-out"></a>
                     </div>
                 </div>
 
