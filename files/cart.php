@@ -42,8 +42,8 @@
         $price = $_POST['price'];
         $currentDate = date('Y-m-d');
         
-        foreach($_SESSION['addedIds'] as $index=>$productsId){
-            $sql = "INSERT INTO orders(orderPlaceDate, fkUser, fkProduct, price, qtty) VALUES ('$currentDate',$userId,$productsId,$price,$quantity)";
+        foreach($_SESSION['addedIds'] as $productsIds){
+            $sql = "INSERT INTO orders(orderPlaceDate, fkUser, fkProduct, orderPrice, orderedQtty) VALUES ('$currentDate',$userId,'$productsIds','$price','$quantity')";
             if($conn->query($sql)){
                 $queryStatus = true;
             }
@@ -105,7 +105,7 @@ foreach ($_SESSION["shopping_cart"] as $key=>$product){
 ?>
 <tr>
 <td>
-<img src='../images/<?=$product["image"]; ?>' width="50" height="40" />
+<img src='../images/<?=$product["productImage"]; ?>' width="50" height="40" />
 </td>
 <td><?php echo $product["name"]; ?><br />
 <form method='post' action=''>

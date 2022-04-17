@@ -6,15 +6,15 @@ require_once "../actions/userFileUpload.php";
 if(session_id() == '') {
     session_start();
 }
-// if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
-//     header("location: login.php");
-// }
-// if(isset($_SESSON['user'])){
-//     header("locaton: landingPage.php");
-//   }
-// if(!isset($_GET)){
-//   header("location: error.php");
-// }
+if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+    header("location: login.php");
+}
+if(isset($_SESSON['user'])){
+    header("locaton: landingPage.php");
+  }
+if(!isset($_GET)){
+  header("location: error.php");
+}
 
 if ($_GET) {
     $id = $_GET['id'];
@@ -30,6 +30,7 @@ if ($_GET) {
     $street = $rows['street'];
     $plz = $rows['plz'];
     $stiege = $rows['stiege'];  
+    $_SESSION['stiege'] = $stiege;
     $houseNumber = $rows['houseNumber'];
     $image = $rows['image'];
     $rank = $rows['rank'];
