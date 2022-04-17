@@ -9,9 +9,6 @@
     if(isset($_SESSON['user'])){
         header("locaton: landingPage.php");
     }
-    if(!isset($_GET)){
-    header("location: error.php");
-    }
 
 ?>
 

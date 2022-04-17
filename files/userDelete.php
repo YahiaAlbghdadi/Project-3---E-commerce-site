@@ -18,11 +18,6 @@
   
 if($_GET['id']) {
     $id = $_GET['id'];
-    if(isset($_SESSION['user'])){
-      if($id != $_SESSION['user']){
-        header("location: error.php");
-      }
-    }
     $sql = "SELECT * FROM users WHERE id = {$id}" ;
     $result = mysqli_query($conn, $sql);
     $fetchedResult = mysqli_fetch_assoc($result);
