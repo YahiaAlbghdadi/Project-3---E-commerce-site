@@ -7,10 +7,10 @@
     }
 
     if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
-        header("location: login.php");
+        header("location:login.php");
     }
-    if(isset($_SESSON['user'])){
-        header("locaton: landingPage.php");
+    if(isset($_SESSION['user'])){
+        header("location:landingPage.php");
     }
 
 ?>
