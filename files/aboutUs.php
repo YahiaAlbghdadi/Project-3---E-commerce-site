@@ -16,10 +16,6 @@
 
     <!-- font awesome cdn link  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
-
-    <!-- swiper css link  -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
 
     <!-- cusom css file link  -->
     <link rel="stylesheet" href="../styles/aboutus.css">
@@ -52,8 +48,6 @@
     <section class="faq">
 
         <div class="header1"><p> questions & <span>answers</span></p> </div>
-
-        <!-- <h1 class="heading"> questions & <span>answers</span> </h1> -->
 
         <div class="accordion-container">
 
@@ -147,11 +141,6 @@
             }
         });
     </script>
-
-    <!-- swiper js link      -->
-    <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
-
-    <!-- custom js file link  -->
 
 
 </body>

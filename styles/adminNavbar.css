@@ -73,9 +73,18 @@ nav .navbar {
     margin-bottom: 100px;
 }
 
+.navbar .navlogo {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navbar .logo {
+    padding-top: 10px;
+}
+
 .navbar .logo a {
     font-family: 'Cinzel', serif;
-    font-size: 30px;
+    font-size: 25px;
     color: #2880b8;
     text-decoration: none;
     font-weight: 600;
@@ -307,7 +316,7 @@ nav .navbar .icons a:hover {
 
 @media (max-width:800px) {
     nav .navbar .logo a {
-        font-size: 24px;
+        font-size: 20px;
     }
     .navbar .bx-menu {
         display: block;

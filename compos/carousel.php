@@ -9,11 +9,6 @@
     <!-- owl carousel css file cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 
-    <!-- font awesome cdn link  -->
-    <!-- <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"> -->
-
-    <!-- custom css file link  -->
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
 
 
 
@@ -125,8 +120,6 @@
             <div class="item">
                 <img src="../images/caro1.jpg" alt="">
                 <div class="content">
-                    <!-- <h3>samsung</h3> -->
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque.</p> -->
                     <a href="#"><button class="btncar">SAMSUNG</button></a>
                 </div>
             </div>
@@ -138,44 +131,22 @@
                 </div>
             </div>
 
-            <!-- <div class="item">
-                <img src="../images/caro3.jpg" alt="">
-                <div class="content">
-                    <a href="#"><button class="btncar">HUAWEI</button></a>
-                </div>
-            </div> -->
-
             <div class="item">
-                <img src="../images/caro4.jpg" alt="">
+                <img src="../images/caro3.jpg" alt="">
                 <div class="content">
                     <a href="#"><button class="btncar">XIAUME   </button></a>
                 </div>
             </div>
 
             <div class="item">
-                <img src="../images/caro5.jpg" alt="">
+                <img src="../images/caro4.jpg" alt="">
                 <div class="content">
-                    <a href="#"><button class="btncar"> LG</button></a>
+                    <a href="#"><button class="btncar"> HUAWIE</button></a>
                 </div>
             </div>
 
-
-            <!-- <div class="item">
-                <img src="../images/caro6.jpg" alt="">
-                <div class="content">
-                    <a href="#"><button class="btncar">COLLECTION</button></a>
-                </div>
-            </div> -->
-
-            <!-- <div class="item">
-                <img src="../images/caro7.jpg" alt="">
-                <div class="content">
-                    <a href="#"><button class="btncar">I PHONE     </button></a>
-                </div>
-            </div> -->
-
             <div class="item">
-                <img src="../images/caro8.jpg" alt="">
+                <img src="../images/caro5.jpg" alt="">
                 <div class="content">
                     <a href="#"><button class="btncar">COLLECTION</button></a>
                 </div>

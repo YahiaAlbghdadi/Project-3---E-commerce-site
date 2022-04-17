@@ -11,7 +11,6 @@
 
     <?php require_once "bootstrap.php" ?>
     <style><?php include "../styles/footer.css"; ?></style>
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
 
     <title>footer</title>
 </head>
@@ -99,6 +98,7 @@
 
                 <div class=" col-sm-4 col-md  col-12 col">
                     <img src="/images/footerlogo.png" style="width: 300px;" alt="">
+                    <img src="../images/storelogo.png" style="width: 280px; height: 70px;"  alt="">
                 </div>
             </div>
         </div>
@@ -114,6 +114,7 @@
         <p class="text-center">Copyright @2022 | Designed by Full-Stack Team - Code Factory, Wien Austria </p>
         <div class="iconn">
             <img src="../images/pay.png" style="width: 220px;"  alt="">
+            
             
             <div class="footer-social-icons">
                 <ul class="social-icons">

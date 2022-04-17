@@ -2,9 +2,6 @@
 require_once "connection.php";
 
 
-// $database = new Database;
-// $conn = $database->conn;
-
 $sql = "SELECT * From products";
 
 if(!$_GET){
