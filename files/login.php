@@ -92,7 +92,7 @@
 
     </head>
 
-    <body class="img js-fullheight" style="background-image: url(../LoginForm/images/phon.jpg);">
+    <body class="img js-fullheight" style="background-image: url(../LoginForm/images/bg.jpg);">
         <section class="ftco-section">
             <div class="container">
                 <div class="row justify-content-center">

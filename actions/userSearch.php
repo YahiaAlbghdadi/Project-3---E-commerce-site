@@ -23,7 +23,7 @@
             <td class='p-2'>{$row['lastName']}</td>
             <td class='p-2'>{$row['email']}</td>
             <td class='p-2'>{$row['telefonNumber']}</td>
-            <td class='p-2' ><a href='userDetails.php?id={$row['id']}'>Show Details</a></td>
+            <td class='p-2' ><a href='userDetails.php?id={$row['id']}'>Show Details</a>  <a class='deleteLink' href='userDelete.php?id={$row['id']}&addressId={$row['fkAddress']}'>Delete User</a></td>
 
         </tr>";
       }

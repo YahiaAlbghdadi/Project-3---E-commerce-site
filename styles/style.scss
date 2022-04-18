@@ -54,6 +54,10 @@ body {
     color: #f3f6f4;
 }
 
+.deleteLink {
+    color: red;
+}
+
 .userSearchDiv {
     text-align: center;
     margin: 10px auto;
@@ -307,6 +311,8 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 8px;
     align-self: center;
     border: 2px solid snow;
+    margin: 5px;
+    margin-bottom: 10px;
 }
 
 .ordersHistoryLink:hover {
@@ -654,6 +660,10 @@ fieldset[disabled] a.btn {
     background-color: #025aa5;
     background-image: none;
     border-color: #01549b;
+}
+
+.reviewsImg {
+    max-width: 100px;
 }
 
 //review style

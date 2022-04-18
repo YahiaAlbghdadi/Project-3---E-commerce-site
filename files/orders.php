@@ -9,8 +9,8 @@ if(session_id() == '') {
 if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
     header("location: login.php");
 }
-if(isset($_SESSON['user'])){
-    header("locaton: landingPage.php");
+if(isset($_SESSION['user'])){
+    header("location: landingPage.php");
 }
 
 if($_POST){
@@ -24,13 +24,13 @@ if($_POST){
 }
 
 
-$sql = "SELECT * FROM orders INNER JOIN products on orders.fkProduct = products.id INNER JOIN users on orders.fkUser = users.id WHERE sent = 'no'";
+$sql = "SELECT * FROM orders INNER JOIN products on orders.fkProduct = products.productId INNER JOIN users on orders.fkUser = users.id WHERE sent = 'no'";
 $result = $conn->query($sql);
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 $print = "";
 
 foreach($rows as $row){
-    $addressSql = "SELECT * FROM addresses WHERE id = {$row['fkAddress']}";
+    $addressSql = "SELECT * FROM addresses WHERE addressId = {$row['fkAddress']}";
     $result = $conn->query($addressSql);
     $addressRow = $result->fetch_assoc();
     $stiege = "";

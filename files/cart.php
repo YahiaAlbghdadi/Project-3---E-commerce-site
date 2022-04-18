@@ -3,15 +3,16 @@
     
     if(session_id() == '') {
         session_start();
+
     }
     
     if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
         header("location: login.php");
     }
-    if(isset($_SESSON['user'])){
-        header("locaton: landingPage.php");
+    if(isset($_SESSION['admin'])){
+        header("location: dashboard.php");
     }
-        
+
     $status="";
     $class = "";
     $queryStatus = "";
@@ -37,7 +38,7 @@
         $_SESSION["shopping_cart"][$index]["quantity"] = $qtty;  	
     }
     if(isset($_POST['action']) && $_POST['action']=="checkout"){
-        $userId = 3; //$_SESSION['user']
+        $userId =  $_SESSION['user'];
         $quantity = $_POST['quantity'];
         $price = $_POST['price'];
         $currentDate = date('Y-m-d');
@@ -59,7 +60,7 @@
             $status = "there is an Error in your SQL statement";
             $class = "danger";
         }
-        
+
 }
 ?>
  
@@ -122,7 +123,7 @@ foreach ($_SESSION["shopping_cart"] as $key=>$product){
 <input type='hidden' name='index' value="<?= $key; ?>" />
 
 <input type='hidden' name='action' value="change" />
-<select name='quantity' class='quantity' onChange="this.form.submit()">
+<select name='quantity' class='quantity text-center' onChange="this.form.submit()">
 <option  
 value="1" <?php if($product["quantity"]==1) echo "selected";?>>1</option>
 <option 
@@ -133,6 +134,16 @@ value="3" <?php if($product["quantity"]==3) echo "selected";?>>3</option>
  value="4" <?php if($product["quantity"]==4) echo "selected ";?>>4</option>
 <option 
 value="5" <?php if($product["quantity"]==5) echo "selected";?>>5</option>
+<option 
+value="6" <?php if($product["quantity"]==6) echo "selected";?>>6</option>
+<option 
+value="7" <?php if($product["quantity"]==7) echo "selected";?>>7</option>
+<option 
+value="8" <?php if($product["quantity"]==8) echo "selected";?>>8</option>
+<option 
+value="9" <?php if($product["quantity"]==9) echo "selected";?>>9</option>
+<option 
+value="10" <?php if($product["quantity"]==10) echo "selected";?>>10</option>
 </select>
 </form>
 
@@ -163,7 +174,7 @@ $totalPrice += intval($product["price"])*intval($product["quantity"]);
 </table>		
   <?php
 }else{
-	echo "<h3>Your cart is empty!</h3>";
+	echo "<h3>Your cart is empty!</h3><br><h2>Show  <a href='ordersHistory.php'>your orders History</a></h2>";
 	}
 
 ?>

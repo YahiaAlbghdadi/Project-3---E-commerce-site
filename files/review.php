@@ -1,25 +1,49 @@
 <?php
     require_once "../actions/connection.php";
+    if(session_id() == '') {
+      session_start();
+  }
+  
+    if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
+        header("location: login.php");
+    }
+    if(isset($_SESSION['admin'])){
+        header("location: dashboard.php");
+    }
 
-    $order = "";
+    $orderNumber = "";
     if($_GET){
-        $order = $_GET['orderId'];
-        $SelectSql="SELECT * from orders inner join products on orders.fkProduct = products.productId WHERE orderId = '$order'";
+        $orderNumber = $_GET['orderId'];
+        $SelectSql="SELECT * from orders inner join products on orders.fkProduct = products.productId WHERE orderId = '$orderNumber'";
         $result = $conn->query($SelectSql);
         $row = $result->fetch_assoc();
+        $rated = $row['rated'];
+        if($rated == "yes"){
+          header("location:ordersHistory.php");
+        }
         $productName = $row['name'];
         $brand = $row['brand'];
+        $image = $row['productImage'];
+        
     }
     if($_POST){
         $message = $_POST['message'];
+        
         $reviewDate = date('Y-m-d');
-        $rate = $_POST['rate'];
-        
-        $insertSql = "INSERT INTO reviews(message, reviewDate, rate, fkOrder) VALUES ('$message','$reviewDate',$rate,$order)";
-        
+        $costumerRate = $_POST['rate'];
+        $insertSql = "INSERT INTO reviews(message, reviewDate, rate, fkOrder) VALUES ('$message','$reviewDate','$costumerRate','$orderNumber')";
+        if($conn->query($insertSql)){
+          $updateSql = "UPDATE orders SET rated='yes' WHERE orderId = '$orderNumber'";
+          if($conn->query($updateSql)){
+            echo "<div class='alert alert-success' role='alert'>
+            <p>Your Rate was successfully sent</p>
+             <a href='../files/landingPage.php'>Back to Home Page</a>
+            </div >";exit;;
+          }
+        }
     }
 
-
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +54,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../styles/style.css">
+
 </head>
 <body>
 
@@ -38,6 +63,7 @@
 
 
 <form id="feedback" method="POST">
+    <img class="reviewsImg" src="../images/<?=$image?>" alt="">
   <div class="pinfo">Product Info</div>
   
 
@@ -45,7 +71,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="fa-solid fa-mobile"></i></span>
-    <input name="productName" value="<?=$productName?>" type="text" class="form-control" placeholder="Product Name">
+    <input name="productName"  value="<?=$productName?>" type="text" class="form-control " placeholder="Product Name">
      </div>
   </div>
 </div>
@@ -67,11 +93,11 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="fa fa-heart"></i></span>
    <select name="rate" class="form-control" id="rate">
-      <option value="1star">1</option>
-      <option value="2stars">2</option>
-      <option value="3stars">3</option>
-      <option value="4stars">4</option>
-      <option value="5stars">5</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
     </select>
     </div>
   </div>

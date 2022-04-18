@@ -109,7 +109,7 @@ if ($_GET) {
                 </tr>
                 <tr>
                     <td>
-                        <button   name = "submit"   class = "btn btn-success" type = "submit"> Save Changes </button>
+                        <button   name = "submit"   class = "btn btn-success" type = "submit"> Save  </button>
                     </td>
                     <td>
                         <a href = "dashboard.php"><button class = "btn btn-warning" type = "button"> Back </button></a>
