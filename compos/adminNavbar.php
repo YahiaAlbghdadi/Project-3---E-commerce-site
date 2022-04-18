@@ -55,6 +55,8 @@
                             </ul>
                         </li>
                         <li><a href="/files/landingpage.php">Landingpage</a></li>
+                        <li><a href="/files/orders.php">Orders</a></li>
+
 
                         <li><a href="/files/productCreate.php">Create Product</a></li>
                         <li><a href="/files/userCreate.php">Create User</a></li>

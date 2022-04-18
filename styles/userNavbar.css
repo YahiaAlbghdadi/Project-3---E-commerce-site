@@ -222,7 +222,7 @@ nav .navbar .links li:hover .htmlCss-sub-menu {
 nav .navbar .icons a {
     color: #e63946;
     font-size: 1.4rem;
-    padding: 1rem .6rem;
+    padding: 1.2rem .6rem;
     text-decoration: none;
 }
 
@@ -260,8 +260,8 @@ nav .navbar .icons a:hover {
     }
     nav .navbar .icons a {
         color: #e63946;
-        font-size: 1.3rem;
-        padding: 1rem .5rem;
+        font-size: 1.2rem;
+        padding: 1.2rem .4rem;
         text-decoration: none;
     }
     .navbar .linksaid {
@@ -283,12 +283,12 @@ nav .navbar .icons a:hover {
         white-space: nowrap;
     }
     nav .navbar .links li a {
-        font-size: 12px;
+        font-size: 11px;
     }
     nav .navbar .icons a {
         color: #e63946;
-        font-size: 1.2rem;
-        padding: 1rem .5rem;
+        font-size: 1.1rem;
+        padding: 1.2rem .4rem;
         text-decoration: none;
     }
     .navbar .linksaid {
@@ -365,8 +365,8 @@ nav .navbar .icons a:hover {
     }
     nav .navbar .icons a {
         color: #e63946;
-        font-size: 1.2rem;
-        padding: 1rem .5rem;
+        font-size: 1.1rem;
+        padding: 1.2rem .4rem;
         text-decoration: none;
     }
     .navbar .linksaid {
@@ -382,7 +382,7 @@ nav .navbar .icons a:hover {
     nav .navbar .icons a {
         color: #e63946;
         font-size: 1.1rem;
-        padding: 1rem 1rem;
+        padding: 1.2rem 1rem;
         text-decoration: none;
     }
     .navbar .linksaid {

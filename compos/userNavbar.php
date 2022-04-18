@@ -55,6 +55,7 @@
                         <li><a href="/files/landingPage.php">HOME</a></li>
                         <li><a href="/files/aboutUs.php">ABOUT US</a></li>
                         <li><a href="contactUs.php">CONTACT US</a></li>
+                        <li><a href="ordersHistory.php">ORDERS HISTORY</a></li>
                         
                         <li>
                             <a href="#">SORTING</a>
