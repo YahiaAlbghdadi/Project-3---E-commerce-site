@@ -96,7 +96,7 @@
                     </ul>     
                 </div>
 
-                <div class=" col-sm-4 col-md  col-12 col">
+                <div class="col-sm-4 col-md  col-12 col footlogo">
                     <img src="/images/footerlogo.png" style="width: 300px;" alt="">
                     <img src="../images/storelogo.png" style="width: 280px; height: 70px;"  alt="">
                 </div>
