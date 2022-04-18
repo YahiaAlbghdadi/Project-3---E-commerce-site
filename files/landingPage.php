@@ -13,9 +13,9 @@
     // session_unset();
 
 $status="";
-if (isset($_POST['id']) && $_POST['id']!=""){
-$id = $_POST['id'];
-$cartResult = mysqli_query($conn,"SELECT * FROM products WHERE id='$id'");
+if (isset($_POST['productId']) && $_POST['productId']!=""){
+$id = $_POST['productId'];
+$cartResult = mysqli_query($conn,"SELECT * FROM products WHERE productId='$id'");
 $cartRow = mysqli_fetch_assoc($cartResult);
 $name = $cartRow['name'];
 $price = $cartRow['price'];

@@ -18,14 +18,14 @@ require_once "../actions/connection.php";
                 <a href='#' class='image'>
                     <img class='pic-1' src='../images/{$row['productImage']}' class='card-img-top' alt='...' height='350'>
                 </a>
+                
             </div>
         </div>
         <div class='card-body'>
             <h4 class='card-title'>{$row['name']}  {$row['brand']}</h4>
-            <p class='card-text'>Price: {$row['price']} €</p>
-           
-             
+            <p class='card-text'>Ordered At: {$row['orderPlaceDate']} </p>
         </div>
+        <a class='ordersHistoryLink ' href='review.php?orderId={$row['orderId']} '>Leave a review</a>
     </div>";
     }
 
@@ -38,10 +38,10 @@ require_once "../actions/connection.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reviews</title>    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>  
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <?php require_once "../compos/bootstrap.php" ?>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/landingpage.css">
+
 </head>
 <body>
 <?php  require_once "../compos/adminNavbar.php"?>
@@ -49,9 +49,11 @@ require_once "../actions/connection.php";
         <h1 class="ordersH1">
             Your Orders History
         </h1>
-        <form method="POST" class="row ordersCardParent justify-content-center">
+        <form  class="container parent row p-5 mb-2 row justify-content-center" id="foundProduct">
             <?=$print?>
         </form>
+        <a href='review.php?productId= '></a>
+        <a href=""></a>
 
     </div>
     
