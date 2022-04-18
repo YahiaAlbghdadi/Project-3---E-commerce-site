@@ -57,7 +57,7 @@ if(!$_GET){
               </a>
               <ul class='product-links'>
                 <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag cartButton'></i> Add to cart</button></li>
-                <li><button><a href='../files/productDetails.php?productId={$row['productId']}'><i class='fa fa-search'></i></a> Quick View </button></li>
+                <li><button><i class='fa fa-search'><a href='../files/productDetails.php?productId={$row['productId']}'>Quick View</a></i></button>  </li>
                 
               </ul>
           </div>

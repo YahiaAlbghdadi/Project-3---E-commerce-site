@@ -68,8 +68,8 @@ if(empty($_SESSION["shopping_cart"])) {
 
 	}
 }
-// $_SESSION['shopping_cart'] == $_SESSION['shopping_cart'];
-// mysqli_close($conn)
+$_SESSION['shopping_cart'] == $_SESSION['shopping_cart'];
+mysqli_close($conn)
 ?>
 
 <!DOCTYPE html>

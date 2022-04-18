@@ -82,7 +82,7 @@
     <div class="btnSub">
         <a href="productUpdate.php?id=<?=$productId?>" class="btn btn-warning" type="button"> Edit</a>
 ​
-        <a href="products.php"><button class="btn btn-primary" type="button"> Back </button></a>
+        <a href="landingPage.php"><button class="btn btn-primary" type="button"> Back </button></a>
     </div>
 </body>
 ​
