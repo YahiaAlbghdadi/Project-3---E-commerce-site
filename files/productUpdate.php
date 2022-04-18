@@ -24,9 +24,9 @@
     <p class='card-text text-danger'>Price: {$row["price"]}€</p>
     <hr>
     <div class='mul-btn'>
-        <button class='update'><a href='../files/productUpdate.php?id={$row["id"]}'>Update</a></button>
-        <button class='delete'><a href='../files/productDelete.php?id={$row["id"]}'>Delete</a></button>
-        <button class='deta'><a href='../files/productDetails.php?id={$row["id"]}'>Details</a></button>
+        <button class='update'><a href='../files/productUpdate.php?productId={$row["productId"]}'>Update</a></button>
+        <button class='delete'><a href='../files/productDelete.php?productId={$row["productId"]}'>Delete</a></button>
+        <button class='deta'><a href='../files/productDetails.php?productId={$row["productId"]}'>Details</a></button>
     </div>
 </div>
 </div>
@@ -67,11 +67,11 @@ $layout ="<h1 class='text-center fw-bold p-5'> No Results</h1>";
 <body class="bg-info">
     <!-- Start Hero Section -->
 ​
-    <div class="carousel-inner">
+    <!-- <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="../styles/product_style/images/img1.jpg" class="d-block w-100" alt="...">
         </div>
-    </div>
+    </div> -->
 ​
     <!-- End Hero Section -->
 ​
@@ -82,7 +82,7 @@ $layout ="<h1 class='text-center fw-bold p-5'> No Results</h1>";
             Product</a>
         Our Products</h1>
 ​
-    <div class="row" id="bg">
+    <div class="row" productId="bg">
         <?php echo $layout ?>
     </div>
 ​

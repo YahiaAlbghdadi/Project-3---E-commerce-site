@@ -55,7 +55,7 @@
       <!-- Style End  -->
   </head>
 ​
-  <body id="a-create">
+  <body productId="a-create">
       <div class="container">
           <div class="mt-3 mb-3">
               <h1>Created Request Response</h1>

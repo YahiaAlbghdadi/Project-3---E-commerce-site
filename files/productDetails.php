@@ -1,6 +1,6 @@
 <?php
     require_once "../actions/connection.php";
-    require_once "../compos/adminNavbar.php";
+    
 
     if(session_id() == '') {
         session_start();
@@ -14,8 +14,8 @@
 
 
     if($_GET){
-        $Id = $_GET['id'];
-        $sql = "SELECT * FROM products where id = {$Id}";
+        $productId = $_GET['productId'];
+        $sql = "SELECT * FROM products where productId = {$productId}";
         $result = $conn->query($sql);
         $rows = $result->fetch_assoc();
 
@@ -35,6 +35,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require_once "../compos/adminNavbar.php"?>
     <?php require_once '../compos/bootstrap.php'?>
     <style>
     <?php include '../styles/productCrud.css'?>
@@ -79,7 +80,7 @@
         </table>
     </div>
     <div class="btnSub">
-        <a href="productUpdate.php?id=<?=$Id?>" class="btn btn-warning" type="button"> Edit</a>
+        <a href="productUpdate.php?id=<?=$productId?>" class="btn btn-warning" type="button"> Edit</a>
 ​
         <a href="products.php"><button class="btn btn-primary" type="button"> Back </button></a>
     </div>

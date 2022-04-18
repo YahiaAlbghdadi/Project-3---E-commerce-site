@@ -13,7 +13,7 @@ if(!$_GET){
     $products = "";
     foreach( $rows as $row){
       $products .= "<div class='card' style='width: 17.85rem;'>
-      <input type='hidden' name='id' id='productId' value='{$row['id']}' />      
+      <input type='hidden' name='productId' id='productId' value='{$row['productId']}' />      
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
@@ -21,7 +21,7 @@ if(!$_GET){
               </a>
               <ul class='product-links'>
                 <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag cartButton'></i> Add to cart</button></li>
-                <li><button><a href='../files/productDetails.php?id={$row['id']}'><i class='fa fa-search'></i></a> Quick View </button></li>
+                <li><button><a href='../files/productDetails.php?productId={$row['productId']}'><i class='fa fa-search'></i></a> Quick View </button></li>
                 
               </ul>
           </div>
@@ -49,7 +49,7 @@ if(!$_GET){
     foreach($rows as $row){
       echo "<div class='card' style='width: 17.85rem;'>
       <form  method='POST'  >
-      <input type='hidden' id='productId' name='id' value='{$row['id']}' />      
+      <input type='hidden' id='productId' name='productId' value='{$row['productId']}' />      
       <div class='product-grid'>
           <div class='product-image'>
               <a href='#' class='image'>
@@ -57,7 +57,7 @@ if(!$_GET){
               </a>
               <ul class='product-links'>
                 <li><button id='cartButton' type='submit'><i class='fa fa-shopping-bag cartButton'></i> Add to cart</button></li>
-                <li><button><a href='../files/productDetails.php?id={$row['id']}'><i class='fa fa-search'></i></a> Quick View </button></li>
+                <li><button><a href='../files/productDetails.php?productId={$row['productId']}'><i class='fa fa-search'></i></a> Quick View </button></li>
                 
               </ul>
           </div>

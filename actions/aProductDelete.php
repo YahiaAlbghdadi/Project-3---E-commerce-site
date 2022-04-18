@@ -12,10 +12,10 @@ if (session_status() == PHP_SESSION_NONE) {
 //     exit;
 //  }
 if ($_POST) {
-   $id = $_POST['id'];
+   $productId = $_POST['productId'];
    $image = $_POST['productImage'];
    ($image =="product.png")?: unlink("../../images/$image");
-  $sql = "DELETE FROM products WHERE id = {$id}";
+  $sql = "DELETE FROM products WHERE productId = {$productId}";
   if ($conn->query($sql)===true) {
    $class = "alert alert-success" ;
    $message = "Successfully Deleted!";

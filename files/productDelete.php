@@ -1,7 +1,7 @@
 <?php
       require_once "../actions/connection.php";
 
-      if(session_id() == '') {
+      if(session_Id() == '') {
         session_start();
     }
     if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
@@ -12,9 +12,9 @@
     }
 
       
-if($_GET['id']) {
-      $id = $_GET['id'];
-      $sql = "SELECT * FROM products WHERE id = {$id}" ;
+if($_GET['productId']) {
+      $productId = $_GET['productId'];
+      $sql = "SELECT * FROM products WHERE productId = {$productId}" ;
       $result = mysqli_query($conn, $sql);
       $data = mysqli_fetch_assoc($result);
       if (mysqli_num_rows($result) == 1) {
@@ -22,7 +22,7 @@ if($_GET['id']) {
             $brand= $data['brand'];
             $price= $data['price'];
             $qtty= $data['qtty'];
-            $image = $data['productImage'];
+            $productImage = $data['productImage'];
       }  else {
        header("location: error.php");
    }
@@ -31,7 +31,7 @@ if($_GET['id']) {
    header( "location: error.php");
 }  
       
-require_once "../compos/adminNavbar.php";
+
 
       ?>
 ​
@@ -42,11 +42,11 @@ require_once "../compos/adminNavbar.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete a Product</title>
-​
+​    <?php require_once "../compos/adminNavbar.php" ?>
     <!-- Style Start  -->
     <style>
     <?php include '../styles/productCrud.css'?>
-    ?>
+
     </style>
     <!-- End  Start  -->
 ​
@@ -92,7 +92,7 @@ require_once "../compos/adminNavbar.php";
                 </table>
                 <div class="formdel">
                     <form action="../actions/aProductDelete.php" method="post">
-                        <input type="hidden" name="id" value="<?= $id ?>" />
+                        <input type="hidden" name="productId" value="<?= $productId ?>" />
                         <input type="hidden" name="image" value="<?= $image ?>" />
 ​
                 </div>

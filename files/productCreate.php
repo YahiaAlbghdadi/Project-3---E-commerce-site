@@ -9,7 +9,7 @@
     if(isset($_SESSON['user'])){
         header("locaton: landingPage.php");
     }
-    require_once "../compos/adminNavbar.php";
+    
 
 ?>
 <!DOCTYPE html>
@@ -18,9 +18,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require_once "../compos/adminNavbar.php"?>
     <!-- Bootstrap Start  -->
     <?php include '../compos/bootstrap.php'?>
     <!-- Bootstrap End -->
+    
     <!-- Style Page Start  -->
     <style>
     <?php include '../styles/productCrud.css'?>

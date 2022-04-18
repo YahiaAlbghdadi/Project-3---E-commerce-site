@@ -9,18 +9,18 @@ if ($_POST) {
     $price = $_POST['price'];
     $deliveryDate = $_POST['deliveryDate'];
     $qtty = $_POST['qtty'];  
-    $id = $_POST['id']; 
+    $productId = $_POST['productId']; 
     $uploadError = '';    
-$image = productFileUpload($_FILES['productImage']);
+    $image = productFileUpload($_FILES['productImage']);
    if($image->error == 0) {      
        ($_POST["productImage"] == "product.png")?: unlink('../../images/$_POST[productImage]');
        $sql = "UPDATE products SET name = '$name', brand = '$brand',
        price = '$price', deliveryDate = '$deliveryDate', qtty = '$qtty',  
-       image = '$image->fileName' WHERE id = {$id}";
+       image = '$image->fileName' WHERE productId = {$productId}";
    } else {
        $sql = "UPDATE products SET name ='$name', brand = '$brand',
        price = '$price', deliveryDate = '$deliveryDate', 
-       qtty = '$qtty'  WHERE id = {$id}";
+       qtty = '$qtty'  WHERE productId = {$productId}";
    }
     if($conn->query($sql)===true) {    
        $class = 'alert alert-success';
@@ -58,7 +58,7 @@ $image = productFileUpload($_FILES['productImage']);
 ​
 </head>
 ​
-<body id='update'>
+<body productId='update'>
     <div class='container'>
         <div class='<?=$class; ?>' role='alert'>
             <p><?=($message) ?? ''; ?></p>

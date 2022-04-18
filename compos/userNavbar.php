@@ -43,7 +43,7 @@
             <div class="navbar">
                 <i class='bx bx-menu'></i>
                 <div class="navlogo">
-                    <img src="../images/navbarlogo.png" style="max-width:90px" alt="">
+                    <img src="../images/navbarlogo.png" style="max-width:160px" alt="">
                     <!-- <div class="logo"><a href="#">  My Mobile</a></div> -->
                 </div>
                 <div class="nav-links">

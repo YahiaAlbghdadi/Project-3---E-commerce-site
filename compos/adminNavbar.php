@@ -30,7 +30,7 @@
             <div class="navbar">
                 <i class='bx bx-menu'></i>
                 <div class="navlogo">
-                    <img src="../images/navbarlogo.png" style="max-width:90px" alt="">
+                    <img src="../images/navbarlogo.png" style="max-width:160px" alt="">
                     <!-- <div class="logo"><a href="#">  My Mobile</a></div> -->
                 </div>
                 <div class="nav-links">
@@ -48,13 +48,13 @@
                             <a href="#">Products</a>
                             <i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
                             <ul class="htmlCss-sub-menu sub-menu">
-                            <li><a href="/files/landingPage.php">All Products</a></li>
+                                <li><a href="/files/products.php">All Products</a></li>
                                 <li><a href="/files/sort1.php">Samsung</a></li>
                                 <li><a href="/files/sort2.php">I Phone</a></li>
                                 <li><a href="/files/sort3.php">Xiaumi</a></li>
                             </ul>
                         </li>
-                        
+                        <li><a href="/files/landingpage.php">Landingpage</a></li>
 
                         <li><a href="/files/productCreate.php">Create Product</a></li>
                         <li><a href="/files/userCreate.php">Create User</a></li>
