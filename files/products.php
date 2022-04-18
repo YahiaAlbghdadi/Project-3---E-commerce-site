@@ -81,17 +81,14 @@ $layout ="<h1 class='text-center fw-bold p-5'> No Results</h1>";
 ​
 ​
 ​
-    <h1 class="Pro text-center mt-5 mb-3 container"> <a href="productCreate.php" class="btn btn-info fw-bold">
-            Create New
-            Product</a>
-        Our Products</h1>
+    <h1 class="Pro text-center mt-5 mb-3 container"> <a href="productCreate.php" class="btn btn-info fw-bold">New Product</a> Our Products</h1>
 ​
     <div class="row" productId="bg">
         <?php echo $layout ?>
     </div>
 ​
-​
-    </script>
+​   
+    
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.28.0/dist/tsparticles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.5.0/custom-elements-es5-adapter.js">
     </script>

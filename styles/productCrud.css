@@ -325,7 +325,7 @@ fieldset tr {
 
 .Pro {
     text-transform: uppercase;
-    font-weight: 900;
+    /* font-weight: 900; */
     font-family: 'Cursive';
     padding: 50px;
     font-size: 5rem;
