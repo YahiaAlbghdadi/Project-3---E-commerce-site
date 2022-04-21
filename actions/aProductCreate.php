@@ -12,16 +12,16 @@
   $uploadError = '';
    $ErrorMsg = '';
 
-  $sql = "INSERT INTO products (name, brand, price, deliveryDate , qtty, productImage) VALUES ('$name', '$brand', '$price',
-    '$deliveryDate', '$qtty', '$image->fileName')";
+$sql = "INSERT INTO products (name, brand, price, deliveryDate , qtty, productImage) VALUES ('$name', '$brand', '$price',
+  '$deliveryDate', '$qtty', '$image->fileName')";
 
-  if($conn->query($sql) === true ){
+if($conn->query($sql) === true ){
   $class ="success";
-  $message = "The entry below was successfully created <br>
-      <div class='card-body'>
-          <h4 class='card-title'>Model :$name</h4>
-          <h4 class='card-title'>Quantity :$qtty</h4>
-          <h4 class='card-title'>Delivery Date: $deliveryDate</h4>
+  $message = "<h5 class='text-center m-4 text-dark fw-bold '>The entry below was successfully created</h5> <br>
+      <div class='container'>
+          <h6 class='card-title'>Model :$name</h6>
+          <h6 class='card-title'>Quantity :$qtty</h6>
+          <h6 class='card-title'>Delivery Date: $deliveryDate</h6>
           <p class='card-text'>Price : $price €</p>
           <hr>
   </div>";
@@ -37,10 +37,8 @@
   header("location: ../error.php");
   }
   ?>
-​
-​
-​
-  <!DOCTYPE html>
+
+<!DOCTYPE html>
   <html lang="en">
 ​
   <head>
@@ -49,13 +47,12 @@
       <!-- Bootstrap -->
       <?php require_once '../compos/bootstrap.php' ?>
       <!-- style Start -->
-      <Style>
-      <?php include '../styles/productCrud.css'?>
-      </style>
+      <link rel="stylesheet" href="../styles/product_style/product.css">
+​
       <!-- Style End  -->
   </head>
 ​
-  <body productId="a-create">
+  <body id="a-create">
       <div class="container">
           <div class="mt-3 mb-3">
               <h1>Created Request Response</h1>
@@ -64,7 +61,7 @@
           <div class="alert alert-<?=$class;?>" role="alert">
               <p><?php echo ($message) ?? ''; ?></p>
               <p><?php echo ($uploadError) ?? ''; ?></p>
-              <a href='../files/products.php'><button class="abtn btn-primary" type='button'>Home</button></a>
+              <a href='../files/products.php' class="abtn btn-primary" type='button'>Home</a>
 ​
           </div>
       </div>

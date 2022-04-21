@@ -1,21 +1,13 @@
 <?php
-    require_once "../actions/connection.php";
-    
-
-    if(session_id() == '') {
+ if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
-        header("location: login.php");
-    }
-    if(isset($_SESSON['user'])){
-        header("locaton: landingPage.php");
-    }
-
+    require_once "../actions/connection.php";
+    require_once "../compos/adminNavbar.php";
 
     if($_GET){
-        $productId = $_GET['productId'];
-        $sql = "SELECT * FROM products where productId = {$productId}";
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM products where productId = {$id}";
         $result = $conn->query($sql);
         $rows = $result->fetch_assoc();
 
@@ -27,19 +19,17 @@
         $qtty = $rows["qtty"];
     }
 ?>
-​
-​
+
 <!DOCTYPE html>
 <html lang="en">
 ​
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once "../compos/adminNavbar.php"?>
+    <!-- start Bootstrap  -->
     <?php require_once '../compos/bootstrap.php'?>
-    <style>
-    <?php include '../styles/productCrud.css'?>
-    </style>
+    <!-- Start Style  -->
+    <link rel="stylesheet" href="../styles/product.css">
     <title>Product Detail</title>
 </head>
 ​
@@ -80,9 +70,9 @@
         </table>
     </div>
     <div class="btnSub">
-        <a href="productUpdate.php?id=<?=$productId?>" class="btn btn-warning" type="button"> Edit</a>
+        <a href="productUpdate.php?id=<?=$id?>" class="btn btn-warning" type="button"> Edit</a>
 ​
-        <a href="landingPage.php"><button class="btn btn-primary" type="button"> Back </button></a>
+        <a class="btn " type="button" href="products.php">Back </a>
     </div>
 </body>
 ​

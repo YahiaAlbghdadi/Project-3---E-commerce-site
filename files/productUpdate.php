@@ -1,98 +1,94 @@
 <?php
-      require_once "../actions/connection.php";
-      if(session_id() == '') {
-        session_start();
-    }
-    if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
-        header("location: login.php");
-    }
-    if(isset($_SESSON['user'])){
-        header("locaton: landingPage.php");
-    }
-    $sql='SELECT * FROM products';
-    $result=mysqli_query($conn,$sql);
-    $layout ="";
-    if(mysqli_num_rows($result) > 0){
-    while($row= mysqli_fetch_assoc($result)){
-      $layout .="<div class='con ' style='width: 18rem;' >
-     <img  src='../images/{$row["productImage"]}' class='card-img-top' height='300' >
-      <div class='card-body'>
-    <h4 class='card-title'>Model:{$row["name"]}</h4>
-    <h4 class='card-title'>Brand:{$row["brand"]}</h4>
-    <h4 class='card-title '>Quantity:<b class='text-primary'>{$row["qtty"]}</b> Pieces </h4>
-    <h4 class='card-title'>Delivery:{$row["deliveryDate"]}</h4>
-    <p class='card-text text-danger'>Price: {$row["price"]}€</p>
-    <hr>
-    <div class='mul-btn'>
-        <button class='update'><a href='../files/productUpdate.php?productId={$row["productId"]}'>Update</a></button>
-        <button class='delete'><a href='../files/productDelete.php?productId={$row["productId"]}'>Delete</a></button>
-        <button class='deta'><a href='../files/productDetails.php?productId={$row["productId"]}'>Details</a></button>
-    </div>
-</div>
-</div>
-";
+      
+require_once "../actions/connection.php";
+require_once "../actions/productFileUpload.php";
+
+if (isset($_GET['id']) ) {
+      $id = $_GET['id'];
+      $sql = "SELECT * FROM products WHERE productId = {$id}";
+      $result = $conn->query($sql);
+      if ($result->num_rows == 1) {
+       $data = $result->fetch_assoc();
+       $name = $data["name"];
+      $brand = $data["brand"];
+      $price = $data["price"];
+      $deliveryDate = $data["deliveryDate"];
+      $qtty = $data["qtty"];
+      $image =$data["productImage"];
 }
-}else{
-$layout ="<h1 class='text-center fw-bold p-5'> No Results</h1>";
 }
+
 ?>
-​
-​
-​
-​
+
 <!DOCTYPE html>
 <html lang="en">
 ​
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-​
-    <!-- Start Style CSS  -->
-    <Style>
-    <?php require_once '../styles/product_style/product.css'?>
-    </Style>
-    <!-- End Style CSS  -->
-​
-    <!-- Start Bootstrap  -->
+    <!-- Navbar  -->
+    <?php require_once '../compos/adminNavbar.php'?>
+    <!-- bootstrap  -->
     <?php require_once '../compos/bootstrap.php';  ?>
-    <!-- Start Bootstrap  -->
+    <!-- Style start   -->
+    <link rel="stylesheet" href="../styles/product.css">
 ​
-    <!-- Navbar Admin -->
-    <?php require_once "../compos/adminNavbar.php"; ?>
-​
-    <title>My Products </title>
+    <title> Edit The Product</title>
 </head>
 ​
-<body class="bg-info">
-    <!-- Start Hero Section -->
-​
-    <!-- <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="../styles/product_style/images/img1.jpg" class="d-block w-100" alt="...">
+<body id="update">
+    <div class="container">
+        <h1>I want Update : <?= $name ?></h1>
+        <img class='img-up d-block w-75  rounded-circle ' src='../images/<?php echo $data["productImage"] ?>'
+            alt="<?php echo $data["name"] ?>">
+        <div>
+            <form action="../actions/aProductUpdate.php" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <table class="table center ">
+                        <tr>
+                            <th>The Model </th>
+                            <td><input class='form-control' type="text" value="<?php echo $name ?>"
+                                    value="<?php echo $name ?>" name="name" placeholder="The Model" /></td>
+                        </tr>
+                        <tr>
+                            <th>The Brand </th>
+                            <td><input class='form-control' type="text" value="<?php echo $brand ?>" name="brand"
+                                    placeholder="The Brand" /></td>
+                        </tr>
+                        <tr>
+                            <th>Delivery Date </th>
+                            <td><input class='form-control' type="text" value="<?php echo $deliveryDate ?>"
+                                    name="deliveryDate" placeholder="Delivery Date" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Price</th>
+                            <td><input class='form-control' type="number" value="<?php echo $price ?>" name="price"
+                                    placeholder="Price" /></td>
+                        </tr>
+                        <tr>
+                            <th> The Quantity </th>
+                            <td><input class='form-control' type="number" value="<?php echo $qtty ?>" name="qtty"
+                                    placeholder="quantity " /></td>
+                        </tr>
+                        <tr>
+                            <th>image</th>
+                            <td><input class="form-control" type="file" name="productImage" /></td>
+                        </tr>
+                        <tr>
+                            <input type="hidden" name="id" value="<?php echo $id ?>" />
+                            <input type="hidden" name="productImage" value="<?php echo $data['productImage'] ?>" />
+                    </table>
+                </fieldset>
+                <div class="btnSub m-1">
+                    <button class="btn btn-success">Save</button>
+                    <a href="products.php" type="button"> Go To Products</a>
+                    <a href="landingPage.php"> Back To Home</a>
+                </div>
+            </form>
         </div>
-    </div> -->
-​
-    <!-- End Hero Section -->
-​
-​
-​
-    <h1 class="Pro text-center mt-5 mb-3 container"> <a href="productCreate.php" class="btn btn-info fw-bold">
-            Create New
-            Product</a>
-        Our Products</h1>
-​
-    <div class="row" productId="bg">
-        <?php echo $layout ?>
     </div>
 ​
-​
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.28.0/dist/tsparticles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.5.0/custom-elements-es5-adapter.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.5.0/webcomponents-loader.js">
-    </script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/web-particles@1.1.0/dist/web-particles.min.js">
-    </script>
 </body>
+​
+</html>

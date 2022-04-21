@@ -37,16 +37,16 @@ if (isset($_POST["submit" ])) {
     $uploadError = '';  
     $insertStiege = "";  
     if($stiege != $_SESSION['stiege']){
-        $insertStiege = ", stiege = '$stiege'";
+        $insertStiege = " stiege = '$stiege',";
     }else{
         $insertStiege = "";
     }
 
    if ($imageArray->error == 0) {      
        ($_POST["image"] == "avatar.png") ?: unlink("../images/$_POST[image]");
-       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.id) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', image = '$image', city = '$city', street = '$street', $insertStiege plz = '$plz', houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.id";
+       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.addressId) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', image = '$image', city = '$city', street = '$street', $insertStiege plz = '$plz', houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.addressId";
    } else {
-       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.id) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', city = '$city', street = '$street', plz = '$plz'$insertStiege, houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.id";
+       $sql = "UPDATE users INNER JOIN addresses on (users.fkAddress = addresses.addressId) SET firstName = '$firstName', lastName = '$lastName',email = '$email', telefonNumber = '$telefonNumber', rank = '$rank', city = '$city', street = '$street', plz = '$plz',$insertStiege houseNumber = '$houseNumber' WHERE users.id = {$id} and users.fkAddress = addresses.addressId";
    }
     if ($conn->query($sql)) {    
        $class = "alert alert-success";
@@ -77,7 +77,8 @@ if (isset($_POST["submit" ])) {
 <div class ="container">
    <div class="<?=$class; ?>"  role="alert">
        <p><?=($message) ?? ''; ?></p>
-        <p><?=($uploadError) ?? ''; ?></p>       
+        <p><?=($uploadError) ?? ''; ?></p>  
+        <a href='../files/dashboard.php'><button class="btn btn-primary"  type='button'>Dashboard</button ></a>     
     </div>
 </div>
 

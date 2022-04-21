@@ -35,10 +35,7 @@
         if($conn->query($insertSql)){
           $updateSql = "UPDATE orders SET rated='yes' WHERE orderId = '$orderNumber'";
           if($conn->query($updateSql)){
-            echo "<div class='alert alert-success' role='alert'>
-            <p>Your Rate was successfully sent</p>
-             <a href='../files/landingPage.php'>Back to Home Page</a>
-            </div >";exit;;
+            header("location:ordersHistory.php");
           }
         }
     }

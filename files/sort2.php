@@ -33,7 +33,7 @@
 </head>
 <body>
 <div class ="container">
-<h1 class="text-center ">Samsung</h1>
+<h1 class="text-center ">Iphone</h1>
 
 
 <div class='  row  p-3 m-4'  id="foundProduct">

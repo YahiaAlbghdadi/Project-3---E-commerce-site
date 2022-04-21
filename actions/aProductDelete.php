@@ -1,8 +1,8 @@
 <?php 
-require_once "../actions/connection.php";
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+require_once "connection.php";
+// if (session_status() == PHP_SESSION_NONE) {
+//     session_start();
+// }
 // if (!isset($_SESSION['adm' ]) && !isset($_SESSION['user'])) {
 //     header("Location: login.php" );
 //      exit;
@@ -11,20 +11,23 @@ if (session_status() == PHP_SESSION_NONE) {
 //     header("Location: landingPage.php");
 //     exit;
 //  }
+
 if ($_POST) {
-   $productId = $_POST['productId'];
-   $image = $_POST['productImage'];
-   ($image =="product.png")?: unlink("../../images/$image");
-  $sql = "DELETE FROM products WHERE productId = {$productId}";
+   $id = $_POST['id'];
+   $image = $_POST['image'];
+   ($image =="product.png")?: unlink("../images/$image");
+
+   $sql = "DELETE FROM products WHERE productId = {$id}";
   if ($conn->query($sql)===true) {
    $class = "alert alert-success" ;
    $message = "Successfully Deleted!";
-   header("refresh:3;url=../files/products.php");
+//    header("refresh:3;url=../files/products.php");
 } else {
    $class = "alert alert-danger";
    $message = "The entry was not deleted due to: <br>" . $conn->error;
 }
 }
+
 ?>
 ​
 ​
@@ -34,13 +37,10 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <title>Delete Product</title>
+    <!-- Style CSS  -->
+    <link rel="stylesheet" href="../styles/product_style/product.css">
     <!-- bootstrap -->
     <?php require_once '../compos/bootstrap.php'; ?>
-    <!-- Style CSS  -->
-    <style>
-      <?php include '../styles/productCrud.css'?>
-    </style>
-​
 </head>
 ​
 <body>

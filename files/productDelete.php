@@ -1,20 +1,11 @@
 <?php
       require_once "../actions/connection.php";
-
-      if(session_Id() == '') {
-        session_start();
-    }
-    if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
-        header("location: login.php");
-    }
-    if(isset($_SESSON['user'])){
-        header("locaton: landingPage.php");
-    }
-
+      require_once "../compos/adminNavbar.php";
       
-if($_GET['productId']) {
-      $productId = $_GET['productId'];
-      $sql = "SELECT * FROM products WHERE productId = {$productId}" ;
+
+      if(isset ($_GET['id'])) {
+      $id = $_GET['id'];
+      $sql = "SELECT * FROM products WHERE productId = {$id}" ;
       $result = mysqli_query($conn, $sql);
       $data = mysqli_fetch_assoc($result);
       if (mysqli_num_rows($result) == 1) {
@@ -22,17 +13,14 @@ if($_GET['productId']) {
             $brand= $data['brand'];
             $price= $data['price'];
             $qtty= $data['qtty'];
-            $productImage = $data['productImage'];
+            $image = $data['productImage'];
       }  else {
        header("location: error.php");
    }
    $conn->close();
-} else {
-   header( "location: error.php");
-}  
+}
+    //   var_dump($image):
       
-
-
       ?>
 ​
 <!DOCTYPE html>
@@ -42,11 +30,11 @@ if($_GET['productId']) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete a Product</title>
-​    <?php require_once "../compos/adminNavbar.php" ?>
+​
     <!-- Style Start  -->
     <style>
-    <?php include '../styles/productCrud.css'?>
-
+    <?php require_once "../styles/product.css";
+    ?>
     </style>
     <!-- End  Start  -->
 ​
@@ -65,7 +53,7 @@ if($_GET['productId']) {
         </div>
 ​
         <div class='h2 text-center fw-bold m-3 p-3'>Delete request !<img class='d-flex w-40 center rounded-circle '
-                src='../images/<?= $data["productImage"] ?>' alt="<?= $name."". $brand ?>"></div>
+                src='../images/<?= $image ?>' alt="<?= $name."". $brand ?>"></div>
         <fieldset class="container w-50 center fd">
 ​
             <div>
@@ -92,7 +80,7 @@ if($_GET['productId']) {
                 </table>
                 <div class="formdel">
                     <form action="../actions/aProductDelete.php" method="post">
-                        <input type="hidden" name="productId" value="<?= $productId ?>" />
+                        <input type="hidden" name="id" value="<?= $id ?>" />
                         <input type="hidden" name="image" value="<?= $image ?>" />
 ​
                 </div>

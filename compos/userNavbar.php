@@ -63,8 +63,8 @@
                             <ul class="htmlCss-sub-menu sub-menu">
                                 <li><a href="/files/landingPage.php">All Products</a></li>
                                 <li><a href="/files/sort1.php">Samsung</a></li>
-                                <li><a href="/files/sort2.php">I Phone</a></li>
-                                <li><a href="/files/sort3.php">Xiaumi</a></li>
+                                <li><a href="/files/sort2.php">IPhone</a></li>
+                                <li><a href="/files/sort3.php">Huawei</a></li>
                             </ul>
                         </li>
                         

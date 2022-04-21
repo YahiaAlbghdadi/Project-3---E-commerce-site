@@ -18,7 +18,7 @@ if(!isset($_GET)){
 
 if ($_GET) {
     $id = $_GET['id'];
-    $sql = "SELECT * FROM users left join addresses on users.fkAddress = addresses.id WHERE users.id = {$id}";
+    $sql = "SELECT * FROM users left join addresses on users.fkAddress = addresses.addressId WHERE users.id = {$id}";
     $result = $conn->query($sql);
     $rows = $result->fetch_assoc();
     $firstName = $rows['firstName'];

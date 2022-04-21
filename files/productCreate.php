@@ -1,15 +1,6 @@
 <?php
       
-      if(session_id() == '') {
-        session_start();
-    }
-    if(!isset($_SESSION['user']) && !isset($_SESSION['admin'])){
-        header("location: login.php");
-    }
-    if(isset($_SESSON['user'])){
-        header("locaton: landingPage.php");
-    }
-    
+      require_once "../compos/adminNavbar.php";
 
 ?>
 <!DOCTYPE html>
@@ -18,22 +9,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once "../compos/adminNavbar.php"?>
-    <!-- Bootstrap Start  -->
-    <?php include '../compos/bootstrap.php'?>
-    <!-- Bootstrap End -->
-    
     <!-- Style Page Start  -->
-    <style>
-    <?php include '../styles/productCrud.css'?>
-    </style>
+    <link rel="stylesheet" href="../styles/product.css">
     <!-- Style Page End   -->
+    <!-- Bootstrap Start  -->
+    <?php require_once '../compos/bootstrap.php'?>
+    <!-- Bootstrap End -->
     <title> Add a new Product</title>
 ​
 </head>
 ​
 <body id="create">
-    <fieldset>
+    <fieldset class="container">
         <legend> Add new Product</legend>
         <form action="../actions/aProductCreate.php" method="post" enctype="multipart/form-data">
             <table class='table'>
@@ -61,9 +48,11 @@
                     <th>Upload Image</th>
                     <td><input class='form-control' type="file" name="productImage" /></td>
                 </tr>
-                <tr>
+                <tr class="c-btn">
                     <td><button class='btn btn-success' type="submit">Insert Product</button></td>
-                    <td><a class='btn btn-warning' href="products.php">Home</a></td>
+                    <td>
+                        <a class='btn btn-warning' href="products.php"> Home</a>
+                    </td>
                 </tr>
             </table>
         </form>

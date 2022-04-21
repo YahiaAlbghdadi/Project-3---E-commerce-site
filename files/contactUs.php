@@ -113,7 +113,7 @@
             <h2>Contact Us</h2>
             <h3>
                <span id="confirm">
-               <form action="https://formsubmit.co/ahmadtktk44@gmail.com" method="POST">
+               <form action="https://formsubmit.co/ahmad.tktk44@gmail.com" method="POST">
             </h3>
             <p>Name *</p>
             <input id="txt_name" type="text"  placeholder="name " name="name" Required="required">
