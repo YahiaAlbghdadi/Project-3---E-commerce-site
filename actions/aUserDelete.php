@@ -26,18 +26,17 @@
     $image = $_POST['image'];
     $addressId = $_POST['addressId'];
     ($image =="avatar.png")?: unlink("../images/$image");
-    $usersql = " DELETE FROM users WHERE id = {$id}";
+    $query = " Delete FROM users WHERE id = {$id} ";
     
-    if ($conn->query($usersql) ){
-       
+    if ($conn->query($query)){
     $class = "alert alert-success" ;
     $message = "Successfully Deleted!";
     header("refresh:3;url=../files/dashboard.php");
-    }} else {
+    } else {
     $class = "alert alert-danger";
     $message = "The entry was not deleted due to: <br>" . $conn->error;
     
-    }
+    }}
 
 
 ?>

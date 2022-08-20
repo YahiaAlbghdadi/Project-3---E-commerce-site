@@ -15,8 +15,8 @@ if(isset($_SESSION['user'])){
 
 if($_POST){
     $id = $_POST['orderId'];
-    $sentSql = "UPDATE orders SET sent = 'yes' WHERE orderId = '{$id}'";
-    if($conn->query($sentSql)){
+    $sendSql = "UPDATE orders SET sent = 'yes' WHERE orderId = '{$id}'";
+    if($conn->query($sendSql)){
         echo "success";
     }else{
         echo "error";

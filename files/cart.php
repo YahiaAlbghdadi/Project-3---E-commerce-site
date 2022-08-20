@@ -84,7 +84,7 @@
 
     <div class="cart container">
 <?php
-    if(isset($_SESSION["shopping_cart"]) && count($_SESSION["shopping_cart"]) > 0){
+    if(isset($_SESSION["shopping_cart"]) && count($_SESSION["shopping_cart"]) > 0):
         $totalPrice = 0;
         ;
 ?>	
@@ -102,7 +102,7 @@
 <td>ITEMS TOTAL</td>
 </tr>	
 <?php	
-foreach ($_SESSION["shopping_cart"] as $key=>$product){
+foreach ($_SESSION["shopping_cart"] as $key=>$product):
 ?>
 <tr>
 <td>
@@ -114,7 +114,7 @@ foreach ($_SESSION["shopping_cart"] as $key=>$product){
 <input type='hidden' name='index' value="<?= $key; ?>" />
 
 <input type='hidden' name='action' value="remove" />
-<button type='submit' onclick="myAlert()" class='remove'>Remove Item</button>
+<button type='submit' class='remove'>Remove Item</button>
 </form>
 </td>
 <td>
@@ -153,7 +153,7 @@ value="10" <?php if($product["quantity"]==10) echo "selected";?>>10</option>
 </tr>
 <?php
 $totalPrice += intval($product["price"])*intval($product["quantity"]);
-}
+endforeach
 ?>
 <tr>
 <td colspan="5" align="right">
@@ -173,9 +173,9 @@ $totalPrice += intval($product["price"])*intval($product["quantity"]);
 </tbody>
 </table>		
   <?php
-}else{
+else:
 	echo "<h3>Your cart is empty!</h3><br><h2>Show  <a href='ordersHistory.php'>your orders History</a></h2>";
-	}
+	endif
 
 ?>
 </div>
